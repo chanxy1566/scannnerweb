@@ -1,0 +1,657 @@
+{% extends "admin_base.html" %}
+{% block title %}套装档案管理{% endblock %}
+
+{% block content %}
+<style>
+  .table-fixed { table-layout: fixed; width: 100%; }
+  .table-fixed th, .table-fixed td { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .col-check { width: 5%; }
+  .col-id { width: 6%; }
+  .col-name { width: 16%; }
+  .col-code { width: 16%; }
+  .col-dyn { min-width: 90px; }
+  .col-actions { width: 10%; }
+</style>
+
+<div class="card">
+    <div class="card-header py-2 d-flex justify-content-between align-items-center">
+        <h3 class="card-title m-0">套装档案管理</h3>
+        {% if current_user.role == 'admin' %}
+        <button class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#manageColumnsModal">
+            <i class="fas fa-columns mr-1"></i>管理列
+        </button>
+        {% endif %}
+    </div>
+    <div class="card-body p-2">
+        <!-- 搜索栏 + 操作按钮 -->
+        <div class="d-flex flex-wrap align-items-center mb-2">
+            <div class="input-group input-group-sm mr-2" style="max-width: 400px;">
+                <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-search"></i></span></div>
+                <input type="text" id="searchInput" class="form-control" placeholder="输入套装名称搜索...">
+            </div>
+            {% if current_user.role in ['admin', 'editor'] %}
+            <div class="btn-group btn-group-sm mr-2">
+                <button class="btn btn-success" id="btnImportExcel" title="导入Excel"><i class="fas fa-upload"></i> 导入</button>
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#addPanel" title="新增套装"><i class="fas fa-plus"></i> 新增</button>
+                <button class="btn btn-danger btn-ajax" id="batchDelBtn" title="批量删除"><i class="fas fa-trash"></i> 批量删除</button>
+                <button class="btn btn-outline-success btn-sm" onclick="exportSets()" title="导出当前搜索结果">
+                    <i class="fas fa-file-excel mr-1"></i>导出
+                </button>
+            </div>
+            {% endif %}
+            <span class="badge badge-info ml-auto" id="totalCount">共 0 条</span>
+        </div>
+
+        <!-- 进度条 -->
+        <div id="importProgress" class="progress mb-2" style="display:none; height: 25px;">
+            <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%">0%</div>
+        </div>
+
+        {% if current_user.role in ['admin', 'editor'] %}
+        <!-- 新增面板 -->
+        <div class="collapse mb-2" id="addPanel">
+            <div class="bg-light p-2 rounded">
+                <div class="form-inline mb-2">
+                    <input type="text" id="setName" class="form-control form-control-sm mr-2" placeholder="套装名称" style="width: 200px;">
+                    <input type="text" id="setCode" class="form-control form-control-sm mr-2" placeholder="套装编码（可选）" style="width: 160px;">
+                    <button class="btn btn-primary btn-sm btn-ajax" onclick="addSet()"><i class="fas fa-check mr-1"></i>保存</button>
+                </div>
+                <!-- 动态列输入区域 -->
+                <div id="dynamicFields" class="form-inline mb-2"></div>
+                <!-- extras JSON 字段保留备用 -->
+                <div class="form-inline">
+                    <input type="text" id="setExtras" class="form-control form-control-sm" placeholder="扩展信息（JSON，可选）" style="width: 400px;">
+                </div>
+            </div>
+        </div>
+        <input type="file" id="excelFile" accept=".xlsx" style="display:none">
+        {% endif %}
+
+        <!-- 表格容器 -->
+        <div style="max-height: 55vh; overflow: auto; border: 1px solid #dee2e6; border-radius: 4px;" class="table-responsive-sm">
+            <table class="table table-sm table-bordered table-hover mb-0 table-fixed">
+                <thead class="bg-light" style="position: sticky; top: 0; z-index: 1;">
+                    <tr id="tableHeaderRow">
+                        {% if current_user.role in ['admin', 'editor'] %}
+                        <th class="col-check"><input type="checkbox" id="selectAll" title="全选/取消"></th>
+                        {% endif %}
+                        <th class="col-id">ID</th>
+                        <th class="col-name">套装名称</th>
+                        <th class="col-code">套装编码</th>
+                        <!-- 动态列由 JS 插入此处 -->
+                        {% if current_user.role in ['admin', 'editor'] %}
+                        <th class="col-actions">操作</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody id="setTable">
+                    <tr><td colspan="5" class="text-center text-muted py-3">加载中...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 分页 -->
+        <div class="text-center text-muted small mt-2" id="pageInfo"></div>
+        <div class="d-flex justify-content-center mt-1">
+            <ul class="pagination pagination-sm mb-0" id="pagination"></ul>
+        </div>
+    </div>
+</div>
+
+{% if current_user.role in ['admin', 'editor'] %}
+<!-- 导入预览模态框 -->
+<div class="modal fade" id="previewModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title">导入预览</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body p-2">
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="overwriteCheck">
+                    <label class="form-check-label" for="overwriteCheck">覆盖已存在的数据</label>
+                </div>
+                <div class="alert alert-info small mb-2" id="previewInfo"></div>
+                <div style="max-height: 400px; overflow-y: auto;">
+                    <table class="table table-sm table-bordered table-striped mb-0">
+                        <thead id="previewHead"></thead>
+                        <tbody id="previewBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer py-2">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn-sm btn-ajax" id="confirmImportBtn">确认导入</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- 管理列模态框（仅管理员可操作） -->
+{% if current_user.role == 'admin' %}
+<div class="modal fade" id="manageColumnsModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title">管理自定义列</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-inline mb-3">
+                    <input type="text" id="newColumnName" class="form-control form-control-sm mr-2" placeholder="列名（英文）" style="width: 160px;">
+                    <button class="btn btn-primary btn-sm" onclick="addColumn()"><i class="fas fa-plus mr-1"></i>添加列</button>
+                </div>
+                <div class="form-group">
+                    <label>当前自定义列：</label>
+                    <ul class="list-group" id="columnList"></ul>
+                </div>
+            </div>
+            <div class="modal-footer py-2">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block script %}
+<script>
+const perPage = 15;
+let allSets = [];
+let filteredSets = [];
+let currentPage = 1;
+let extraColumns = [];
+let saving = false;        // 全局保存锁
+{% if current_user.role in ['admin', 'editor'] %}
+let pendingImportFile = null;
+{% endif %}
+
+$(function(){
+    // 获取自定义列定义
+    $.getJSON('/api/set-columns', function(res) {
+        extraColumns = res.columns;
+        renderTableHeader();
+        renderAddPanel();
+        loadSets();
+    });
+    $('#searchInput').on('input', applyFilter);
+
+    {% if current_user.role in ['admin', 'editor'] %}
+    $('#btnImportExcel').on('click', function(){ $('#excelFile').click(); });
+    $('#selectAll').on('change', function(){ $('.set-check').prop('checked', this.checked); });
+    $('#batchDelBtn').on('click', batchDeleteSets);
+
+    // 文件选择 -> 预览
+    $('#excelFile').on('change', function(){
+        const file = this.files[0];
+        if (!file) return;
+        pendingImportFile = file;
+        const formData = new FormData();
+        formData.append('file', file);
+        $.ajax({
+            url: '/api/goods-set-import-preview',
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(res) {
+                if (res.success) showPreviewModal(res.columns, res.rows, res.total_rows, res.statuses);
+                else showError('预览失败：' + res.msg);
+            },
+            error: function() { showError('网络异常，预览失败'); }
+        });
+    });
+
+    // 确认导入 -> 异步执行
+    $('#confirmImportBtn').on('click', function(){
+        if (!pendingImportFile) return;
+        const btn = $(this);
+        setButtonLoading(btn, true);
+        const overwrite = $('#overwriteCheck').is(':checked');
+        $('#previewModal').modal('hide');
+        importSetAsync(pendingImportFile, overwrite);
+        setButtonLoading(btn, false);
+    });
+
+    $('#addPanel').on('shown.bs.collapse', function () {
+        $(this).find('input[type="text"]').first().focus();
+    });
+
+    $('.btn-ajax').each(function(){
+        const btn = $(this);
+        if (!btn.data('original-html')) {
+            btn.data('original-html', btn.html());
+            btn.data('loading-text', btn.text().trim() || '处理中...');
+        }
+    });
+    {% endif %}
+
+    {% if current_user.role == 'admin' %}
+    // 管理列模态框：打开时刷新列表
+    $('#manageColumnsModal').on('show.bs.modal', function() {
+        loadColumnList();
+    });
+    {% endif %}
+});
+
+// ===================== 动态表头生成 =====================
+function renderTableHeader() {
+    const headerRow = $('#tableHeaderRow');
+    headerRow.find('.col-dyn').remove();
+    const actionTh = headerRow.find('.col-actions');
+    extraColumns.forEach(col => {
+        actionTh.before(`<th class="col-dyn">${col}</th>`);
+    });
+    updateColspan();
+}
+
+// ===================== 新增面板动态字段 =====================
+function renderAddPanel() {
+    const container = $('#dynamicFields');
+    container.empty();
+    extraColumns.forEach(col => {
+        container.append(`<input type="text" id="attr_${col}" class="form-control form-control-sm mr-2 dyn-attr" placeholder="${col}" style="width: 140px;">`);
+    });
+}
+
+// ===================== 计算当前总列数 =====================
+function getTotalCols() {
+    let base = {{ '4' if current_user.role in ['admin', 'editor'] else '3' }};
+    base += extraColumns.length;
+    if ({{ '1' if current_user.role in ['admin', 'editor'] else '0' }}) base += 1;
+    return base;
+}
+
+function updateColspan() {
+    const total = getTotalCols();
+    $('#setTable tr td[colspan]').attr('colspan', total);
+}
+
+// ===================== 加载套装数据 =====================
+function loadSets() {
+    $.getJSON('/api/goods-set-lib', function(data) {
+        //console.log('加载套装数据成功，条数：', data.length);
+        if (data.length > 0) console.log('第一条数据：', data[0]);
+        allSets = data;
+        applyFilter();
+    }).fail(function(xhr) {
+        //console.error('加载套装数据失败，状态：', xhr.status, xhr.responseText);
+        const total = getTotalCols();
+        $('#setTable').html(`<tr><td colspan="${total}" class="text-center text-danger">加载失败，请刷新重试</td></tr>`);
+    });
+}
+
+function applyFilter() {
+    const keyword = $('#searchInput').val().trim().toLowerCase();
+    filteredSets = keyword ? allSets.filter(item => item.set_name.toLowerCase().includes(keyword)) : allSets;
+    currentPage = 1;
+    renderPage(1);
+}
+
+function renderPage(page) {
+    currentPage = page;
+    const start = (page - 1) * perPage;
+    const pageData = filteredSets.slice(start, start + perPage);
+
+    const totalCols = getTotalCols();
+    let html = '';
+    if (pageData.length === 0) {
+        html = `<tr><td colspan="${totalCols}" class="text-center text-muted py-3">暂无数据</td></tr>`;
+    } else {
+        pageData.forEach(item => {
+            const name = $('<div>').text(item.set_name).html();
+            const code = $('<div>').text(item.set_code || '-').html();
+            let dynCells = '';
+            extraColumns.forEach(col => {
+                const val = item[col] || '';
+                dynCells += `<td class="col-dyn" data-id="${item.id}" data-col="${col}" title="点击编辑">${val}</td>`;
+            });
+            html += `<tr>
+                {% if current_user.role in ['admin', 'editor'] %}
+                <td class="col-check"><input type="checkbox" class="set-check" data-id="${item.id}"></td>
+                {% endif %}
+                <td class="col-id">${item.id}</td>
+                <td class="col-name" title="${name}">${name}</td>
+                <td class="col-code" title="${code}">${code}</td>
+                ${dynCells}
+                {% if current_user.role in ['admin', 'editor'] %}
+                <td class="col-actions"><button class="btn btn-danger btn-xs btn-delete-set" data-id="${item.id}" title="删除"><i class="fas fa-trash"></i></button></td>
+                {% endif %}
+            </tr>`;
+        });
+    }
+    $('#setTable').html(html);
+    bindCellClick();
+    renderPagination();
+    $('#totalCount').text(`共 ${filteredSets.length} 条`);
+    $('#pageInfo').text(`第 ${page} 页 / 共 ${Math.ceil(filteredSets.length / perPage)} 页`);
+    {% if current_user.role in ['admin', 'editor'] %}
+    $('#selectAll').prop('checked', false);
+    {% endif %}
+}
+
+// ===================== 分页（不变） =====================
+function renderPagination() {
+    const totalPages = Math.ceil(filteredSets.length / perPage);
+    if (totalPages <= 1) { $('#pagination').html(''); return; }
+    let html = '';
+    html += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}"><a class="page-link" href="#" onclick="changePage(${currentPage - 1})">&laquo;</a></li>`;
+    const maxVisible = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+    if (endPage - startPage + 1 < maxVisible) startPage = Math.max(1, endPage - maxVisible + 1);
+    if (startPage > 1) {
+        html += `<li class="page-item"><a class="page-link" href="#" onclick="changePage(1)">1</a></li>`;
+        if (startPage > 2) html += '<li class="page-item disabled"><span class="page-link">...</span></li>';
+    }
+    for (let i = startPage; i <= endPage; i++) {
+        html += `<li class="page-item ${i === currentPage ? 'active' : ''}"><a class="page-link" href="#" onclick="changePage(${i})">${i}</a></li>`;
+    }
+    if (endPage < totalPages) {
+        if (endPage < totalPages - 1) html += '<li class="page-item disabled"><span class="page-link">...</span></li>';
+        html += `<li class="page-item"><a class="page-link" href="#" onclick="changePage(${totalPages})">${totalPages}</a></li>`;
+    }
+    html += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}"><a class="page-link" href="#" onclick="changePage(${currentPage + 1})">&raquo;</a></li>`;
+    $('#pagination').html(html);
+}
+
+function changePage(page) {
+    const totalPages = Math.ceil(filteredSets.length / perPage);
+    if (page < 1 || page > totalPages) return false;
+    renderPage(page);
+    return false;
+}
+function bindCellClick() {
+    $('.col-dyn').off('click').on('click', function() {
+        if (saving) return;
+        const td = $(this);
+        if (td.find('input').length) return;
+        const oldVal = td.text().trim();
+        const id = td.data('id');
+        const col = td.data('col');
+        if (!id || !col) {
+            showError('数据异常，无法编辑');
+            return;
+        }
+        td.html(`<input type="text" class="form-control form-control-sm" value="${oldVal}" />`);
+        const input = td.find('input');
+        input.focus().select();
+        input.on('blur keydown', function(e) {
+            if (e.type === 'blur' || e.key === 'Enter') {
+                const newVal = input.val().trim();
+                const set = allSets.find(s => s.id == id);
+                if (!set) return;
+                
+                // 乐观更新本地缓存
+                set[col] = newVal;
+                td.text(newVal);
+
+                // 构建包含所有动态列当前值的更新数据
+                const updateData = {
+                    set_name: set.set_name,
+                    set_code: set.set_code || '',
+                    extras: set.extras || '{}'
+                };
+                extraColumns.forEach(c => {
+                    updateData[c] = (set[c] !== undefined && set[c] !== null) ? set[c] : '';
+                });
+                updateData[col] = newVal;   // 确保新值生效
+
+                //.log('发送更新数据:', updateData);   // 调试
+
+                saving = true;
+                $.ajax({
+                    url: '/api/goods-set-update/' + id,
+                    method: 'PUT',
+                    data: updateData,
+                    success: function(res) {
+                        if (res.success) {
+                            showSuccess('保存成功');
+                            // 自动刷新最新数据
+                            $.getJSON('/api/goods-set-lib', function(newData) {
+                                allSets = newData;
+                                applyFilter();
+                            });
+                        } else {
+                            showError(res.msg);
+                            // 回滚
+                            set[col] = oldVal;
+                            td.text(oldVal);
+                        }
+                    },
+                    error: function() {
+                        showError('保存失败');
+                        set[col] = oldVal;
+                        td.text(oldVal);
+                    },
+                    complete: function() {
+                        saving = false;
+                    }
+                });
+            }
+        });
+    });
+}
+{% if current_user.role in ['admin', 'editor'] %}
+// ===================== 批量删除（不变） =====================
+function batchDeleteSets() {
+    const ids = $('.set-check:checked').map(function(){ return $(this).data('id'); }).get();
+    if (!ids.length) return showWarning('请至少选择一个套装');
+    if (!confirm(`确定删除 ${ids.length} 个套装？`)) return;
+    const btn = $('#batchDelBtn');
+    setButtonLoading(btn, true);
+    $.ajax({
+        url: '/api/goods-set-del-batch',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ ids: ids }),
+        success: function(res) {
+            if (res.success) { showSuccess(res.msg); loadSets(); }
+            else showError(res.msg);
+        },
+        error: function() { showError('删除失败'); },
+        complete: function() { setButtonLoading(btn, false); }
+    });
+}
+
+// ===================== 预览模态框（不变） =====================
+function showPreviewModal(columns, rows, totalRows, statuses) {
+    let headHtml = '<tr>';
+    columns.forEach(col => { headHtml += `<th>${$('<div>').text(col).html()}</th>`; });
+    headHtml += '</tr>';
+    $('#previewHead').html(headHtml);
+    let bodyHtml = '';
+    rows.forEach((row, i) => {
+        let rowStyle = '';
+        const status = statuses ? statuses[i] : 'unknown';
+        if (status === 'new') rowStyle = 'background-color: #d4edda;';
+        else if (status === 'skip') rowStyle = 'background-color: #fff3cd;';
+        else if (status === 'invalid') rowStyle = 'background-color: #f8d7da;';
+        bodyHtml += '<tr style="' + rowStyle + '">';
+        row.forEach(cell => { bodyHtml += `<td>${$('<div>').text(cell || '').html()}</td>`; });
+        bodyHtml += '</tr>';
+    });
+    $('#previewBody').html(bodyHtml);
+    $('#previewInfo').text(`共解析到 ${totalRows} 条数据，以下显示前 ${rows.length} 行。绿色=新增，黄色=已存在，红色=无效`);
+    $('#previewModal').modal('show');
+    $('#overwriteCheck').prop('checked', false);
+}
+
+// ===================== 新增套装（收集动态列） =====================
+function addSet() {
+    const name = $('#setName').val().trim();
+    const code = $('#setCode').val().trim();
+    if (!name) return showWarning('套装名称不能为空');
+    
+    const data = {
+        set_name: name,
+        set_code: code
+    };
+    extraColumns.forEach(col => {
+        data[col] = $(`#attr_${col}`).val().trim();
+    });
+    const extras = $('#setExtras').val().trim();
+    if (extras) data.extras = extras;
+
+    const btn = $('#addPanel .btn-ajax');
+    setButtonLoading(btn, true);
+    $.ajax({
+        url: '/api/goods-set-add',
+        method: 'POST',
+        data: data,
+        success: function(res){
+            if (res.success) {
+                showSuccess(res.msg);
+                $('#setName').val('');
+                $('#setCode').val('');
+                extraColumns.forEach(col => { $(`#attr_${col}`).val(''); });
+                $('#setExtras').val('');
+                $('#addPanel').collapse('hide');
+                loadSets();
+            } else showError(res.msg);
+        },
+        error: function(){ showError('添加失败，请重试'); },
+        complete: function(){ setButtonLoading(btn, false); }
+    });
+}
+
+// ===================== 异步导入（不变） =====================
+function importSetAsync(file, overwrite) {
+    $('#importProgress').show();
+    $('#progressBar').css('width', '0%').text('0%');
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('overwrite', overwrite);
+    $.ajax({
+        url: '/api/goods-set-import-async',
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(res) {
+            if (res.success) pollSetTask(res.task_id);
+            else { showError(res.msg); $('#importProgress').hide(); }
+        },
+        error: function() { showError('上传失败'); $('#importProgress').hide(); }
+    });
+}
+
+function pollSetTask(taskId) {
+    showInfo('导入任务已提交，正在处理...');
+    const timer = setInterval(function() {
+        $.getJSON('/api/goods-set-import-status/' + taskId, function(data) {
+            if (data.state === 'SUCCESS') {
+                clearInterval(timer);
+                $('#progressBar').css('width', '100%').text('100%');
+                setTimeout(function(){ $('#importProgress').hide(); }, 1000);
+                const result = data.result;
+                if (result.success) { showSuccess(result.msg); loadSets(); }
+                else showError(result.msg);
+            } else if (data.state === 'FAILURE') {
+                clearInterval(timer);
+                $('#importProgress').hide();
+                showError('导入失败：' + (data.result || '未知错误'));
+            } else if (data.state === 'RUNNING') {
+                const p = data.progress || 0;
+                $('#progressBar').css('width', p + '%').text(p + '%');
+            }
+        });
+    }, 500);
+}
+
+// 单条删除（事件委托）
+$(document).on('click', '.btn-delete-set', function() {
+    const id = $(this).data('id');
+    if (!confirm('确定删除该套装？')) return;
+    $.ajax({
+        url: '/api/goods-set-delete',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ id: id }),
+        success: function(res){
+            if (res.success) { showSuccess(res.msg); loadSets(); }
+            else showError(res.msg);
+        },
+        error: function(){ showError('删除失败'); }
+    });
+});
+{% endif %}
+
+{% if current_user.role == 'admin' %}
+// ===================== 管理列功能 =====================
+function loadColumnList() {
+    $.getJSON('/api/set-columns', function(res) {
+        const list = $('#columnList');
+        list.empty();
+        if (res.columns.length === 0) {
+            list.append('<li class="list-group-item text-muted">暂无自定义列</li>');
+            return;     
+        }
+        res.columns.forEach(col => {
+            list.append(`
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${col}
+                    <button class="btn btn-outline-danger btn-xs" onclick="removeColumn('${col}')" title="清空该列数据并隐藏">
+                        <i class="fas fa-eye-slash"></i>
+                    </button>
+                </li>
+            `);
+        });
+    });
+}
+
+function addColumn() {
+    const name = $('#newColumnName').val().trim();
+    if (!name) return showWarning('列名不能为空');
+    // 简单验证英文标识符
+    if (!/^[a-zA-Z_][a-zA-Z0-9_]*$/.test(name)) {
+        return showWarning('列名只能包含字母、数字、下划线，且不能以数字开头');
+    }
+    $.post('/api/set-columns', {name: name}, function(res) {
+        if (res.success) {
+            showSuccess(res.msg);
+            $('#newColumnName').val('');
+            loadColumnList();
+            // 刷新页面数据
+            extraColumns.push(name);
+            renderTableHeader();
+            renderAddPanel();
+            loadSets();
+        } else {
+            showError(res.msg);
+        }
+    });
+}
+
+function removeColumn(col) {
+    if (!confirm(`确定清空并隐藏列 "${col}" 吗？该列数据将被清空但不会删除。`)) return;
+    $.ajax({
+        url: '/api/set-columns',
+        method: 'DELETE',
+        data: {name: col},
+        success: function(res) {
+            if (res.success) {
+                showSuccess(res.msg);
+                // 从前端移除该列
+                extraColumns = extraColumns.filter(c => c !== col);
+                renderTableHeader();
+                renderAddPanel();
+                loadSets();
+                loadColumnList();
+            } else {
+                showError(res.msg);
+            }
+        }
+    });
+}
+function exportSets() {
+    const keyword = $('#searchInput').val().trim();
+    const url = `/api/goods-set-lib/export?keyword=${encodeURIComponent(keyword)}`;
+    window.location.href = url;   // 直接下载文件
+}
+{% endif %}
+</script>
+{% endblock %}

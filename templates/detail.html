@@ -1,0 +1,435 @@
+{% extends "admin_base.html" %}
+{% block title %}订单明细 · {{ order_code }}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header py-2">
+        <h3 class="card-title m-0">订单明细 · {{ order_code }}</h3>
+        <div class="card-tools">
+            <a href="/export_detail?order_code={{ order_code }}" class="btn btn-success btn-sm">
+                <i class="fas fa-file-excel mr-1"></i>导出明细
+            </a>
+            <a href="javascript:history.back()" class="btn btn-default btn-sm ml-2">
+                <i class="fas fa-arrow-left mr-1"></i>返回列表
+            </a>
+        </div>
+    </div>
+    <div class="card-body p-2">
+        <!-- 订单公共信息 -->
+        <div class="alert alert-info p-2 mb-2 small">
+            <div class="row no-gutters">
+                <div class="col-md-3"><strong>拓展编码：</strong> {{ order_extend_code or '无' }}</div>
+                <div class="col-md-3"><strong>原始商品名：</strong> {{ original_goods or '无' }}</div>
+                <div class="col-md-3"><strong>倍数：</strong> {{ multiplier }}</div>
+                <div class="col-md-3"><strong>下单时间：</strong> {{ order_time or '无' }}</div>
+            </div>
+        </div>
+
+        <!-- 明细表格（固定表头滚动） -->
+        <div style="max-height: 45vh; overflow: auto; border: 1px solid #dee2e6; border-radius: 4px; margin-bottom: 8px;" class="table-responsive-sm">
+            <table class="table table-sm table-bordered table-hover mb-0 text-nowrap">
+                <thead class="bg-light" style="position: sticky; top: 0; z-index: 1;">
+                    <tr>
+                        <th width="25%">商品名称</th>
+                        <th width="15%">拓展编码</th>
+                        <th width="8%">原始数量</th>
+                        <th width="10%">最终数量</th>
+                        <th width="17%">原始商品名</th>
+                        <th width="8%">倍数</th>
+                        <th width="12%">下单时间</th>
+                        {% if current_user.role in ['admin', 'editor'] %}
+                        <th width="5%">删除</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody id="detailTableBody">
+                    <tr><td colspan="{{ '8' if current_user.role in ['admin', 'editor'] else '7' }}" class="text-center text-muted py-3">加载中...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        {% if current_user.role in ['admin', 'editor'] %}
+        <!-- 操作按钮区 -->
+        <div class="mb-2">
+            <button class="btn btn-primary btn-sm btn-ajax" id="saveQuantityBtn"><i class="fas fa-save mr-1"></i>保存修改</button>
+            <button class="btn btn-danger btn-sm ml-1 btn-ajax" id="deleteSelectedBtn"><i class="fas fa-trash mr-1"></i>删除选中</button>
+            <span class="ml-3">
+                <input type="number" id="multiplierInput" class="form-control form-control-sm d-inline-block" 
+                       value="1" step="0.1" min="0.1" style="width:80px;">
+                <button class="btn btn-warning btn-sm ml-1 btn-ajax" id="applyMultiplierBtn">
+                    <i class="fas fa-times-circle mr-1"></i>乘以倍数
+                </button>
+            </span>
+        </div>
+
+        <!-- 新增商品区域（始终显示） -->
+        <div class="bg-light p-2 rounded mb-2">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+                <h6 class="m-0">➕ 添加商品到当前订单</h6>
+                <button class="btn btn-outline-secondary btn-sm" id="addRowBtn"><i class="fas fa-plus-circle mr-1"></i>新增一行</button>
+            </div>
+            <div id="addItemsContainer">
+                <div class="row align-items-end mb-1 add-row">
+                    <div class="col-md-4">
+                        <label class="small mb-0">商品名称</label>
+                        <input type="text" class="form-control form-control-sm search-goods" placeholder="输入关键词自动匹配" autocomplete="off">
+                        <div class="dropdown-menu w-100" style="position:absolute; display:none;"></div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="small mb-0">拓展编码</label>
+                        <input type="text" class="form-control form-control-sm ec-input" value="{{ order_extend_code }}" data-default="{{ order_extend_code }}" placeholder="自动带入">
+                    </div>
+                    <div class="col-md-1">
+                        <label class="small mb-0">数量</label>
+                        <input type="number" class="form-control form-control-sm qty-input" value="1" min="1">
+                    </div>
+                    <input type="hidden" class="orig-input" value="{{ original_goods }}">
+                    <input type="hidden" class="mult-input" value="{{ multiplier }}">
+                    <input type="hidden" class="time-input" value="{{ order_time }}">
+                    <div class="col-md-1">
+                        <button class="btn btn-outline-danger btn-sm remove-row-btn" type="button" title="移除本行"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-primary btn-sm btn-ajax" id="submitAddBtn"><i class="fas fa-check mr-1"></i>提交添加</button>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+// 使用全局 csrftoken（由 csrf_setup.js 设置）
+const orderCode = {{ order_code|tojson }};
+const defaultExtendCode = {{ order_extend_code|tojson }};
+const defaultOrig = {{ original_goods|tojson }};
+const defaultMult = {{ multiplier|tojson }};
+const defaultTime = {{ order_time|tojson }};
+const goodsLib = {};
+let rowCount = 0;
+
+// 原生 fetch 包装（携带 CSRF token）
+function fetchWithCSRF(url, options = {}) {
+    options.headers = {
+        ...options.headers,
+        'X-CSRFToken': window.csrftoken
+    };
+    return fetch(url, options);
+}
+
+$(function(){
+    // 加载商品档案到内存
+    $.getJSON('/api/goods-lib', function(data){
+        data.forEach(item => goodsLib[item.goods_name] = item.extend_code);
+    });
+    loadDetailTable();
+
+    {% if current_user.role in ['admin', 'editor'] %}
+    // 初始化按钮加载状态
+    $('.btn-ajax').each(function(){
+        const btn = $(this);
+        if (!btn.data('original-html')) {
+            btn.data('original-html', btn.html());
+            btn.data('loading-text', btn.text().trim() || '处理中...');
+        }
+    });
+
+    $('#saveQuantityBtn').click(saveQuantity);
+    $('#deleteSelectedBtn').click(deleteSelected);
+    $('#addRowBtn').click(addGoodsRow);
+    $('#submitAddBtn').click(submitAddGoods);
+    $('#applyMultiplierBtn').click(applyMultiplier);
+
+    // 最终数量失焦修正
+    $(document).on('blur', '.final-qty', function(){
+        const val = $(this).val().trim();
+        if (val === '' || !isValidNumber(val)) {
+            $(this).val($(this).data('prev') || 0);
+        } else {
+            $(this).data('prev', val);
+        }
+    });
+
+    // 倍数输入限制
+    $('#multiplierInput').on('input', function(){
+        const v = $(this).val();
+        if (!/^\d*\.?\d*$/.test(v)) {
+            $(this).val(v.replace(/[^\d.]/g, ''));
+        }
+    });
+
+    $(document).on('input', '.search-goods', handleGoodsSearch);
+    $(document).on('click', '.remove-row-btn', function(){
+        if ($('#addItemsContainer .add-row').length > 1) $(this).closest('.add-row').remove();
+    });
+    $(document).click(function(e){
+        if (!$(e.target).closest('.search-goods').length) $('.dropdown-menu').hide();
+    });
+    {% endif %}
+});
+
+function isValidNumber(val) {
+    return /^\d+(\.\d+)?$/.test(val);
+}
+
+function loadDetailTable(){
+    $.getJSON(`/api/detail/${orderCode}`, function(data){
+        let html = '';
+        if (!data.length) {
+            html = '<tr><td colspan="{{ '8' if current_user.role in ['admin', 'editor'] else '7' }}" class="text-center text-muted py-3">暂无明细数据</td></tr>';
+        } else {
+            data.forEach(item => {
+                html += `<tr data-id="${item.id}">
+                    <td>${item.split_goods || '-'}</td>
+                    <td>${item.extend_code || '-'}</td>
+                    <td class="text-center">${item.original_quantity}</td>
+                    <td>
+                      {% if current_user.role in ['admin', 'editor'] %}
+                        <input type="number" class="form-control form-control-sm final-qty" value="${item.final_quantity}" min="0" style="width:70px;">
+                      {% else %}
+                        ${item.final_quantity}
+                      {% endif %}
+                    </td>
+                    <td>${item.original_goods || '-'}</td>
+                    <td class="text-center">${item.multiplier || '-'}</td>
+                    <td>${item.order_time || '-'}</td>
+                    {% if current_user.role in ['admin', 'editor'] %}
+                    <td class="text-center"><input type="checkbox" class="del-checkbox"></td>
+                    {% endif %}
+                </tr>`;
+            });
+        }
+        $('#detailTableBody').html(html);
+    }).fail(function(){
+        $('#detailTableBody').html('<tr><td colspan="{{ '8' if current_user.role in ['admin', 'editor'] else '7' }}" class="text-center text-danger">加载失败，请刷新重试</td></tr>');
+    });
+}
+
+{% if current_user.role in ['admin', 'editor'] %}
+function saveQuantity(){
+    const updates = [];
+    let hasError = false;
+    $('#detailTableBody tr[data-id]').each(function(){
+        const qtyVal = $(this).find('.final-qty').val().trim();
+        if (!isValidNumber(qtyVal)) {
+            $(this).find('.final-qty').focus().select();
+            hasError = true;
+            return false;
+        }
+        updates.push({
+            id: $(this).data('id'),
+            final_quantity: parseFloat(qtyVal)
+        });
+    });
+    if (hasError) {
+        showError('存在无效的数量，请修正后再保存');
+        return;
+    }
+    if (!updates.length) return;
+
+    const btn = $('#saveQuantityBtn');
+    setButtonLoading(btn, true);
+    $.ajax({
+        url: '/api/update',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(updates),
+        success: function(res){
+            if (res.ok) {
+                showSuccess('数量保存成功');
+                loadDetailTable();
+            } else {
+                showError('保存失败');
+            }
+        },
+        error: function(){ showError('网络异常'); },
+        complete: function(){ setButtonLoading(btn, false); }
+    });
+}
+
+function applyMultiplier(){
+    let mult = parseFloat($('#multiplierInput').val());
+    if (isNaN(mult) || mult <= 0) {
+        showWarning('请输入大于0的有效倍数');
+        return;
+    }
+    
+    const ids = [];
+    $('#detailTableBody tr[data-id]').each(function(){
+        ids.push($(this).data('id'));
+    });
+    if (!ids.length) return showWarning('没有明细数据');
+    if (!confirm(`确认将所有 ${ids.length} 条明细的最终数量 × ${mult} 吗？`)) return;
+
+    const btn = $('#applyMultiplierBtn');
+    setButtonLoading(btn, true);
+    $.ajax({
+        url: '/api/updateMultiplier',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ multiplier: mult, ids: ids }),
+        success: function(res){
+            if (res.success) {
+                showSuccess(res.msg);
+                loadDetailTable();
+            } else {
+                showError(res.msg);
+            }
+        },
+        error: function(){ showError('网络异常，操作失败'); },
+        complete: function(){ setButtonLoading(btn, false); }
+    });
+}
+
+function deleteSelected(){
+    const ids = [];
+    $('#detailTableBody .del-checkbox:checked').each(function(){
+        ids.push($(this).closest('tr').data('id'));
+    });
+    if (!ids.length) return showWarning('请先勾选明细');
+    if (!confirm(`确认删除 ${ids.length} 条？`)) return;
+
+    const btn = $('#deleteSelectedBtn');
+    setButtonLoading(btn, true);
+
+    const promises = ids.map(id => $.ajax({
+        url: '/api/deleteDetail',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({id})
+    }));
+
+    Promise.allSettled(promises).then(results => {
+        let ok = 0, fail = [];
+        results.forEach((res, idx) => {
+            if (res.status === 'fulfilled' && res.value?.success) {
+                ok++;
+                $(`#detailTableBody tr[data-id="${ids[idx]}"]`).fadeOut(300, function(){ $(this).remove(); });
+            } else fail.push(ids[idx]);
+        });
+        if (fail.length) {
+            showError(`删除完成：${ok} 成功，${fail.length} 失败 (ID: ${fail.join(', ')})`);
+        } else {
+            showSuccess(`成功删除 ${ok} 条`);
+        }
+        if (!$('#detailTableBody tr[data-id]').length) loadDetailTable();
+    }).catch(err => {
+        showError('删除异常：' + err.message);
+    }).finally(() => {
+        setButtonLoading(btn, false);
+    });
+}
+
+function addGoodsRow(){
+    const idx = rowCount++;
+    $('#addItemsContainer').append(`
+        <div class="row align-items-end mb-1 add-row">
+            <div class="col-md-4">
+                <input type="text" class="form-control form-control-sm search-goods" placeholder="输入关键词自动匹配" autocomplete="off">
+                <div class="dropdown-menu w-100" style="position:absolute;display:none;"></div>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control form-control-sm ec-input" value="${defaultExtendCode}" data-default="${defaultExtendCode}" placeholder="自动带入">
+            </div>
+            <div class="col-md-1">
+                <input type="number" class="form-control form-control-sm qty-input" value="1" min="1">
+            </div>
+            <input type="hidden" class="orig-input" value="${defaultOrig}">
+            <input type="hidden" class="mult-input" value="${defaultMult}">
+            <input type="hidden" class="time-input" value="${defaultTime}">
+            <div class="col-md-1">
+                <button class="btn btn-outline-danger btn-sm remove-row-btn" type="button"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    `);
+}
+
+let searchTimer;
+function handleGoodsSearch(){
+    const $input = $(this);
+    clearTimeout(searchTimer);
+    const $row = $input.closest('.add-row');
+    const $dropdown = $row.find('.dropdown-menu');
+    const $ecInput = $row.find('.ec-input');
+    searchTimer = setTimeout(async () => {
+        const kw = $input.val().trim();
+        if (!kw) return $dropdown.hide();
+        // 使用 fetchWithCSRF 虽为 GET，但统一封装无害
+        const res = await fetchWithCSRF(`/api/goods-match?kw=${encodeURIComponent(kw)}`);
+        const list = await res.json();
+        if (!list.length) return $dropdown.hide();
+        $dropdown.html(list.map(i => `<a class="dropdown-item" href="#">${i.name}</a>`).join('')).show();
+        $dropdown.find('.dropdown-item').off('click').click(function(e){
+            e.preventDefault();
+            const name = $(this).text();
+            $input.val(name);
+            if (goodsLib[name]) $ecInput.val(goodsLib[name]);
+            $dropdown.hide();
+        });
+    }, 300);
+}
+
+async function submitAddGoods(){
+    const $btn = $('#submitAddBtn');
+    setButtonLoading($btn, true);
+    const goods = [], codes = [], qtys = [], origs = [], mults = [], times = [];
+
+    $('.add-row').each(function(){
+        const $row = $(this);
+        const name = $row.find('.search-goods').val().trim();
+        let ec = $row.find('.ec-input').val().trim();
+        const qty = parseInt($row.find('.qty-input').val()) || 1;
+        const orig = $row.find('.orig-input').val();
+        const mult = $row.find('.mult-input').val();
+        const time = $row.find('.time-input').val();
+
+        if (!name) return;
+        if (ec === name) {
+            ec = $row.find('.ec-input').data('default') || '';
+            $row.find('.ec-input').val(ec);
+        }
+
+        goods.push(name);
+        codes.push(ec);
+        qtys.push(qty);
+        origs.push(orig);
+        mults.push(mult);
+        times.push(time);
+    });
+
+    if (!goods.length) {
+        showWarning('请至少填写一个商品名称');
+        setButtonLoading($btn, false);
+        return;
+    }
+
+    const formData = new URLSearchParams();
+    formData.append('order_code', orderCode);
+    goods.forEach(g => formData.append('g[]', g));
+    codes.forEach(c => formData.append('ec[]', c));
+    qtys.forEach(q => formData.append('q[]', q));
+    origs.forEach(o => formData.append('orig[]', o));
+    mults.forEach(m => formData.append('mult[]', m));
+    times.forEach(t => formData.append('time[]', t));
+
+    try {
+        const resp = await fetchWithCSRF('/add-g', { method: 'POST', body: formData });
+        const text = await resp.text();
+        if (text.trim() === 'OK') {
+            showSuccess('添加成功');
+            $('#addItemsContainer').empty();
+            rowCount = 0;
+            addGoodsRow();  // 保留一个空行
+            loadDetailTable();
+        } else {
+            showError('添加失败：' + text);
+        }
+    } catch (e) { showError('网络异常'); }
+    finally { setButtonLoading($btn, false); }
+}
+{% endif %}
+</script>
+{% endblock %}

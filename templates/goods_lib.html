@@ -1,0 +1,405 @@
+{% extends "admin_base.html" %}
+{% block title %}商品档案管理{% endblock %}
+
+{% block content %}
+<style>
+  .table-fixed { table-layout: fixed; width: 100%; }
+  .table-fixed th, .table-fixed td { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .col-check { width: 5%; }
+  .col-id { width: 8%; }
+  .col-name { width: 50%; }
+  .col-code { width: 27%; }
+  .col-actions { width: 10%; }
+</style>
+
+<div class="card">
+    <div class="card-header py-2">
+        <h3 class="card-title m-0">商品档案管理</h3>
+    </div>
+    <div class="card-body p-2">
+        <div class="d-flex flex-wrap align-items-center mb-2">
+            <div class="input-group input-group-sm mr-2" style="max-width: 400px;">
+                <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-search"></i></span></div>
+                <input type="text" id="searchInput" class="form-control" placeholder="输入商品名称搜索...">
+            </div>
+            {% if current_user.role in ['admin', 'editor'] %}
+            <div class="btn-group btn-group-sm mr-2">
+                <button class="btn btn-success" onclick="importExcel()" title="导入Excel"><i class="fas fa-upload"></i> 导入</button>
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#addPanel" title="新增商品"><i class="fas fa-plus"></i> 新增</button>
+                <button class="btn btn-danger btn-ajax" id="batchDelBtn" title="批量删除"><i class="fas fa-trash"></i> 批量删除</button>
+            </div>
+                        <!-- 放在搜索栏下面，或模态框内 -->
+            <div id="importProgress" class="progress mb-2" style="display:none; height: 25px;">
+                <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%">
+                    0%
+                </div>
+            </div>
+            {% endif %}
+            <span class="badge badge-info ml-auto" id="totalCount">共 0 条</span>
+        </div>
+
+        {% if current_user.role in ['admin', 'editor'] %}
+        <div class="collapse mb-2" id="addPanel">
+            <div class="bg-light p-2 rounded">
+                <div class="form-inline">
+                    <input type="text" id="goodsName" class="form-control form-control-sm mr-2" placeholder="商品名称" style="width: 200px;">
+                    <input type="text" id="extendCode" class="form-control form-control-sm mr-2" placeholder="商品编码（可选）" style="width: 160px;">
+                    <button class="btn btn-primary btn-sm btn-ajax" onclick="addGoods()"><i class="fas fa-check mr-1"></i>保存</button>
+                </div>
+            </div>
+        </div>
+        <input type="file" id="excelFile" accept=".xlsx" style="display:none">
+        {% endif %}
+
+        <div style="max-height: 55vh; overflow: auto; border: 1px solid #dee2e6; border-radius: 4px;" class="table-responsive-sm">
+            <table class="table table-sm table-bordered table-hover mb-0 table-fixed">
+                <thead class="bg-light" style="position: sticky; top: 0; z-index: 1;">
+                    <tr>
+                        {% if current_user.role in ['admin', 'editor'] %}
+                        <th class="col-check"><input type="checkbox" id="selectAll" title="全选/取消"></th>
+                        {% endif %}
+                        <th class="col-id">ID</th>
+                        <th class="col-name">商品名称</th>
+                        <th class="col-code">商品编码</th>
+                        {% if current_user.role in ['admin', 'editor'] %}
+                        <th class="col-actions">操作</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody id="goodsTable">
+                    <tr><td colspan="{{ '5' if current_user.role in ['admin', 'editor'] else '3' }}" class="text-center text-muted py-3">加载中...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-center text-muted small mt-2" id="pageInfo"></div>
+        <div class="d-flex justify-content-center mt-1">
+            <ul class="pagination pagination-sm mb-0" id="pagination"></ul>
+        </div>
+    </div>
+</div>
+
+{% if current_user.role in ['admin', 'editor'] %}
+<div class="modal fade" id="previewModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title">导入预览</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body p-2">
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="overwriteCheck">
+                    <label class="form-check-label" for="overwriteCheck">覆盖已存在的数据</label>
+                </div>
+                <div class="alert alert-info small mb-2" id="previewInfo"></div>
+                <div style="max-height: 400px; overflow-y: auto;">
+                    <table class="table table-sm table-bordered table-striped mb-0">
+                        <thead id="previewHead"></thead>
+                        <tbody id="previewBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer py-2">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn-sm btn-ajax" id="confirmImportBtn">确认导入</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block script %}
+<script>
+const perPage = 15;
+let allGoods = [];
+let filteredGoods = [];
+let currentPage = 1;
+{% if current_user.role in ['admin', 'editor'] %}
+let pendingImportFile = null;
+{% endif %}
+
+$(function(){
+    loadGoods();
+    $('#searchInput').on('input', applyFilter);
+
+    {% if current_user.role in ['admin', 'editor'] %}
+    $('#selectAll').on('change', function(){
+        $('.goods-check').prop('checked', this.checked);
+    });
+    $('#batchDelBtn').on('click', batchDeleteGoods);
+
+    // 文件选择 → 预览
+    $('#excelFile').on('change', function(){
+        const file = this.files[0];
+        if (!file) return;
+        pendingImportFile = file;
+        const formData = new FormData();
+        formData.append('file', file);
+        $.ajax({
+            url: '/api/goods-import-preview',
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(res) {
+                if (res.success) {
+                    showPreviewModal(res.columns, res.rows, res.total_rows, res.statuses);
+                } else {
+                    showError('预览失败：' + res.msg);
+                }
+            },
+            error: function() { showError('网络异常，预览失败'); }
+        });
+    });
+
+    // 确认导入 → 异步执行
+    $('#confirmImportBtn').on('click', function(){
+        if (!pendingImportFile) return;
+        const btn = $(this);
+        setButtonLoading(btn, true);
+        const overwrite = $('#overwriteCheck').is(':checked');
+        // 关闭预览弹窗
+        $('#previewModal').modal('hide');
+        // 调用异步导入
+        importExcelAsync(pendingImportFile, overwrite);
+        setButtonLoading(btn, false);
+    });
+
+    $('#addPanel').on('shown.bs.collapse', function () {
+        $(this).find('input[type="text"]').first().focus();
+    });
+
+    $('.btn-ajax').each(function(){
+        const btn = $(this);
+        if (!btn.data('original-html')) {
+            btn.data('original-html', btn.html());
+            btn.data('loading-text', btn.text().trim() || '处理中...');
+        }
+    });
+    {% endif %}
+});
+
+function loadGoods() {
+    $.getJSON('/api/goods-lib', function(data){
+        allGoods = data;
+        applyFilter();
+    }).fail(function(){
+        $('#goodsTable').html('<tr><td colspan="{{ '5' if current_user.role in ['admin', 'editor'] else '3' }}" class="text-center text-danger">加载失败，请刷新重试</td></tr>');
+    });
+}
+
+function applyFilter() {
+    const keyword = $('#searchInput').val().trim().toLowerCase();
+    filteredGoods = keyword ? allGoods.filter(item => item.goods_name.toLowerCase().includes(keyword)) : allGoods;
+    currentPage = 1;
+    renderPage(1);
+}
+
+function renderPage(page) {
+    currentPage = page;
+    const start = (page - 1) * perPage;
+    const pageData = filteredGoods.slice(start, start + perPage);
+    let html = '';
+    if (pageData.length === 0) {
+        html = '<tr><td colspan="{{ '5' if current_user.role in ['admin', 'editor'] else '3' }}" class="text-center text-muted py-3">暂无数据</td></tr>';
+    } else {
+        pageData.forEach(item => {
+            const name = $('<div>').text(item.goods_name).html();
+            const code = $('<div>').text(item.extend_code || '-').html();
+            html += `<tr>
+                {% if current_user.role in ['admin', 'editor'] %}
+                <td class="col-check"><input type="checkbox" class="goods-check" data-id="${item.id}"></td>
+                {% endif %}
+                <td class="col-id">${item.id}</td>
+                <td class="col-name" title="${name}">${name}</td>
+                <td class="col-code" title="${code}">${code}</td>
+                {% if current_user.role in ['admin', 'editor'] %}
+                <td class="col-actions"><button class="btn btn-danger btn-xs" onclick="deleteGoods(${item.id})" title="删除"><i class="fas fa-trash"></i></button></td>
+                {% endif %}
+            </tr>`;
+        });
+    }
+    $('#goodsTable').html(html);
+    renderPagination();
+    $('#totalCount').text(`共 ${filteredGoods.length} 条`);
+    $('#pageInfo').text(`第 ${page} 页 / 共 ${Math.ceil(filteredGoods.length / perPage)} 页`);
+    {% if current_user.role in ['admin', 'editor'] %}
+    $('#selectAll').prop('checked', false);
+    {% endif %}
+}
+
+function renderPagination() {
+    const totalPages = Math.ceil(filteredGoods.length / perPage);
+    if (totalPages <= 1) { $('#pagination').html(''); return; }
+    let html = '';
+    html += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}"><a class="page-link" href="#" onclick="changePage(${currentPage - 1})">&laquo;</a></li>`;
+    const maxVisible = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+    if (endPage - startPage + 1 < maxVisible) startPage = Math.max(1, endPage - maxVisible + 1);
+    if (startPage > 1) {
+        html += `<li class="page-item"><a class="page-link" href="#" onclick="changePage(1)">1</a></li>`;
+        if (startPage > 2) html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+    }
+    for (let i = startPage; i <= endPage; i++) {
+        html += `<li class="page-item ${i === currentPage ? 'active' : ''}"><a class="page-link" href="#" onclick="changePage(${i})">${i}</a></li>`;
+    }
+    if (endPage < totalPages) {
+        if (endPage < totalPages - 1) html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+        html += `<li class="page-item"><a class="page-link" href="#" onclick="changePage(${totalPages})">${totalPages}</a></li>`;
+    }
+    html += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}"><a class="page-link" href="#" onclick="changePage(${currentPage + 1})">&raquo;</a></li>`;
+    $('#pagination').html(html);
+}
+
+function changePage(page) {
+    const totalPages = Math.ceil(filteredGoods.length / perPage);
+    if (page < 1 || page > totalPages) return false;
+    renderPage(page);
+    return false;
+}
+
+{% if current_user.role in ['admin', 'editor'] %}
+function batchDeleteGoods() {
+    const ids = $('.goods-check:checked').map(function(){ return $(this).data('id'); }).get();
+    if (!ids.length) return showWarning('请至少选择一个商品');
+    if (!confirm(`确定删除 ${ids.length} 个商品？`)) return;
+    const btn = $('#batchDelBtn');
+    setButtonLoading(btn, true);
+    $.ajax({
+        url: '/api/goods-del-batch',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ ids: ids }),
+        success: function(res) {
+            if (res.success) { showSuccess(res.msg); loadGoods(); }
+            else showError(res.msg);
+        },
+        error: function() { showError('删除失败'); },
+        complete: function() { setButtonLoading(btn, false); }
+    });
+}
+
+function importExcel() { $('#excelFile').click(); }
+
+function showPreviewModal(columns, rows, totalRows, statuses) {
+    let headHtml = '<tr>';
+    columns.forEach(col => { headHtml += `<th>${$('<div>').text(col).html()}</th>`; });
+    headHtml += '</tr>';
+    $('#previewHead').html(headHtml);
+    let bodyHtml = '';
+    rows.forEach((row, i) => {
+        let rowStyle = '';
+        const status = statuses ? statuses[i] : 'unknown';
+        if (status === 'new') rowStyle = 'background-color: #d4edda;';
+        else if (status === 'skip') rowStyle = 'background-color: #fff3cd;';
+        else if (status === 'invalid') rowStyle = 'background-color: #f8d7da;';
+        bodyHtml += '<tr style="' + rowStyle + '">';
+        row.forEach(cell => { bodyHtml += `<td>${$('<div>').text(cell || '').html()}</td>`; });
+        bodyHtml += '</tr>';
+    });
+    $('#previewBody').html(bodyHtml);
+    $('#previewInfo').text(`共解析到 ${totalRows} 条数据，以下显示前 ${rows.length} 行。绿色=新增，黄色=已存在，红色=无效`);
+    $('#previewModal').modal('show');
+    $('#overwriteCheck').prop('checked', false);
+}
+
+function addGoods() {
+    const name = $('#goodsName').val().trim();
+    const code = $('#extendCode').val().trim();
+    if (!name) return showWarning('商品名称不能为空');
+    const btn = $('#addPanel .btn-ajax');
+    setButtonLoading(btn, true);
+    $.ajax({
+        url: '/api/goods-add',
+        method: 'POST',
+        data: { goods_name: name, extend_code: code },
+        success: function(res){
+            if (res.success) {
+                showSuccess(res.msg);
+                $('#goodsName').val(''); $('#extendCode').val('');
+                $('#addPanel').collapse('hide');
+                loadGoods();
+            } else showError(res.msg);
+        },
+        error: function(){ showError('添加失败，请重试'); },
+        complete: function(){ setButtonLoading(btn, false); }
+    });
+}
+
+// 异步导入核心
+function importExcelAsync(file, overwrite) {
+    // 显示进度条
+    $('#importProgress').show();
+    $('#progressBar').css('width', '0%').text('0%');
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('overwrite', overwrite);
+    $.ajax({
+        url: '/api/goods-import-async',
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(res) {
+            if (res.success) {
+                pollTaskStatus(res.task_id);
+            } else {
+                showError(res.msg);
+                $('#importProgress').hide();
+            }
+        },
+        error: function() {
+            showError('上传失败');
+            $('#importProgress').hide();
+        }
+    });
+}
+function pollTaskStatus(taskId) {
+    showInfo('导入任务已提交，正在处理...');
+    const timer = setInterval(function() {
+        $.getJSON('/api/goods-import-status/' + taskId, function(data) {
+            if (data.state === 'SUCCESS') {
+                clearInterval(timer);
+                $('#progressBar').css('width', '100%').text('100%');
+                setTimeout(function(){
+                    $('#importProgress').hide();
+                }, 1000);
+                const result = data.result;
+                if (result.success) {
+                    showSuccess(result.msg);
+                    loadGoods();
+                } else {
+                    showError(result.msg);
+                }
+            } else if (data.state === 'FAILURE') {
+                clearInterval(timer);
+                $('#importProgress').hide();
+                showError('导入失败：' + (data.result || '未知错误'));
+            } else if (data.state === 'RUNNING') {
+                const progress = data.progress || 0;
+                $('#progressBar').css('width', progress + '%').text(progress + '%');
+            }
+        });
+    }, 500);
+}
+function deleteGoods(id) {
+    if (!confirm('确定删除该商品？')) return;
+    $.ajax({
+        url: '/api/goods-del',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ id: id }),
+        success: function(res){
+            if (res.success) { showSuccess(res.msg); loadGoods(); }
+            else showError(res.msg);
+        },
+        error: function(){ showError('删除失败'); }
+    });
+}
+{% endif %}
+</script>
+{% endblock %}

@@ -1,0 +1,2336 @@
+2026-06-22 11:55:53,025 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 11:55:53,025 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 11:55:53,026 - INFO - Scheduler started
+2026-06-22 11:55:53,040 - INFO - 启动生产服务器（waitress）...
+2026-06-22 11:55:53,044 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 11:55:56,068 - WARNING - Task queue depth is 1
+2026-06-22 13:34:13,857 - WARNING - Task queue depth is 1
+2026-06-22 13:34:40,036 - WARNING - Task queue depth is 1
+2026-06-22 13:34:40,038 - WARNING - Task queue depth is 2
+2026-06-22 13:34:42,497 - WARNING - Task queue depth is 1
+2026-06-22 13:34:42,498 - WARNING - Task queue depth is 2
+2026-06-22 14:07:19,248 - INFO - Added column username to operation_log
+2026-06-22 14:07:19,251 - INFO - Added column ip_address to operation_log
+2026-06-22 14:07:19,273 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 14:07:19,320 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 14:07:19,321 - INFO - Scheduler started
+2026-06-22 14:07:19,336 - INFO - 启动生产服务器（waitress）...
+2026-06-22 14:07:19,420 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 14:07:19,923 - WARNING - Task queue depth is 1
+2026-06-22 14:07:20,039 - WARNING - Task queue depth is 2
+2026-06-22 14:07:24,247 - WARNING - Task queue depth is 1
+2026-06-22 14:07:24,272 - WARNING - Task queue depth is 1
+2026-06-22 14:07:34,543 - WARNING - Task queue depth is 1
+2026-06-22 14:08:05,370 - WARNING - Task queue depth is 1
+2026-06-22 14:09:13,387 - WARNING - Task queue depth is 1
+2026-06-22 14:09:13,389 - WARNING - Task queue depth is 2
+2026-06-22 14:09:15,983 - WARNING - Task queue depth is 1
+2026-06-22 14:09:16,023 - WARNING - Task queue depth is 2
+2026-06-22 14:19:00,660 - WARNING - Task queue depth is 1
+2026-06-22 14:19:00,684 - WARNING - Task queue depth is 1
+2026-06-22 14:19:27,741 - WARNING - Task queue depth is 1
+2026-06-22 14:50:32,921 - WARNING - Task queue depth is 1
+2026-06-22 14:50:32,942 - WARNING - Task queue depth is 1
+2026-06-22 14:50:34,957 - WARNING - Task queue depth is 1
+2026-06-22 14:53:01,972 - WARNING - Task queue depth is 1
+2026-06-22 15:11:46,052 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 15:11:46,053 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 15:11:46,053 - INFO - Scheduler started
+2026-06-22 15:11:46,065 - INFO - 启动生产服务器（waitress）...
+2026-06-22 15:11:46,085 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 15:12:35,092 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 15:12:35,094 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 15:12:35,094 - INFO - Scheduler started
+2026-06-22 15:12:35,106 - INFO - 启动生产服务器（waitress）...
+2026-06-22 15:12:35,135 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 15:12:41,736 - WARNING - Task queue depth is 1
+2026-06-22 15:12:41,769 - WARNING - Task queue depth is 2
+2026-06-22 15:12:41,770 - WARNING - Task queue depth is 3
+2026-06-22 15:17:05,010 - WARNING - Task queue depth is 1
+2026-06-22 15:17:05,013 - WARNING - Task queue depth is 2
+2026-06-22 15:17:05,017 - WARNING - Task queue depth is 3
+2026-06-22 15:17:39,977 - WARNING - Task queue depth is 1
+2026-06-22 15:18:25,922 - WARNING - Task queue depth is 1
+2026-06-22 15:18:29,474 - WARNING - Task queue depth is 1
+2026-06-22 15:18:29,631 - WARNING - Task queue depth is 1
+2026-06-22 16:49:41,156 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 16:49:41,157 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 16:49:41,158 - INFO - Scheduler started
+2026-06-22 16:54:19,414 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 16:54:19,415 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 16:54:19,415 - INFO - Scheduler started
+2026-06-22 16:54:19,428 - INFO - 启动生产服务器（waitress）...
+2026-06-22 16:54:19,435 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 16:56:27,273 - WARNING - Task queue depth is 1
+2026-06-22 16:57:34,904 - WARNING - Task queue depth is 1
+2026-06-22 16:57:45,863 - WARNING - Task queue depth is 1
+2026-06-22 17:07:40,148 - WARNING - Task queue depth is 1
+2026-06-22 17:07:40,372 - WARNING - Task queue depth is 1
+2026-06-22 17:09:49,319 - WARNING - Task queue depth is 1
+2026-06-22 17:09:56,951 - WARNING - Task queue depth is 1
+2026-06-22 17:09:57,613 - WARNING - Task queue depth is 1
+2026-06-22 17:09:57,654 - WARNING - Task queue depth is 2
+2026-06-22 17:09:57,656 - WARNING - Task queue depth is 3
+2026-06-22 17:09:58,720 - WARNING - Task queue depth is 1
+2026-06-22 17:09:58,760 - WARNING - Task queue depth is 1
+2026-06-22 17:11:51,182 - WARNING - Task queue depth is 1
+2026-06-22 17:11:51,186 - WARNING - Task queue depth is 1
+2026-06-22 17:11:51,244 - WARNING - Task queue depth is 1
+2026-06-22 17:11:51,421 - WARNING - Task queue depth is 2
+2026-06-22 17:17:28,829 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 17:17:28,835 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 17:17:28,836 - INFO - Scheduler started
+2026-06-22 17:17:28,851 - INFO - 启动生产服务器（waitress）...
+2026-06-22 17:17:28,859 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 17:17:31,673 - WARNING - Task queue depth is 1
+2026-06-22 17:17:31,758 - WARNING - Task queue depth is 2
+2026-06-22 17:17:33,448 - WARNING - Task queue depth is 1
+2026-06-22 17:17:34,889 - WARNING - Task queue depth is 1
+2026-06-22 17:18:05,603 - WARNING - Task queue depth is 1
+2026-06-22 17:18:05,644 - WARNING - Task queue depth is 2
+2026-06-22 17:18:05,960 - WARNING - Task queue depth is 1
+2026-06-22 18:09:37,194 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 18:09:37,197 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 18:09:37,221 - INFO - Scheduler started
+2026-06-22 18:09:37,238 - INFO - 启动生产服务器（waitress）...
+2026-06-22 18:09:37,283 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 18:09:56,152 - WARNING - Task queue depth is 1
+2026-06-22 18:09:56,167 - WARNING - Task queue depth is 2
+2026-06-22 18:10:00,109 - WARNING - Task queue depth is 1
+2026-06-22 18:10:00,138 - WARNING - Task queue depth is 1
+2026-06-22 18:25:47,251 - WARNING - Task queue depth is 1
+2026-06-22 18:25:47,326 - WARNING - Task queue depth is 2
+2026-06-22 18:25:47,327 - WARNING - Task queue depth is 3
+2026-06-22 18:33:32,640 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 18:33:32,647 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 18:33:32,647 - INFO - Scheduler started
+2026-06-22 18:33:32,667 - INFO - 启动生产服务器（waitress）...
+2026-06-22 18:33:32,717 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 18:43:17,142 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 18:43:17,143 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 18:43:17,143 - INFO - Scheduler started
+2026-06-22 18:43:17,172 - INFO - 启动生产服务器（waitress）...
+2026-06-22 18:43:17,190 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 18:44:01,502 - WARNING - Task queue depth is 1
+2026-06-22 18:44:01,526 - WARNING - Task queue depth is 2
+2026-06-22 18:53:41,450 - WARNING - Task queue depth is 1
+2026-06-22 18:53:41,529 - WARNING - Task queue depth is 1
+2026-06-22 18:53:41,535 - WARNING - Task queue depth is 2
+2026-06-22 19:01:07,720 - WARNING - Task queue depth is 1
+2026-06-22 19:01:13,759 - WARNING - Task queue depth is 1
+2026-06-22 19:40:50,540 - WARNING - Task queue depth is 1
+2026-06-22 19:40:50,540 - WARNING - Task queue depth is 2
+2026-06-22 19:40:50,545 - WARNING - Task queue depth is 3
+2026-06-22 19:40:55,836 - WARNING - Task queue depth is 1
+2026-06-22 19:41:00,758 - WARNING - Task queue depth is 1
+2026-06-22 19:41:00,799 - WARNING - Task queue depth is 2
+2026-06-22 20:00:00,023 - INFO - Running job "backup_database (trigger: cron[hour='20', minute='0'], next run at: 2026-06-22 20:00:00 CST)" (scheduled at 2026-06-22 20:00:00+08:00)
+2026-06-22 20:00:00,047 - INFO - 数据库备份成功：backups\scan_data_20260622_200000.db
+2026-06-22 20:00:00,053 - INFO - Job "backup_database (trigger: cron[hour='20', minute='0'], next run at: 2026-06-23 20:00:00 CST)" executed successfully
+2026-06-22 20:05:33,091 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 20:05:33,091 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 20:05:33,091 - INFO - Scheduler started
+2026-06-22 20:05:33,104 - INFO - 启动生产服务器（waitress）...
+2026-06-22 20:05:33,124 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 20:05:34,984 - WARNING - Task queue depth is 1
+2026-06-22 20:05:41,683 - ERROR - Exception on /api/dashboard/export/trend [GET]
+Traceback (most recent call last):
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_08\server_web.py", line 1522, in dashboard_export_chart
+    data = api_order_trend().get_json()
+           ^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_08\server_web.py", line 1155, in api_order_trend
+    end = datetime.strptime(end_date, '%Y-%m-%d')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\_strptime.py", line 655, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\_strptime.py", line 434, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'start_date=2026-06-09' does not match format '%Y-%m-%d'
+2026-06-22 20:08:57,907 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 20:08:57,908 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 20:08:57,909 - INFO - Scheduler started
+2026-06-22 20:08:57,937 - INFO - 启动生产服务器（waitress）...
+2026-06-22 20:08:57,957 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 20:09:01,515 - WARNING - Task queue depth is 1
+2026-06-22 20:09:01,581 - WARNING - Task queue depth is 2
+2026-06-22 20:09:01,965 - WARNING - Task queue depth is 1
+2026-06-22 20:09:03,099 - ERROR - Exception on /api/dashboard/export/trend [GET]
+Traceback (most recent call last):
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_08\server_web.py", line 1523, in dashboard_export_chart
+    data = api_order_trend().get_json()
+           ^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_08\server_web.py", line 1156, in api_order_trend
+    end = datetime.strptime(end_date, '%Y-%m-%d')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\_strptime.py", line 655, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\_strptime.py", line 434, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'start_date=2026-06-09' does not match format '%Y-%m-%d'
+2026-06-22 20:16:53,716 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 20:16:53,718 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 20:16:53,718 - INFO - Scheduler started
+2026-06-22 20:16:53,732 - INFO - 启动生产服务器（waitress）...
+2026-06-22 20:16:53,740 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 20:17:10,606 - ERROR - Exception on /api/dashboard/export/trend [GET]
+Traceback (most recent call last):
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_08\server_web.py", line 1517, in dashboard_export_chart
+    data = api_order_trend().get_json()
+           ^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_08\server_web.py", line 1150, in api_order_trend
+    end = datetime.strptime(end_date, '%Y-%m-%d')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\_strptime.py", line 655, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\_strptime.py", line 434, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'start_date=2026-06-09' does not match format '%Y-%m-%d'
+2026-06-22 20:19:02,495 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 20:19:02,510 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 20:19:02,510 - INFO - Scheduler started
+2026-06-22 20:19:02,551 - INFO - 启动生产服务器（waitress）...
+2026-06-22 20:19:02,555 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 20:19:03,006 - WARNING - Task queue depth is 1
+2026-06-22 20:19:03,094 - WARNING - Task queue depth is 2
+2026-06-22 20:19:03,414 - WARNING - Task queue depth is 1
+2026-06-22 20:19:04,266 - ERROR - Exception on /api/dashboard/export/trend [GET]
+Traceback (most recent call last):
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_08\server_web.py", line 1519, in dashboard_export_chart
+    data = api_order_trend().get_json()
+           ^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_08\server_web.py", line 1152, in api_order_trend
+    end = datetime.strptime(end_date, '%Y-%m-%d')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\_strptime.py", line 655, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\_strptime.py", line 434, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'start_date=2026-06-09' does not match format '%Y-%m-%d'
+2026-06-22 20:21:51,544 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 20:21:51,544 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 20:21:51,546 - INFO - Scheduler started
+2026-06-22 20:21:51,566 - INFO - 启动生产服务器（waitress）...
+2026-06-22 20:21:51,596 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 20:27:18,885 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-22 20:27:18,886 - INFO - Added job "backup_database" to job store "default"
+2026-06-22 20:27:18,886 - INFO - Scheduler started
+2026-06-22 20:27:18,887 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-22 20:27:18,902 - INFO - 启动生产服务器（waitress）...
+2026-06-22 20:27:18,949 - INFO - Serving on http://0.0.0.0:5001
+2026-06-22 20:27:21,632 - WARNING - Task queue depth is 1
+2026-06-22 20:27:21,659 - WARNING - Task queue depth is 1
+2026-06-24 20:30:29,875 - INFO - Added column username to operation_log
+2026-06-24 20:30:29,875 - INFO - Added column ip_address to operation_log
+2026-06-24 20:30:30,186 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-24 20:30:30,186 - INFO - Added job "backup_database" to job store "default"
+2026-06-24 20:30:30,186 - INFO - Scheduler started
+2026-06-24 20:30:30,193 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-24 20:30:30,208 - INFO - 启动生产服务器（waitress）...
+2026-06-24 20:30:30,213 - INFO - Serving on http://0.0.0.0:5001
+2026-06-24 20:30:44,296 - WARNING - Task queue depth is 1
+2026-06-24 20:30:44,313 - WARNING - Task queue depth is 2
+2026-06-24 20:30:50,268 - WARNING - Task queue depth is 1
+2026-06-24 20:30:50,269 - WARNING - Task queue depth is 2
+2026-06-24 20:30:50,272 - WARNING - Task queue depth is 2
+2026-06-24 20:31:52,357 - WARNING - Task queue depth is 1
+2026-06-24 20:31:52,358 - WARNING - Task queue depth is 2
+2026-06-24 20:31:52,362 - WARNING - Task queue depth is 3
+2026-06-24 20:31:53,473 - WARNING - Task queue depth is 1
+2026-06-24 20:33:37,012 - WARNING - Task queue depth is 1
+2026-06-24 20:33:37,044 - WARNING - Task queue depth is 2
+2026-06-24 20:33:41,439 - WARNING - Task queue depth is 1
+2026-06-24 20:34:09,379 - WARNING - Task queue depth is 1
+2026-06-24 20:34:09,387 - WARNING - Task queue depth is 2
+2026-06-25 16:37:50,654 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 16:37:50,655 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 16:37:50,655 - INFO - Scheduler started
+2026-06-25 16:37:50,657 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 16:37:50,675 - INFO - 启动生产服务器（waitress）...
+2026-06-25 16:37:50,678 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 16:38:17,028 - WARNING - Task queue depth is 1
+2026-06-25 16:38:17,476 - WARNING - Task queue depth is 1
+2026-06-25 16:38:17,482 - WARNING - Task queue depth is 2
+2026-06-25 16:57:57,456 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 16:57:57,667 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 16:57:57,864 - INFO - Scheduler started
+2026-06-25 16:57:57,941 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 16:57:58,079 - INFO - 启动生产服务器（waitress）...
+2026-06-25 16:57:58,342 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 17:17:24,093 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 17:17:24,095 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 17:17:24,096 - INFO - Scheduler started
+2026-06-25 17:17:24,098 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 17:17:24,133 - INFO - 启动生产服务器（waitress）...
+2026-06-25 17:17:24,146 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 17:20:00,066 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 17:20:00,068 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 17:20:00,068 - INFO - Scheduler started
+2026-06-25 17:20:00,071 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 17:20:00,100 - INFO - 启动生产服务器（waitress）...
+2026-06-25 17:20:00,125 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 17:20:53,822 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 17:20:53,823 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 17:20:53,823 - INFO - Scheduler started
+2026-06-25 17:20:53,827 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 17:20:53,861 - INFO - 启动生产服务器（waitress）...
+2026-06-25 17:20:53,876 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 17:22:12,072 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 17:22:12,077 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 17:22:12,079 - INFO - Scheduler started
+2026-06-25 17:22:12,083 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 17:22:12,107 - INFO - 启动生产服务器（waitress）...
+2026-06-25 17:22:12,116 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 18:04:05,832 - WARNING - Task queue depth is 1
+2026-06-25 18:04:12,865 - WARNING - Task queue depth is 1
+2026-06-25 18:05:40,937 - WARNING - Task queue depth is 1
+2026-06-25 18:05:46,449 - WARNING - Task queue depth is 1
+2026-06-25 18:24:09,961 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 18:24:09,964 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 18:24:09,970 - INFO - Scheduler started
+2026-06-25 18:24:09,973 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 18:24:09,993 - INFO - 启动生产服务器（waitress）...
+2026-06-25 18:24:10,016 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 18:28:25,528 - ERROR - 套装导入失败
+Traceback (most recent call last):
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 927, in api_goods_set_import
+    df = pd.read_excel(file, dtype=str)
+                       ^^^^
+NameError: name 'file' is not defined
+2026-06-25 18:28:26,044 - ERROR - 套装导入失败
+Traceback (most recent call last):
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 927, in api_goods_set_import
+    df = pd.read_excel(file, dtype=str)
+                       ^^^^
+NameError: name 'file' is not defined
+2026-06-25 18:28:26,828 - ERROR - 套装导入失败
+Traceback (most recent call last):
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 927, in api_goods_set_import
+    df = pd.read_excel(file, dtype=str)
+                       ^^^^
+NameError: name 'file' is not defined
+2026-06-25 18:28:27,326 - ERROR - 套装导入失败
+Traceback (most recent call last):
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 927, in api_goods_set_import
+    df = pd.read_excel(file, dtype=str)
+                       ^^^^
+NameError: name 'file' is not defined
+2026-06-25 18:29:21,706 - WARNING - Task queue depth is 1
+2026-06-25 18:29:37,695 - ERROR - 预览商品 Excel 失败
+Traceback (most recent call last):
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 1169, in api_goods_import_preview
+    gname = str(row[name_col]).strip()
+                    ^^^^^^^^
+NameError: name 'name_col' is not defined
+2026-06-25 18:32:30,576 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 18:32:30,577 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 18:32:30,577 - INFO - Scheduler started
+2026-06-25 18:32:30,578 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 18:32:30,592 - INFO - 启动生产服务器（waitress）...
+2026-06-25 18:32:30,624 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 18:37:08,532 - ERROR - 套装导入失败
+Traceback (most recent call last):
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 927, in api_goods_set_import
+    df = pd.read_excel(file, dtype=str)
+                       ^^^^
+NameError: name 'file' is not defined
+2026-06-25 18:37:09,607 - ERROR - 套装导入失败
+Traceback (most recent call last):
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 927, in api_goods_set_import
+    df = pd.read_excel(file, dtype=str)
+                       ^^^^
+NameError: name 'file' is not defined
+2026-06-25 18:37:10,444 - ERROR - 套装导入失败
+Traceback (most recent call last):
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 927, in api_goods_set_import
+    df = pd.read_excel(file, dtype=str)
+                       ^^^^
+NameError: name 'file' is not defined
+2026-06-25 18:37:11,127 - ERROR - 套装导入失败
+Traceback (most recent call last):
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 927, in api_goods_set_import
+    df = pd.read_excel(file, dtype=str)
+                       ^^^^
+NameError: name 'file' is not defined
+2026-06-25 18:38:14,917 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 18:38:14,920 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 18:38:14,920 - INFO - Scheduler started
+2026-06-25 18:38:14,922 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 18:38:14,935 - INFO - 启动生产服务器（waitress）...
+2026-06-25 18:38:14,945 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 18:47:45,007 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 18:47:45,008 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 18:47:45,008 - INFO - Scheduler started
+2026-06-25 18:47:45,010 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 18:47:45,026 - INFO - 启动生产服务器（waitress）...
+2026-06-25 18:47:45,033 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 19:03:05,872 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 19:03:05,873 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 19:03:05,875 - INFO - Scheduler started
+2026-06-25 19:03:05,876 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 19:03:05,911 - INFO - 启动生产服务器（waitress）...
+2026-06-25 19:03:05,927 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 19:03:20,058 - WARNING - Task queue depth is 1
+2026-06-25 19:12:07,647 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 19:12:07,648 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 19:12:07,648 - INFO - Scheduler started
+2026-06-25 19:12:07,649 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 19:12:07,669 - INFO - 启动生产服务器（waitress）...
+2026-06-25 19:12:07,681 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 19:13:39,833 - WARNING - Task queue depth is 1
+2026-06-25 19:51:49,840 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 19:51:49,857 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 19:51:49,858 - INFO - Scheduler started
+2026-06-25 19:51:49,859 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 19:51:49,875 - INFO - 启动生产服务器（waitress）...
+2026-06-25 19:51:49,942 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 19:54:34,710 - WARNING - Task queue depth is 1
+2026-06-25 20:00:00,015 - INFO - Running job "backup_database (trigger: cron[hour='20', minute='0'], next run at: 2026-06-26 20:00:00 CST)" (scheduled at 2026-06-25 20:00:00+08:00)
+2026-06-25 20:00:00,101 - INFO - 数据库备份成功：backups\scan_data_20260625_200000.db
+2026-06-25 20:00:00,102 - INFO - Job "backup_database (trigger: cron[hour='20', minute='0'], next run at: 2026-06-26 20:00:00 CST)" executed successfully
+2026-06-25 20:16:41,464 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:16:41,465 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:16:41,465 - INFO - Scheduler started
+2026-06-25 20:16:41,467 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:16:41,483 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:16:41,498 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:18:39,686 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:18:39,719 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:18:39,778 - INFO - Scheduler started
+2026-06-25 20:18:39,851 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:18:39,868 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:18:39,930 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:21:41,200 - WARNING - Task queue depth is 1
+2026-06-25 20:21:41,209 - WARNING - Task queue depth is 2
+2026-06-25 20:21:41,209 - WARNING - Task queue depth is 3
+2026-06-25 20:21:45,368 - WARNING - Task queue depth is 1
+2026-06-25 20:21:45,369 - WARNING - Task queue depth is 2
+2026-06-25 20:21:45,376 - WARNING - Task queue depth is 3
+2026-06-25 20:21:47,505 - WARNING - Task queue depth is 1
+2026-06-25 20:21:50,948 - WARNING - Task queue depth is 1
+2026-06-25 20:21:50,950 - WARNING - Task queue depth is 2
+2026-06-25 20:21:50,954 - WARNING - Task queue depth is 3
+2026-06-25 20:21:51,378 - WARNING - Task queue depth is 1
+2026-06-25 20:21:51,382 - WARNING - Task queue depth is 2
+2026-06-25 20:23:52,242 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:23:52,243 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:23:52,243 - INFO - Scheduler started
+2026-06-25 20:23:52,244 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:23:52,259 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:23:52,305 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:23:55,534 - WARNING - Task queue depth is 1
+2026-06-25 20:23:55,600 - WARNING - Task queue depth is 2
+2026-06-25 20:26:36,119 - WARNING - Task queue depth is 1
+2026-06-25 20:26:36,126 - WARNING - Task queue depth is 2
+2026-06-25 20:27:42,309 - WARNING - Task queue depth is 1
+2026-06-25 20:31:52,922 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:31:52,930 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:31:52,930 - INFO - Scheduler started
+2026-06-25 20:31:52,931 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:31:52,949 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:31:52,983 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:32:06,180 - WARNING - Task queue depth is 1
+2026-06-25 20:32:06,184 - WARNING - Task queue depth is 2
+2026-06-25 20:32:51,589 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:32:51,589 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:32:51,590 - INFO - Scheduler started
+2026-06-25 20:32:51,592 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:32:51,606 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:32:51,619 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:33:11,518 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:33:11,519 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:33:11,520 - INFO - Scheduler started
+2026-06-25 20:33:11,522 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:33:11,544 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:33:11,548 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:33:17,842 - WARNING - Task queue depth is 1
+2026-06-25 20:35:03,076 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:35:03,076 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:35:03,076 - INFO - Scheduler started
+2026-06-25 20:35:03,077 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:35:03,092 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:35:03,101 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:35:05,143 - WARNING - Task queue depth is 1
+2026-06-25 20:35:05,144 - WARNING - Task queue depth is 2
+2026-06-25 20:35:06,746 - WARNING - Task queue depth is 1
+2026-06-25 20:35:06,949 - WARNING - Task queue depth is 1
+2026-06-25 20:35:11,250 - WARNING - Task queue depth is 1
+2026-06-25 20:35:11,253 - WARNING - Task queue depth is 2
+2026-06-25 20:35:11,278 - WARNING - Task queue depth is 3
+2026-06-25 20:35:12,915 - WARNING - Task queue depth is 1
+2026-06-25 20:35:12,919 - WARNING - Task queue depth is 2
+2026-06-25 20:35:12,919 - WARNING - Task queue depth is 3
+2026-06-25 20:35:14,810 - WARNING - Task queue depth is 1
+2026-06-25 20:35:14,814 - WARNING - Task queue depth is 2
+2026-06-25 20:35:14,814 - WARNING - Task queue depth is 3
+2026-06-25 20:35:59,027 - ERROR - Exception on /detail/JDVE18094448250 [GET]
+Traceback (most recent call last):
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 487, in detail
+    return render_template('detail.html', order_code=order_code, goods=goods,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\jinja2\environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+  File "E:\Program Files (x86)\python\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "E:\scanner_results\WEB+Query6.13_11\templates\detail.html", line 180, in template
+    <td>{{% if current_user.role in ['admin', 'editor'] %}}<input type="number" class="form-control form-control-sm final-qty" value="${item.final_quantity}" min="0" style="width:70px;">{{% else %}}${item.final_quantity}{{% endif %}}</td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: unexpected '%'
+2026-06-25 20:41:16,769 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:41:16,769 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:41:16,770 - INFO - Scheduler started
+2026-06-25 20:41:16,772 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:41:16,797 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:41:16,800 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:41:18,376 - WARNING - Task queue depth is 1
+2026-06-25 20:41:18,429 - WARNING - Task queue depth is 2
+2026-06-25 20:41:37,047 - WARNING - Task queue depth is 1
+2026-06-25 20:41:37,048 - WARNING - Task queue depth is 2
+2026-06-25 20:41:37,091 - WARNING - Task queue depth is 3
+2026-06-25 20:44:48,336 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:44:48,339 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:44:48,339 - INFO - Scheduler started
+2026-06-25 20:44:48,341 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:44:48,358 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:44:48,373 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:44:49,510 - WARNING - Task queue depth is 1
+2026-06-25 20:44:49,579 - WARNING - Task queue depth is 2
+2026-06-25 20:44:50,899 - WARNING - Task queue depth is 1
+2026-06-25 20:44:50,908 - WARNING - Task queue depth is 1
+2026-06-25 20:44:51,034 - WARNING - Task queue depth is 2
+2026-06-25 20:44:59,112 - WARNING - Task queue depth is 1
+2026-06-25 20:47:43,450 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:47:43,451 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:47:43,451 - INFO - Scheduler started
+2026-06-25 20:47:43,452 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:47:43,478 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:47:43,481 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:47:47,757 - WARNING - Task queue depth is 1
+2026-06-25 20:48:06,928 - WARNING - Task queue depth is 1
+2026-06-25 20:48:06,932 - WARNING - Task queue depth is 2
+2026-06-25 20:52:08,010 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-25 20:52:08,010 - INFO - Added job "backup_database" to job store "default"
+2026-06-25 20:52:08,011 - INFO - Scheduler started
+2026-06-25 20:52:08,014 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-25 20:52:08,035 - INFO - 启动生产服务器（waitress）...
+2026-06-25 20:52:08,050 - INFO - Serving on http://0.0.0.0:5001
+2026-06-25 20:52:15,604 - WARNING - Task queue depth is 1
+2026-06-25 20:52:15,607 - WARNING - Task queue depth is 2
+2026-06-25 20:52:15,628 - WARNING - Task queue depth is 3
+2026-06-26 10:42:50,072 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 10:42:50,072 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 10:42:50,073 - INFO - Scheduler started
+2026-06-26 10:42:50,075 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 10:42:50,087 - INFO - 启动生产服务器（waitress）...
+2026-06-26 10:42:50,091 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 10:43:45,380 - WARNING - Task queue depth is 1
+2026-06-26 10:43:59,096 - WARNING - Task queue depth is 1
+2026-06-26 10:43:59,126 - WARNING - Task queue depth is 2
+2026-06-26 10:44:03,647 - WARNING - Task queue depth is 1
+2026-06-26 10:44:17,607 - WARNING - Task queue depth is 1
+2026-06-26 10:45:26,191 - WARNING - Task queue depth is 1
+2026-06-26 10:45:56,823 - WARNING - Task queue depth is 1
+2026-06-26 10:45:58,679 - WARNING - Task queue depth is 1
+2026-06-26 10:45:58,685 - WARNING - Task queue depth is 2
+2026-06-26 10:46:11,663 - WARNING - Task queue depth is 1
+2026-06-26 10:46:11,688 - WARNING - Task queue depth is 2
+2026-06-26 10:46:11,839 - WARNING - Task queue depth is 1
+2026-06-26 10:47:35,021 - WARNING - Task queue depth is 1
+2026-06-26 10:47:35,039 - WARNING - Task queue depth is 2
+2026-06-26 10:47:35,222 - WARNING - Task queue depth is 1
+2026-06-26 10:47:36,153 - WARNING - Task queue depth is 1
+2026-06-26 10:48:11,519 - WARNING - Task queue depth is 1
+2026-06-26 10:49:55,227 - WARNING - Task queue depth is 1
+2026-06-26 10:49:55,234 - WARNING - Task queue depth is 2
+2026-06-26 10:49:55,234 - WARNING - Task queue depth is 3
+2026-06-26 10:55:13,444 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 10:55:13,445 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 10:55:13,445 - INFO - Scheduler started
+2026-06-26 10:55:13,447 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 10:55:13,461 - INFO - 启动生产服务器（waitress）...
+2026-06-26 10:55:13,466 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 10:56:48,842 - WARNING - Task queue depth is 1
+2026-06-26 10:56:48,893 - WARNING - Task queue depth is 2
+2026-06-26 10:56:57,022 - WARNING - Task queue depth is 1
+2026-06-26 10:56:57,027 - WARNING - Task queue depth is 2
+2026-06-26 10:56:57,029 - WARNING - Task queue depth is 3
+2026-06-26 10:56:57,029 - WARNING - Task queue depth is 4
+2026-06-26 10:56:59,635 - WARNING - Task queue depth is 1
+2026-06-26 10:56:59,637 - WARNING - Task queue depth is 2
+2026-06-26 10:56:59,642 - WARNING - Task queue depth is 3
+2026-06-26 10:56:59,659 - WARNING - Task queue depth is 4
+2026-06-26 10:57:01,155 - WARNING - Task queue depth is 1
+2026-06-26 10:57:01,156 - WARNING - Task queue depth is 2
+2026-06-26 10:57:01,164 - WARNING - Task queue depth is 2
+2026-06-26 10:57:01,217 - WARNING - Task queue depth is 3
+2026-06-26 10:57:01,355 - WARNING - Task queue depth is 1
+2026-06-26 10:57:01,357 - WARNING - Task queue depth is 2
+2026-06-26 10:57:01,358 - WARNING - Task queue depth is 3
+2026-06-26 10:57:01,532 - WARNING - Task queue depth is 1
+2026-06-26 10:57:01,536 - WARNING - Task queue depth is 2
+2026-06-26 10:57:01,537 - WARNING - Task queue depth is 3
+2026-06-26 10:57:05,387 - WARNING - Task queue depth is 1
+2026-06-26 10:57:05,389 - WARNING - Task queue depth is 2
+2026-06-26 10:57:05,399 - WARNING - Task queue depth is 1
+2026-06-26 10:57:44,901 - WARNING - Task queue depth is 1
+2026-06-26 10:57:44,903 - WARNING - Task queue depth is 2
+2026-06-26 10:57:44,919 - WARNING - Task queue depth is 3
+2026-06-26 10:57:44,920 - WARNING - Task queue depth is 4
+2026-06-26 10:58:44,082 - WARNING - Task queue depth is 1
+2026-06-26 10:58:46,186 - WARNING - Task queue depth is 1
+2026-06-26 10:58:46,190 - WARNING - Task queue depth is 2
+2026-06-26 10:59:46,590 - WARNING - Task queue depth is 1
+2026-06-26 10:59:46,592 - WARNING - Task queue depth is 2
+2026-06-26 11:13:34,519 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 11:13:34,521 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 11:13:34,522 - INFO - Scheduler started
+2026-06-26 11:13:34,550 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 11:13:34,575 - INFO - 启动生产服务器（waitress）...
+2026-06-26 11:13:34,586 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 11:14:05,898 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 11:14:05,901 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 11:14:05,902 - INFO - Scheduler started
+2026-06-26 11:14:05,904 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 11:14:05,935 - INFO - 启动生产服务器（waitress）...
+2026-06-26 11:14:05,956 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 11:14:21,728 - WARNING - Task queue depth is 1
+2026-06-26 11:14:43,485 - WARNING - Task queue depth is 1
+2026-06-26 11:14:43,490 - WARNING - Task queue depth is 1
+2026-06-26 11:15:13,916 - WARNING - Task queue depth is 1
+2026-06-26 11:15:13,946 - WARNING - Task queue depth is 2
+2026-06-26 11:39:07,776 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 11:39:07,786 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 11:39:07,787 - INFO - Scheduler started
+2026-06-26 11:39:07,789 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 11:39:07,809 - INFO - 启动生产服务器（waitress）...
+2026-06-26 11:39:07,815 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 11:39:09,500 - WARNING - Task queue depth is 1
+2026-06-26 11:39:09,552 - WARNING - Task queue depth is 2
+2026-06-26 11:39:11,581 - WARNING - Task queue depth is 1
+2026-06-26 11:39:11,589 - WARNING - Task queue depth is 2
+2026-06-26 11:39:11,590 - WARNING - Task queue depth is 3
+2026-06-26 11:39:11,593 - WARNING - Task queue depth is 4
+2026-06-26 11:39:16,871 - WARNING - Task queue depth is 1
+2026-06-26 11:39:16,900 - WARNING - Task queue depth is 2
+2026-06-26 11:39:16,901 - WARNING - Task queue depth is 3
+2026-06-26 11:39:16,903 - WARNING - Task queue depth is 4
+2026-06-26 11:41:30,207 - WARNING - Task queue depth is 1
+2026-06-26 11:41:35,862 - WARNING - Task queue depth is 1
+2026-06-26 11:41:35,960 - WARNING - Task queue depth is 2
+2026-06-26 11:41:43,376 - WARNING - Task queue depth is 1
+2026-06-26 11:41:43,430 - WARNING - Task queue depth is 2
+2026-06-26 11:49:00,004 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 11:49:00,020 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 11:49:00,020 - INFO - Scheduler started
+2026-06-26 11:49:00,029 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 11:49:00,050 - INFO - 启动生产服务器（waitress）...
+2026-06-26 11:49:00,065 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 11:49:03,389 - WARNING - Task queue depth is 1
+2026-06-26 11:49:03,411 - WARNING - Task queue depth is 2
+2026-06-26 11:49:05,102 - WARNING - Task queue depth is 1
+2026-06-26 11:49:05,262 - WARNING - Task queue depth is 1
+2026-06-26 11:49:05,290 - WARNING - Task queue depth is 1
+2026-06-26 11:49:05,291 - ERROR - Exception on /api/dashboard/monthly-orders [GET]
+Traceback (most recent call last):
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 1510, in dashboard_monthly_orders
+    params.append(start_date)
+    ^^^^^^
+NameError: name 'params' is not defined
+2026-06-26 11:50:31,114 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 11:50:31,114 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 11:50:31,114 - INFO - Scheduler started
+2026-06-26 11:50:31,115 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 11:50:31,146 - INFO - 启动生产服务器（waitress）...
+2026-06-26 11:50:31,334 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 11:50:32,530 - WARNING - Task queue depth is 1
+2026-06-26 11:50:32,587 - WARNING - Task queue depth is 2
+2026-06-26 11:50:32,800 - WARNING - Task queue depth is 1
+2026-06-26 11:50:32,828 - WARNING - Task queue depth is 2
+2026-06-26 11:53:00,894 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 11:53:00,895 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 11:53:00,895 - INFO - Scheduler started
+2026-06-26 11:53:00,899 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 11:53:00,936 - INFO - 启动生产服务器（waitress）...
+2026-06-26 11:53:00,947 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 11:53:10,718 - WARNING - Task queue depth is 1
+2026-06-26 11:53:10,751 - WARNING - Task queue depth is 2
+2026-06-26 11:53:10,865 - WARNING - Task queue depth is 1
+2026-06-26 11:53:10,988 - WARNING - Task queue depth is 1
+2026-06-26 11:53:11,014 - WARNING - Task queue depth is 1
+2026-06-26 11:53:11,016 - WARNING - Task queue depth is 2
+2026-06-26 13:45:42,692 - WARNING - Task queue depth is 1
+2026-06-26 13:45:42,712 - WARNING - Task queue depth is 2
+2026-06-26 13:45:42,714 - WARNING - Task queue depth is 3
+2026-06-26 13:45:42,717 - WARNING - Task queue depth is 4
+2026-06-26 13:45:46,078 - WARNING - Task queue depth is 1
+2026-06-26 13:45:46,079 - WARNING - Task queue depth is 2
+2026-06-26 13:46:04,234 - WARNING - Task queue depth is 1
+2026-06-26 13:46:04,242 - WARNING - Task queue depth is 2
+2026-06-26 13:46:04,243 - WARNING - Task queue depth is 3
+2026-06-26 13:46:04,244 - WARNING - Task queue depth is 4
+2026-06-26 13:46:09,341 - WARNING - Task queue depth is 1
+2026-06-26 13:46:12,607 - WARNING - Task queue depth is 1
+2026-06-26 13:46:12,612 - WARNING - Task queue depth is 2
+2026-06-26 13:46:12,612 - WARNING - Task queue depth is 3
+2026-06-26 14:01:47,817 - WARNING - Task queue depth is 1
+2026-06-26 14:01:52,306 - WARNING - Task queue depth is 1
+2026-06-26 14:01:52,322 - WARNING - Task queue depth is 2
+2026-06-26 14:01:57,591 - WARNING - Task queue depth is 1
+2026-06-26 14:01:57,619 - WARNING - Task queue depth is 2
+2026-06-26 14:02:00,742 - WARNING - Task queue depth is 1
+2026-06-26 14:02:00,771 - WARNING - Task queue depth is 2
+2026-06-26 15:07:45,410 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 15:07:45,411 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 15:07:45,411 - INFO - Scheduler started
+2026-06-26 15:07:45,412 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 15:07:45,449 - INFO - 启动生产服务器（waitress）...
+2026-06-26 15:07:45,464 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 15:07:53,943 - WARNING - Task queue depth is 1
+2026-06-26 15:07:53,999 - WARNING - Task queue depth is 1
+2026-06-26 15:08:05,135 - ERROR - Exception on /api/dashboard/summary [GET]
+Traceback (most recent call last):
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 1348, in dashboard_summary
+    total_orders = conn.execute("SELECT COUNT(*) FROM query_results WHERE 1=1" +
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 2, and there are 3 supplied.
+2026-06-26 15:08:05,149 - WARNING - Task queue depth is 1
+2026-06-26 15:08:05,153 - WARNING - Task queue depth is 2
+2026-06-26 15:08:11,886 - ERROR - Exception on /api/dashboard/summary [GET]
+Traceback (most recent call last):
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Program Files (x86)\python\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\scanner_results\WEB+Query6.13_11\server_web.py", line 1348, in dashboard_summary
+    total_orders = conn.execute("SELECT COUNT(*) FROM query_results WHERE 1=1" +
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 2, and there are 3 supplied.
+2026-06-26 15:08:11,905 - WARNING - Task queue depth is 1
+2026-06-26 15:08:11,988 - WARNING - Task queue depth is 2
+2026-06-26 15:22:34,107 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 15:22:34,108 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 15:22:34,108 - INFO - Scheduler started
+2026-06-26 15:22:34,110 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 15:22:34,147 - INFO - 启动生产服务器（waitress）...
+2026-06-26 15:22:34,162 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 15:22:39,106 - WARNING - Task queue depth is 1
+2026-06-26 15:22:39,144 - WARNING - Task queue depth is 2
+2026-06-26 15:22:43,724 - WARNING - Task queue depth is 1
+2026-06-26 15:22:43,725 - WARNING - Task queue depth is 2
+2026-06-26 15:22:43,733 - WARNING - Task queue depth is 2
+2026-06-26 15:22:47,200 - WARNING - Task queue depth is 1
+2026-06-26 15:22:49,998 - WARNING - Task queue depth is 1
+2026-06-26 15:22:50,000 - WARNING - Task queue depth is 2
+2026-06-26 15:22:55,637 - WARNING - Task queue depth is 1
+2026-06-26 15:23:01,264 - WARNING - Task queue depth is 1
+2026-06-26 15:23:01,287 - WARNING - Task queue depth is 2
+2026-06-26 15:23:01,311 - WARNING - Task queue depth is 3
+2026-06-26 15:23:05,847 - WARNING - Task queue depth is 1
+2026-06-26 15:23:05,886 - WARNING - Task queue depth is 2
+2026-06-26 15:23:08,302 - WARNING - Task queue depth is 1
+2026-06-26 15:23:08,303 - WARNING - Task queue depth is 2
+2026-06-26 15:23:10,774 - WARNING - Task queue depth is 1
+2026-06-26 15:23:10,786 - WARNING - Task queue depth is 2
+2026-06-26 15:23:17,329 - WARNING - Task queue depth is 1
+2026-06-26 15:23:17,342 - WARNING - Task queue depth is 2
+2026-06-26 15:23:38,677 - WARNING - Task queue depth is 1
+2026-06-26 15:23:38,698 - WARNING - Task queue depth is 2
+2026-06-26 15:23:45,168 - WARNING - Task queue depth is 1
+2026-06-26 15:23:45,181 - WARNING - Task queue depth is 2
+2026-06-26 15:23:59,033 - WARNING - Task queue depth is 1
+2026-06-26 15:23:59,049 - WARNING - Task queue depth is 2
+2026-06-26 15:24:03,565 - WARNING - Task queue depth is 1
+2026-06-26 15:24:03,567 - WARNING - Task queue depth is 2
+2026-06-26 15:24:03,617 - WARNING - Task queue depth is 3
+2026-06-26 15:24:27,146 - WARNING - Task queue depth is 1
+2026-06-26 15:24:52,893 - WARNING - Task queue depth is 1
+2026-06-26 15:24:52,895 - WARNING - Task queue depth is 2
+2026-06-26 15:24:56,993 - WARNING - Task queue depth is 1
+2026-06-26 15:24:57,004 - WARNING - Task queue depth is 2
+2026-06-26 15:24:59,535 - WARNING - Task queue depth is 1
+2026-06-26 15:24:59,562 - WARNING - Task queue depth is 2
+2026-06-26 15:24:59,563 - WARNING - Task queue depth is 3
+2026-06-26 15:25:04,992 - WARNING - Task queue depth is 1
+2026-06-26 15:25:05,017 - WARNING - Task queue depth is 2
+2026-06-26 15:25:05,022 - WARNING - Task queue depth is 1
+2026-06-26 15:25:08,992 - WARNING - Task queue depth is 1
+2026-06-26 15:25:14,529 - WARNING - Task queue depth is 1
+2026-06-26 15:25:14,550 - WARNING - Task queue depth is 2
+2026-06-26 15:25:18,702 - WARNING - Task queue depth is 1
+2026-06-26 15:25:18,720 - WARNING - Task queue depth is 2
+2026-06-26 15:25:18,732 - WARNING - Task queue depth is 3
+2026-06-26 20:45:05,188 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-26 20:45:05,188 - INFO - Added job "backup_database" to job store "default"
+2026-06-26 20:45:05,188 - INFO - Scheduler started
+2026-06-26 20:45:05,188 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-26 20:45:05,188 - INFO - 启动生产服务器（waitress）...
+2026-06-26 20:45:05,203 - INFO - Serving on http://0.0.0.0:5001
+2026-06-26 20:45:22,639 - WARNING - Task queue depth is 1
+2026-06-26 20:45:22,645 - WARNING - Task queue depth is 1
+2026-06-26 20:45:24,557 - WARNING - Task queue depth is 1
+2026-06-26 20:45:24,557 - WARNING - Task queue depth is 2
+2026-06-26 20:45:24,561 - WARNING - Task queue depth is 2
+2026-06-26 20:45:24,565 - WARNING - Task queue depth is 3
+2026-06-26 20:45:25,687 - WARNING - Task queue depth is 1
+2026-06-26 20:45:25,688 - WARNING - Task queue depth is 2
+2026-06-26 20:45:25,691 - WARNING - Task queue depth is 2
+2026-06-26 20:45:25,694 - WARNING - Task queue depth is 3
+2026-06-26 20:45:26,062 - WARNING - Task queue depth is 1
+2026-06-26 20:45:26,118 - WARNING - Task queue depth is 1
+2026-06-26 20:45:26,144 - WARNING - Task queue depth is 2
+2026-06-26 20:45:33,524 - WARNING - Task queue depth is 1
+2026-06-26 20:45:33,527 - WARNING - Task queue depth is 2
+2026-06-26 20:45:33,533 - WARNING - Task queue depth is 2
+2026-06-26 20:48:02,784 - WARNING - Task queue depth is 1
+2026-06-26 20:48:10,676 - WARNING - Task queue depth is 1
+2026-06-27 13:44:20,305 - INFO - Added column username to operation_log
+2026-06-27 13:44:20,307 - INFO - Added column ip_address to operation_log
+2026-06-27 13:44:20,757 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-27 13:44:20,759 - INFO - Added job "backup_database" to job store "default"
+2026-06-27 13:44:20,759 - INFO - Scheduler started
+2026-06-27 13:44:20,767 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-27 13:44:20,788 - INFO - 启动生产服务器（waitress）...
+2026-06-27 13:44:20,792 - INFO - Serving on http://0.0.0.0:5001
+2026-06-27 13:44:30,337 - WARNING - Task queue depth is 1
+2026-06-27 13:44:30,378 - WARNING - Task queue depth is 2
+2026-06-27 13:44:30,383 - WARNING - Task queue depth is 3
+2026-06-27 13:44:37,716 - WARNING - Task queue depth is 1
+2026-06-27 13:44:37,774 - WARNING - Task queue depth is 2
+2026-06-27 13:44:37,774 - WARNING - Task queue depth is 3
+2026-06-27 13:44:50,643 - WARNING - Task queue depth is 1
+2026-06-27 13:44:50,689 - WARNING - Task queue depth is 2
+2026-06-27 13:44:50,690 - WARNING - Task queue depth is 3
+2026-06-27 13:44:50,690 - WARNING - Task queue depth is 4
+2026-06-27 13:44:50,848 - WARNING - Task queue depth is 1
+2026-06-27 13:44:50,928 - WARNING - Task queue depth is 1
+2026-06-27 13:44:58,544 - WARNING - Task queue depth is 1
+2026-06-27 13:44:58,560 - WARNING - Task queue depth is 2
+2026-06-27 13:45:21,112 - WARNING - Task queue depth is 1
+2026-06-27 15:17:07,512 - WARNING - Task queue depth is 1
+2026-06-27 15:17:07,584 - WARNING - Task queue depth is 2
+2026-06-27 15:17:09,091 - WARNING - Task queue depth is 1
+2026-06-27 19:40:19,202 - INFO - Added column username to operation_log
+2026-06-27 19:40:19,203 - INFO - Added column ip_address to operation_log
+2026-06-27 19:40:19,536 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-27 19:40:19,537 - INFO - Added job "backup_database" to job store "default"
+2026-06-27 19:40:19,537 - INFO - Scheduler started
+2026-06-27 19:40:19,539 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-27 19:40:19,550 - INFO - 启动生产服务器（waitress）...
+2026-06-27 19:40:19,553 - INFO - Serving on http://0.0.0.0:5001
+2026-06-27 19:40:52,207 - WARNING - Task queue depth is 1
+2026-06-27 19:40:53,450 - WARNING - Task queue depth is 1
+2026-06-27 19:40:53,464 - WARNING - Task queue depth is 2
+2026-06-27 19:40:53,571 - WARNING - Task queue depth is 1
+2026-06-27 19:40:53,605 - WARNING - Task queue depth is 2
+2026-06-27 19:40:57,922 - WARNING - Task queue depth is 1
+2026-06-27 19:40:57,927 - WARNING - Task queue depth is 2
+2026-06-27 19:41:01,812 - WARNING - Task queue depth is 1
+2026-06-27 19:41:01,815 - WARNING - Task queue depth is 2
+2026-06-27 19:41:22,403 - WARNING - Task queue depth is 1
+2026-06-27 19:41:22,407 - WARNING - Task queue depth is 2
+2026-06-27 19:41:25,180 - WARNING - Task queue depth is 1
+2026-06-27 19:41:25,180 - WARNING - Task queue depth is 2
+2026-06-27 19:41:25,186 - WARNING - Task queue depth is 3
+2026-06-27 19:47:24,760 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-27 19:47:24,760 - INFO - Added job "backup_database" to job store "default"
+2026-06-27 19:47:24,761 - INFO - Scheduler started
+2026-06-27 19:47:24,774 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-27 19:47:24,791 - INFO - 启动生产服务器（waitress）...
+2026-06-27 19:47:24,810 - INFO - Serving on http://0.0.0.0:5001
+2026-06-27 19:47:28,497 - WARNING - Task queue depth is 1
+2026-06-27 19:47:28,518 - WARNING - Task queue depth is 2
+2026-06-27 19:47:39,277 - WARNING - Task queue depth is 1
+2026-06-27 19:47:39,492 - WARNING - Task queue depth is 1
+2026-06-27 19:47:39,528 - WARNING - Task queue depth is 2
+2026-06-27 19:47:39,631 - WARNING - Task queue depth is 1
+2026-06-27 19:47:44,101 - WARNING - Task queue depth is 1
+2026-06-27 19:47:47,915 - WARNING - Task queue depth is 1
+2026-06-27 19:47:51,496 - WARNING - Task queue depth is 1
+2026-06-27 19:47:55,193 - WARNING - Task queue depth is 1
+2026-06-27 19:47:59,988 - WARNING - Task queue depth is 1
+2026-06-27 19:48:02,995 - WARNING - Task queue depth is 1
+2026-06-27 19:48:03,001 - WARNING - Task queue depth is 1
+2026-06-27 19:48:03,006 - WARNING - Task queue depth is 1
+2026-06-27 19:54:20,091 - WARNING - Task queue depth is 1
+2026-06-27 19:54:20,112 - WARNING - Task queue depth is 2
+2026-06-27 20:00:00,003 - INFO - Running job "backup_database (trigger: cron[hour='20', minute='0'], next run at: 2026-06-28 20:00:00 CST)" (scheduled at 2026-06-27 20:00:00+08:00)
+2026-06-27 20:00:00,013 - INFO - 数据库备份成功：backups\scan_data_20260627_200000.db
+2026-06-27 20:00:00,014 - INFO - Job "backup_database (trigger: cron[hour='20', minute='0'], next run at: 2026-06-28 20:00:00 CST)" executed successfully
+2026-06-27 20:00:17,610 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-27 20:00:17,611 - INFO - Added job "backup_database" to job store "default"
+2026-06-27 20:00:17,611 - INFO - Scheduler started
+2026-06-27 20:00:17,612 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-27 20:00:17,624 - INFO - 启动生产服务器（waitress）...
+2026-06-27 20:00:17,627 - INFO - Serving on http://0.0.0.0:5001
+2026-06-27 20:21:33,340 - WARNING - Task queue depth is 1
+2026-06-27 20:27:56,246 - WARNING - Task queue depth is 1
+2026-06-27 20:28:00,492 - WARNING - Task queue depth is 1
+2026-06-27 20:29:34,341 - WARNING - Task queue depth is 1
+2026-06-27 20:29:34,387 - WARNING - Task queue depth is 2
+2026-06-27 20:29:34,387 - WARNING - Task queue depth is 3
+2026-06-27 20:29:34,557 - WARNING - Task queue depth is 1
+2026-06-27 20:31:14,766 - WARNING - Task queue depth is 1
+2026-06-27 20:31:14,770 - WARNING - Task queue depth is 2
+2026-06-27 20:33:31,425 - WARNING - Task queue depth is 1
+2026-06-27 20:36:30,263 - WARNING - Task queue depth is 1
+2026-06-27 20:36:30,464 - WARNING - Task queue depth is 1
+2026-06-27 20:36:30,505 - WARNING - Task queue depth is 2
+2026-06-27 20:37:46,323 - WARNING - Task queue depth is 1
+2026-06-27 20:45:23,233 - WARNING - Task queue depth is 1
+2026-06-27 20:45:23,278 - WARNING - Task queue depth is 2
+2026-06-28 09:00:08,308 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 09:00:08,308 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 09:00:08,309 - INFO - Scheduler started
+2026-06-28 09:00:08,310 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 09:00:08,322 - INFO - 启动生产服务器（waitress）...
+2026-06-28 09:00:08,326 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 09:00:31,978 - WARNING - Task queue depth is 1
+2026-06-28 09:00:31,981 - WARNING - Task queue depth is 2
+2026-06-28 09:00:34,438 - WARNING - Task queue depth is 1
+2026-06-28 09:00:34,439 - WARNING - Task queue depth is 2
+2026-06-28 09:00:34,443 - WARNING - Task queue depth is 3
+2026-06-28 09:00:34,443 - WARNING - Task queue depth is 4
+2026-06-28 09:00:35,231 - WARNING - Task queue depth is 1
+2026-06-28 09:00:35,240 - WARNING - Task queue depth is 1
+2026-06-28 09:00:35,241 - WARNING - Task queue depth is 2
+2026-06-28 09:00:35,646 - WARNING - Task queue depth is 1
+2026-06-28 09:00:35,650 - WARNING - Task queue depth is 1
+2026-06-28 09:00:36,423 - WARNING - Task queue depth is 1
+2026-06-28 09:00:36,427 - WARNING - Task queue depth is 2
+2026-06-28 09:00:36,427 - WARNING - Task queue depth is 3
+2026-06-28 09:00:36,489 - WARNING - Task queue depth is 1
+2026-06-28 09:00:36,489 - WARNING - Task queue depth is 2
+2026-06-28 09:00:36,501 - WARNING - Task queue depth is 2
+2026-06-28 09:00:49,650 - WARNING - Task queue depth is 1
+2026-06-28 09:00:49,652 - WARNING - Task queue depth is 2
+2026-06-28 09:00:49,657 - WARNING - Task queue depth is 1
+2026-06-28 09:01:24,010 - WARNING - Task queue depth is 1
+2026-06-28 09:01:24,013 - WARNING - Task queue depth is 2
+2026-06-28 09:01:24,528 - WARNING - Task queue depth is 1
+2026-06-28 09:01:24,529 - WARNING - Task queue depth is 2
+2026-06-28 09:01:24,533 - WARNING - Task queue depth is 3
+2026-06-28 09:01:24,533 - WARNING - Task queue depth is 4
+2026-06-28 09:12:34,067 - WARNING - Task queue depth is 1
+2026-06-28 09:12:34,074 - WARNING - Task queue depth is 2
+2026-06-28 09:12:34,077 - WARNING - Task queue depth is 1
+2026-06-28 09:12:35,342 - WARNING - Task queue depth is 1
+2026-06-28 09:12:35,346 - WARNING - Task queue depth is 1
+2026-06-28 09:12:35,349 - WARNING - Task queue depth is 2
+2026-06-28 09:12:35,349 - WARNING - Task queue depth is 3
+2026-06-28 09:12:37,082 - WARNING - Task queue depth is 1
+2026-06-28 09:12:37,083 - WARNING - Task queue depth is 2
+2026-06-28 09:12:37,084 - WARNING - Task queue depth is 3
+2026-06-28 09:12:37,092 - WARNING - Task queue depth is 2
+2026-06-28 09:13:16,696 - WARNING - Task queue depth is 1
+2026-06-28 09:13:16,704 - WARNING - Task queue depth is 1
+2026-06-28 09:13:16,707 - WARNING - Task queue depth is 2
+2026-06-28 09:13:16,707 - WARNING - Task queue depth is 3
+2026-06-28 09:15:09,444 - WARNING - Task queue depth is 1
+2026-06-28 09:15:09,449 - WARNING - Task queue depth is 2
+2026-06-28 09:15:09,450 - WARNING - Task queue depth is 3
+2026-06-28 09:15:09,451 - WARNING - Task queue depth is 4
+2026-06-28 09:15:19,138 - WARNING - Task queue depth is 1
+2026-06-28 09:15:19,144 - WARNING - Task queue depth is 1
+2026-06-28 09:15:20,242 - WARNING - Task queue depth is 1
+2026-06-28 09:15:20,246 - WARNING - Task queue depth is 2
+2026-06-28 09:15:20,249 - WARNING - Task queue depth is 3
+2026-06-28 09:15:20,250 - WARNING - Task queue depth is 4
+2026-06-28 09:40:29,496 - WARNING - Task queue depth is 1
+2026-06-28 09:40:29,497 - WARNING - Task queue depth is 2
+2026-06-28 09:40:29,504 - WARNING - Task queue depth is 3
+2026-06-28 09:40:29,504 - WARNING - Task queue depth is 4
+2026-06-28 09:40:30,256 - WARNING - Task queue depth is 1
+2026-06-28 09:40:30,280 - WARNING - Task queue depth is 2
+2026-06-28 09:40:30,282 - WARNING - Task queue depth is 1
+2026-06-28 09:40:34,839 - WARNING - Task queue depth is 1
+2026-06-28 09:40:34,852 - WARNING - Task queue depth is 2
+2026-06-28 09:40:43,822 - WARNING - Task queue depth is 1
+2026-06-28 09:40:43,824 - WARNING - Task queue depth is 2
+2026-06-28 11:25:36,417 - WARNING - Task queue depth is 1
+2026-06-28 11:25:36,448 - WARNING - Task queue depth is 2
+2026-06-28 11:25:36,448 - WARNING - Task queue depth is 3
+2026-06-28 11:25:36,449 - WARNING - Task queue depth is 4
+2026-06-28 11:25:37,190 - WARNING - Task queue depth is 1
+2026-06-28 11:25:37,192 - WARNING - Task queue depth is 2
+2026-06-28 11:25:39,058 - WARNING - Task queue depth is 1
+2026-06-28 11:25:39,062 - WARNING - Task queue depth is 2
+2026-06-28 11:25:39,065 - WARNING - Task queue depth is 2
+2026-06-28 11:25:41,332 - WARNING - Task queue depth is 1
+2026-06-28 11:25:41,355 - WARNING - Task queue depth is 2
+2026-06-28 11:25:41,356 - WARNING - Task queue depth is 3
+2026-06-28 11:25:41,356 - WARNING - Task queue depth is 4
+2026-06-28 11:25:44,631 - WARNING - Task queue depth is 1
+2026-06-28 11:25:44,638 - WARNING - Task queue depth is 2
+2026-06-28 11:25:44,645 - WARNING - Task queue depth is 3
+2026-06-28 11:25:44,646 - WARNING - Task queue depth is 4
+2026-06-28 11:25:46,034 - WARNING - Task queue depth is 1
+2026-06-28 11:25:46,039 - WARNING - Task queue depth is 2
+2026-06-28 11:25:52,464 - WARNING - Task queue depth is 1
+2026-06-28 11:25:52,466 - WARNING - Task queue depth is 2
+2026-06-28 11:25:57,330 - WARNING - Task queue depth is 1
+2026-06-28 11:25:57,331 - WARNING - Task queue depth is 2
+2026-06-28 11:25:58,297 - WARNING - Task queue depth is 1
+2026-06-28 11:25:58,299 - WARNING - Task queue depth is 2
+2026-06-28 11:25:58,321 - WARNING - Task queue depth is 3
+2026-06-28 11:25:58,322 - WARNING - Task queue depth is 4
+2026-06-28 11:25:59,266 - WARNING - Task queue depth is 1
+2026-06-28 11:25:59,267 - WARNING - Task queue depth is 2
+2026-06-28 11:25:59,274 - WARNING - Task queue depth is 2
+2026-06-28 11:26:00,365 - WARNING - Task queue depth is 1
+2026-06-28 11:26:00,387 - WARNING - Task queue depth is 1
+2026-06-28 11:26:00,398 - WARNING - Task queue depth is 2
+2026-06-28 11:33:55,900 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 11:33:55,901 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 11:33:55,901 - INFO - Scheduler started
+2026-06-28 11:33:55,904 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 11:33:55,917 - INFO - 启动生产服务器（waitress）...
+2026-06-28 11:33:55,922 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 11:33:57,804 - WARNING - Task queue depth is 1
+2026-06-28 11:33:57,825 - WARNING - Task queue depth is 2
+2026-06-28 11:33:59,067 - WARNING - Task queue depth is 1
+2026-06-28 11:33:59,084 - WARNING - Task queue depth is 2
+2026-06-28 11:33:59,085 - WARNING - Task queue depth is 3
+2026-06-28 11:33:59,088 - WARNING - Task queue depth is 4
+2026-06-28 11:34:00,025 - WARNING - Task queue depth is 1
+2026-06-28 11:34:00,032 - WARNING - Task queue depth is 1
+2026-06-28 11:34:01,228 - WARNING - Task queue depth is 1
+2026-06-28 11:34:02,928 - WARNING - Task queue depth is 1
+2026-06-28 11:34:02,930 - WARNING - Task queue depth is 1
+2026-06-28 11:34:02,935 - WARNING - Task queue depth is 2
+2026-06-28 11:34:02,937 - WARNING - Task queue depth is 3
+2026-06-28 11:34:03,962 - WARNING - Task queue depth is 1
+2026-06-28 11:34:03,964 - WARNING - Task queue depth is 2
+2026-06-28 11:34:03,964 - WARNING - Task queue depth is 3
+2026-06-28 11:34:03,966 - WARNING - Task queue depth is 4
+2026-06-28 11:34:06,662 - WARNING - Task queue depth is 1
+2026-06-28 11:34:06,665 - WARNING - Task queue depth is 2
+2026-06-28 11:34:10,634 - WARNING - Task queue depth is 1
+2026-06-28 11:34:10,639 - WARNING - Task queue depth is 2
+2026-06-28 11:34:11,766 - WARNING - Task queue depth is 1
+2026-06-28 11:34:11,773 - WARNING - Task queue depth is 1
+2026-06-28 11:34:11,776 - WARNING - Task queue depth is 2
+2026-06-28 11:34:11,777 - WARNING - Task queue depth is 3
+2026-06-28 11:34:12,358 - WARNING - Task queue depth is 1
+2026-06-28 11:34:12,362 - WARNING - Task queue depth is 2
+2026-06-28 11:34:12,362 - WARNING - Task queue depth is 3
+2026-06-28 11:34:12,364 - WARNING - Task queue depth is 4
+2026-06-28 11:34:12,883 - WARNING - Task queue depth is 1
+2026-06-28 11:34:12,891 - WARNING - Task queue depth is 1
+2026-06-28 11:34:14,390 - WARNING - Task queue depth is 1
+2026-06-28 11:34:14,394 - WARNING - Task queue depth is 2
+2026-06-28 11:34:14,395 - WARNING - Task queue depth is 3
+2026-06-28 11:34:14,396 - WARNING - Task queue depth is 4
+2026-06-28 11:46:18,393 - WARNING - Task queue depth is 1
+2026-06-28 11:46:18,396 - WARNING - Task queue depth is 2
+2026-06-28 11:46:18,397 - WARNING - Task queue depth is 3
+2026-06-28 11:46:20,058 - WARNING - Task queue depth is 1
+2026-06-28 11:46:20,059 - WARNING - Task queue depth is 2
+2026-06-28 11:46:20,077 - WARNING - Task queue depth is 2
+2026-06-28 11:46:20,079 - WARNING - Task queue depth is 3
+2026-06-28 11:46:20,863 - WARNING - Task queue depth is 1
+2026-06-28 11:46:20,876 - WARNING - Task queue depth is 2
+2026-06-28 11:46:20,877 - WARNING - Task queue depth is 3
+2026-06-28 11:46:20,882 - WARNING - Task queue depth is 2
+2026-06-28 11:46:23,423 - WARNING - Task queue depth is 1
+2026-06-28 11:46:23,441 - WARNING - Task queue depth is 2
+2026-06-28 11:46:27,157 - WARNING - Task queue depth is 1
+2026-06-28 11:46:27,158 - WARNING - Task queue depth is 2
+2026-06-28 11:46:27,163 - WARNING - Task queue depth is 2
+2026-06-28 11:46:27,165 - WARNING - Task queue depth is 3
+2026-06-28 11:46:27,253 - WARNING - Task queue depth is 1
+2026-06-28 11:46:27,273 - WARNING - Task queue depth is 2
+2026-06-28 11:46:27,274 - WARNING - Task queue depth is 3
+2026-06-28 11:56:52,861 - WARNING - Task queue depth is 1
+2026-06-28 11:56:52,897 - WARNING - Task queue depth is 2
+2026-06-28 11:56:52,898 - WARNING - Task queue depth is 3
+2026-06-28 11:56:52,899 - WARNING - Task queue depth is 4
+2026-06-28 13:50:34,282 - WARNING - Task queue depth is 1
+2026-06-28 13:50:36,692 - WARNING - Task queue depth is 1
+2026-06-28 13:50:36,693 - WARNING - Task queue depth is 2
+2026-06-28 13:50:38,095 - WARNING - Task queue depth is 1
+2026-06-28 13:50:38,098 - WARNING - Task queue depth is 2
+2026-06-28 13:50:51,968 - WARNING - Task queue depth is 1
+2026-06-28 13:50:57,237 - WARNING - Task queue depth is 1
+2026-06-28 13:50:57,239 - WARNING - Task queue depth is 2
+2026-06-28 13:50:58,225 - WARNING - Task queue depth is 1
+2026-06-28 13:50:58,228 - WARNING - Task queue depth is 2
+2026-06-28 13:51:00,415 - WARNING - Task queue depth is 1
+2026-06-28 13:51:42,860 - WARNING - Task queue depth is 1
+2026-06-28 13:51:42,876 - WARNING - Task queue depth is 2
+2026-06-28 13:51:42,877 - WARNING - Task queue depth is 3
+2026-06-28 13:51:42,878 - WARNING - Task queue depth is 4
+2026-06-28 13:51:43,425 - WARNING - Task queue depth is 1
+2026-06-28 13:52:29,266 - WARNING - Task queue depth is 1
+2026-06-28 13:52:36,514 - WARNING - Task queue depth is 1
+2026-06-28 13:52:36,516 - WARNING - Task queue depth is 2
+2026-06-28 13:52:36,526 - WARNING - Task queue depth is 2
+2026-06-28 13:52:36,549 - WARNING - Task queue depth is 3
+2026-06-28 13:52:47,127 - WARNING - Task queue depth is 1
+2026-06-28 13:52:47,132 - WARNING - Task queue depth is 1
+2026-06-28 13:52:47,134 - WARNING - Task queue depth is 2
+2026-06-28 13:52:47,158 - WARNING - Task queue depth is 3
+2026-06-28 13:52:49,888 - WARNING - Task queue depth is 1
+2026-06-28 13:52:49,891 - WARNING - Task queue depth is 2
+2026-06-28 13:54:38,063 - WARNING - Task queue depth is 1
+2026-06-28 13:54:38,090 - WARNING - Task queue depth is 2
+2026-06-28 13:54:39,423 - WARNING - Task queue depth is 1
+2026-06-28 13:54:39,430 - WARNING - Task queue depth is 2
+2026-06-28 13:54:39,431 - WARNING - Task queue depth is 3
+2026-06-28 13:54:39,432 - WARNING - Task queue depth is 4
+2026-06-28 13:54:44,766 - WARNING - Task queue depth is 1
+2026-06-28 13:54:44,770 - WARNING - Task queue depth is 2
+2026-06-28 13:54:53,054 - WARNING - Task queue depth is 1
+2026-06-28 13:55:26,363 - WARNING - Task queue depth is 1
+2026-06-28 13:55:26,365 - WARNING - Task queue depth is 2
+2026-06-28 13:55:33,033 - WARNING - Task queue depth is 1
+2026-06-28 13:55:48,728 - WARNING - Task queue depth is 1
+2026-06-28 14:00:02,446 - WARNING - Task queue depth is 1
+2026-06-28 14:00:02,465 - WARNING - Task queue depth is 2
+2026-06-28 14:00:02,473 - WARNING - Task queue depth is 3
+2026-06-28 14:00:14,663 - WARNING - Task queue depth is 1
+2026-06-28 14:00:25,670 - WARNING - Task queue depth is 1
+2026-06-28 14:00:25,699 - WARNING - Task queue depth is 2
+2026-06-28 14:00:57,358 - WARNING - Task queue depth is 1
+2026-06-28 14:00:57,361 - WARNING - Task queue depth is 2
+2026-06-28 14:00:57,366 - WARNING - Task queue depth is 3
+2026-06-28 14:01:14,858 - WARNING - Task queue depth is 1
+2026-06-28 14:01:14,861 - WARNING - Task queue depth is 2
+2026-06-28 14:01:17,922 - WARNING - Task queue depth is 1
+2026-06-28 14:01:21,923 - WARNING - Task queue depth is 1
+2026-06-28 14:01:21,927 - WARNING - Task queue depth is 2
+2026-06-28 14:01:24,963 - WARNING - Task queue depth is 1
+2026-06-28 14:01:31,190 - WARNING - Task queue depth is 1
+2026-06-28 14:01:31,198 - WARNING - Task queue depth is 2
+2026-06-28 14:01:31,200 - WARNING - Task queue depth is 3
+2026-06-28 14:01:42,563 - WARNING - Task queue depth is 1
+2026-06-28 14:01:42,571 - WARNING - Task queue depth is 2
+2026-06-28 14:01:42,571 - WARNING - Task queue depth is 3
+2026-06-28 14:06:26,180 - WARNING - Task queue depth is 1
+2026-06-28 14:06:26,184 - WARNING - Task queue depth is 2
+2026-06-28 14:06:26,184 - WARNING - Task queue depth is 3
+2026-06-28 14:06:27,879 - WARNING - Task queue depth is 1
+2026-06-28 14:06:27,880 - WARNING - Task queue depth is 2
+2026-06-28 14:06:27,883 - WARNING - Task queue depth is 3
+2026-06-28 14:06:27,885 - WARNING - Task queue depth is 4
+2026-06-28 14:06:29,113 - WARNING - Task queue depth is 1
+2026-06-28 14:06:29,116 - WARNING - Task queue depth is 2
+2026-06-28 14:06:29,124 - WARNING - Task queue depth is 3
+2026-06-28 14:06:29,125 - WARNING - Task queue depth is 4
+2026-06-28 14:06:30,380 - WARNING - Task queue depth is 1
+2026-06-28 14:06:33,415 - WARNING - Task queue depth is 1
+2026-06-28 14:06:33,421 - WARNING - Task queue depth is 2
+2026-06-28 14:06:33,423 - WARNING - Task queue depth is 3
+2026-06-28 14:06:33,424 - WARNING - Task queue depth is 4
+2026-06-28 14:06:37,311 - WARNING - Task queue depth is 1
+2026-06-28 14:06:37,317 - WARNING - Task queue depth is 1
+2026-06-28 14:06:37,322 - WARNING - Task queue depth is 2
+2026-06-28 14:06:37,323 - WARNING - Task queue depth is 3
+2026-06-28 14:06:39,879 - WARNING - Task queue depth is 1
+2026-06-28 14:06:39,883 - WARNING - Task queue depth is 2
+2026-06-28 14:06:39,888 - WARNING - Task queue depth is 3
+2026-06-28 14:06:39,889 - WARNING - Task queue depth is 4
+2026-06-28 14:06:41,214 - WARNING - Task queue depth is 1
+2026-06-28 14:06:41,215 - WARNING - Task queue depth is 2
+2026-06-28 14:06:44,243 - WARNING - Task queue depth is 1
+2026-06-28 14:06:44,256 - WARNING - Task queue depth is 1
+2026-06-28 14:06:44,272 - WARNING - Task queue depth is 2
+2026-06-28 14:06:44,273 - WARNING - Task queue depth is 3
+2026-06-28 14:32:59,700 - WARNING - Task queue depth is 1
+2026-06-28 14:32:59,730 - WARNING - Task queue depth is 2
+2026-06-28 14:33:00,925 - WARNING - Task queue depth is 1
+2026-06-28 14:33:00,957 - WARNING - Task queue depth is 2
+2026-06-28 15:25:06,084 - WARNING - Task queue depth is 1
+2026-06-28 15:25:06,125 - WARNING - Task queue depth is 2
+2026-06-28 15:25:06,127 - WARNING - Task queue depth is 3
+2026-06-28 15:25:06,589 - WARNING - Task queue depth is 1
+2026-06-28 15:25:06,591 - WARNING - Task queue depth is 2
+2026-06-28 15:25:06,622 - WARNING - Task queue depth is 1
+2026-06-28 15:25:07,649 - WARNING - Task queue depth is 1
+2026-06-28 15:25:18,217 - WARNING - Task queue depth is 1
+2026-06-28 15:25:18,259 - WARNING - Task queue depth is 2
+2026-06-28 15:25:18,260 - WARNING - Task queue depth is 3
+2026-06-28 15:25:24,003 - WARNING - Task queue depth is 1
+2026-06-28 15:25:24,011 - WARNING - Task queue depth is 1
+2026-06-28 15:25:25,393 - WARNING - Task queue depth is 1
+2026-06-28 15:25:25,449 - WARNING - Task queue depth is 1
+2026-06-28 15:25:27,653 - WARNING - Task queue depth is 1
+2026-06-28 15:25:27,661 - WARNING - Task queue depth is 2
+2026-06-28 15:48:28,625 - WARNING - Task queue depth is 1
+2026-06-28 15:48:28,629 - WARNING - Task queue depth is 2
+2026-06-28 15:48:28,629 - WARNING - Task queue depth is 3
+2026-06-28 15:48:30,508 - WARNING - Task queue depth is 1
+2026-06-28 15:48:30,546 - WARNING - Task queue depth is 2
+2026-06-28 15:48:30,549 - WARNING - Task queue depth is 3
+2026-06-28 15:49:45,966 - WARNING - Task queue depth is 1
+2026-06-28 15:49:45,970 - WARNING - Task queue depth is 2
+2026-06-28 15:49:54,041 - WARNING - Task queue depth is 1
+2026-06-28 15:49:54,042 - WARNING - Task queue depth is 2
+2026-06-28 15:50:07,900 - WARNING - Task queue depth is 1
+2026-06-28 15:50:07,907 - WARNING - Task queue depth is 2
+2026-06-28 15:50:07,911 - WARNING - Task queue depth is 2
+2026-06-28 15:50:24,364 - WARNING - Task queue depth is 1
+2026-06-28 15:50:24,374 - WARNING - Task queue depth is 1
+2026-06-28 15:50:24,399 - WARNING - Task queue depth is 2
+2026-06-28 15:50:29,473 - WARNING - Task queue depth is 1
+2026-06-28 15:50:29,476 - WARNING - Task queue depth is 2
+2026-06-28 15:50:29,479 - WARNING - Task queue depth is 3
+2026-06-28 15:50:29,479 - WARNING - Task queue depth is 4
+2026-06-28 15:55:56,949 - WARNING - Task queue depth is 1
+2026-06-28 15:55:56,974 - WARNING - Task queue depth is 2
+2026-06-28 15:55:56,975 - WARNING - Task queue depth is 3
+2026-06-28 15:55:56,976 - WARNING - Task queue depth is 4
+2026-06-28 16:00:45,267 - WARNING - Task queue depth is 1
+2026-06-28 16:00:45,270 - WARNING - Task queue depth is 2
+2026-06-28 16:00:51,180 - WARNING - Task queue depth is 1
+2026-06-28 16:00:51,188 - WARNING - Task queue depth is 2
+2026-06-28 16:00:51,190 - WARNING - Task queue depth is 3
+2026-06-28 16:00:52,983 - WARNING - Task queue depth is 1
+2026-06-28 16:00:52,984 - WARNING - Task queue depth is 2
+2026-06-28 16:00:58,730 - WARNING - Task queue depth is 1
+2026-06-28 16:00:58,738 - WARNING - Task queue depth is 2
+2026-06-28 16:00:58,740 - WARNING - Task queue depth is 3
+2026-06-28 16:01:17,475 - WARNING - Task queue depth is 1
+2026-06-28 16:02:27,124 - WARNING - Task queue depth is 1
+2026-06-28 16:02:29,124 - WARNING - Task queue depth is 1
+2026-06-28 16:02:29,126 - WARNING - Task queue depth is 2
+2026-06-28 16:02:29,273 - WARNING - Task queue depth is 1
+2026-06-28 16:02:29,309 - WARNING - Task queue depth is 2
+2026-06-28 16:02:49,472 - WARNING - Task queue depth is 1
+2026-06-28 16:02:49,483 - WARNING - Task queue depth is 2
+2026-06-28 16:02:49,485 - WARNING - Task queue depth is 3
+2026-06-28 16:02:49,488 - WARNING - Task queue depth is 4
+2026-06-28 16:02:49,659 - WARNING - Task queue depth is 1
+2026-06-28 16:02:49,704 - WARNING - Task queue depth is 2
+2026-06-28 16:03:54,028 - WARNING - Task queue depth is 1
+2026-06-28 16:03:54,031 - WARNING - Task queue depth is 2
+2026-06-28 16:03:54,041 - WARNING - Task queue depth is 1
+2026-06-28 16:03:54,245 - WARNING - Task queue depth is 1
+2026-06-28 16:03:55,325 - WARNING - Task queue depth is 1
+2026-06-28 16:03:55,331 - WARNING - Task queue depth is 1
+2026-06-28 16:03:55,373 - WARNING - Task queue depth is 2
+2026-06-28 16:03:55,373 - WARNING - Task queue depth is 3
+2026-06-28 16:03:55,503 - WARNING - Task queue depth is 1
+2026-06-28 16:03:55,557 - WARNING - Task queue depth is 2
+2026-06-28 16:03:56,233 - WARNING - Task queue depth is 1
+2026-06-28 16:03:56,241 - WARNING - Task queue depth is 2
+2026-06-28 16:03:56,248 - WARNING - Task queue depth is 1
+2026-06-28 16:03:56,345 - WARNING - Task queue depth is 1
+2026-06-28 16:03:56,349 - WARNING - Task queue depth is 1
+2026-06-28 16:03:56,361 - WARNING - Task queue depth is 2
+2026-06-28 16:03:57,695 - WARNING - Task queue depth is 1
+2026-06-28 16:03:57,708 - WARNING - Task queue depth is 1
+2026-06-28 16:04:10,374 - WARNING - Task queue depth is 1
+2026-06-28 16:04:10,389 - WARNING - Task queue depth is 2
+2026-06-28 16:04:10,393 - WARNING - Task queue depth is 3
+2026-06-28 16:04:10,605 - WARNING - Task queue depth is 1
+2026-06-28 16:04:10,672 - WARNING - Task queue depth is 2
+2026-06-28 16:04:30,073 - WARNING - Task queue depth is 1
+2026-06-28 16:04:30,080 - WARNING - Task queue depth is 2
+2026-06-28 16:04:30,104 - WARNING - Task queue depth is 3
+2026-06-28 16:04:30,105 - WARNING - Task queue depth is 4
+2026-06-28 16:04:31,927 - WARNING - Task queue depth is 1
+2026-06-28 16:04:31,955 - WARNING - Task queue depth is 2
+2026-06-28 16:04:31,955 - WARNING - Task queue depth is 3
+2026-06-28 16:04:34,126 - WARNING - Task queue depth is 1
+2026-06-28 16:04:34,127 - WARNING - Task queue depth is 2
+2026-06-28 16:04:36,464 - WARNING - Task queue depth is 1
+2026-06-28 16:04:38,237 - WARNING - Task queue depth is 1
+2026-06-28 16:04:38,292 - WARNING - Task queue depth is 2
+2026-06-28 16:04:38,293 - WARNING - Task queue depth is 3
+2026-06-28 16:16:14,665 - INFO - Added column username to operation_log
+2026-06-28 16:16:14,666 - INFO - Added column ip_address to operation_log
+2026-06-28 16:16:14,969 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 16:16:14,970 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 16:16:14,970 - INFO - Scheduler started
+2026-06-28 16:16:14,971 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 16:16:14,982 - INFO - 启动生产服务器（waitress）...
+2026-06-28 16:16:14,984 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 16:16:38,410 - WARNING - Task queue depth is 1
+2026-06-28 16:16:38,414 - WARNING - Task queue depth is 1
+2026-06-28 16:16:41,113 - WARNING - Task queue depth is 1
+2026-06-28 16:16:41,113 - WARNING - Task queue depth is 2
+2026-06-28 16:16:41,116 - WARNING - Task queue depth is 2
+2026-06-28 16:16:41,123 - WARNING - Task queue depth is 3
+2026-06-28 16:16:50,604 - WARNING - Task queue depth is 1
+2026-06-28 16:16:50,608 - WARNING - Task queue depth is 1
+2026-06-28 16:16:51,382 - WARNING - Task queue depth is 1
+2026-06-28 16:16:51,972 - WARNING - Task queue depth is 1
+2026-06-28 16:16:52,381 - WARNING - Task queue depth is 1
+2026-06-28 16:16:53,028 - WARNING - Task queue depth is 1
+2026-06-28 16:16:53,034 - WARNING - Task queue depth is 1
+2026-06-28 16:16:54,003 - WARNING - Task queue depth is 1
+2026-06-28 16:16:55,123 - WARNING - Task queue depth is 1
+2026-06-28 16:17:05,432 - WARNING - Task queue depth is 1
+2026-06-28 16:17:05,436 - WARNING - Task queue depth is 2
+2026-06-28 16:17:05,640 - WARNING - Task queue depth is 1
+2026-06-28 16:18:26,185 - WARNING - Task queue depth is 1
+2026-06-28 16:18:36,584 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 16:18:36,585 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 16:18:36,585 - INFO - Scheduler started
+2026-06-28 16:18:36,586 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 16:18:36,598 - INFO - 启动生产服务器（waitress）...
+2026-06-28 16:18:36,601 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 16:18:40,025 - WARNING - Task queue depth is 1
+2026-06-28 16:18:43,346 - WARNING - Task queue depth is 1
+2026-06-28 16:18:43,351 - WARNING - Task queue depth is 1
+2026-06-28 16:18:44,132 - WARNING - Task queue depth is 1
+2026-06-28 16:18:44,134 - WARNING - Task queue depth is 2
+2026-06-28 16:18:45,098 - WARNING - Task queue depth is 1
+2026-06-28 16:18:45,120 - WARNING - Task queue depth is 2
+2026-06-28 16:18:46,100 - WARNING - Task queue depth is 1
+2026-06-28 16:18:46,103 - WARNING - Task queue depth is 2
+2026-06-28 16:18:46,107 - WARNING - Task queue depth is 2
+2026-06-28 16:18:46,110 - WARNING - Task queue depth is 3
+2026-06-28 16:18:46,747 - WARNING - Task queue depth is 1
+2026-06-28 16:18:47,243 - WARNING - Task queue depth is 1
+2026-06-28 16:18:50,399 - WARNING - Task queue depth is 1
+2026-06-28 16:18:52,520 - WARNING - Task queue depth is 1
+2026-06-28 16:18:52,829 - WARNING - Task queue depth is 1
+2026-06-28 16:18:59,016 - WARNING - Task queue depth is 1
+2026-06-28 16:18:59,479 - WARNING - Task queue depth is 1
+2026-06-28 16:18:59,490 - WARNING - Task queue depth is 2
+2026-06-28 16:18:59,609 - WARNING - Task queue depth is 1
+2026-06-28 16:18:59,616 - WARNING - Task queue depth is 1
+2026-06-28 16:19:00,013 - WARNING - Task queue depth is 1
+2026-06-28 16:19:00,244 - WARNING - Task queue depth is 1
+2026-06-28 16:19:00,446 - WARNING - Task queue depth is 1
+2026-06-28 16:19:00,449 - WARNING - Task queue depth is 2
+2026-06-28 16:19:00,453 - WARNING - Task queue depth is 3
+2026-06-28 16:19:00,757 - WARNING - Task queue depth is 1
+2026-06-28 16:19:00,765 - WARNING - Task queue depth is 2
+2026-06-28 16:19:02,290 - WARNING - Task queue depth is 1
+2026-06-28 16:19:02,290 - WARNING - Task queue depth is 2
+2026-06-28 16:19:04,524 - WARNING - Task queue depth is 1
+2026-06-28 16:19:04,533 - WARNING - Task queue depth is 2
+2026-06-28 16:19:04,960 - WARNING - Task queue depth is 1
+2026-06-28 16:19:04,964 - WARNING - Task queue depth is 2
+2026-06-28 16:19:05,731 - WARNING - Task queue depth is 1
+2026-06-28 16:19:05,739 - WARNING - Task queue depth is 2
+2026-06-28 16:19:06,297 - WARNING - Task queue depth is 1
+2026-06-28 16:19:06,301 - WARNING - Task queue depth is 2
+2026-06-28 16:19:06,303 - WARNING - Task queue depth is 3
+2026-06-28 16:19:12,523 - WARNING - Task queue depth is 1
+2026-06-28 16:19:12,993 - WARNING - Task queue depth is 1
+2026-06-28 16:19:13,944 - WARNING - Task queue depth is 1
+2026-06-28 16:19:14,477 - WARNING - Task queue depth is 1
+2026-06-28 16:19:14,495 - WARNING - Task queue depth is 2
+2026-06-28 16:19:15,156 - WARNING - Task queue depth is 1
+2026-06-28 16:19:16,314 - WARNING - Task queue depth is 1
+2026-06-28 16:19:16,314 - WARNING - Task queue depth is 2
+2026-06-28 16:19:16,320 - WARNING - Task queue depth is 2
+2026-06-28 16:22:04,729 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 16:22:04,730 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 16:22:04,731 - INFO - Scheduler started
+2026-06-28 16:22:04,732 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 16:22:04,744 - INFO - 启动生产服务器（waitress）...
+2026-06-28 16:22:04,746 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 16:22:19,868 - WARNING - Task queue depth is 1
+2026-06-28 16:22:23,825 - WARNING - Task queue depth is 1
+2026-06-28 16:22:23,829 - WARNING - Task queue depth is 2
+2026-06-28 16:22:23,830 - WARNING - Task queue depth is 3
+2026-06-28 16:22:26,810 - WARNING - Task queue depth is 1
+2026-06-28 16:22:26,811 - WARNING - Task queue depth is 2
+2026-06-28 16:22:26,814 - WARNING - Task queue depth is 1
+2026-06-28 16:22:27,841 - WARNING - Task queue depth is 1
+2026-06-28 16:22:27,846 - WARNING - Task queue depth is 2
+2026-06-28 16:22:27,846 - WARNING - Task queue depth is 3
+2026-06-28 16:22:27,846 - WARNING - Task queue depth is 4
+2026-06-28 16:22:28,769 - WARNING - Task queue depth is 1
+2026-06-28 16:22:29,867 - WARNING - Task queue depth is 1
+2026-06-28 16:22:29,872 - WARNING - Task queue depth is 2
+2026-06-28 16:22:29,942 - WARNING - Task queue depth is 1
+2026-06-28 16:22:30,392 - WARNING - Task queue depth is 1
+2026-06-28 16:22:30,461 - WARNING - Task queue depth is 1
+2026-06-28 16:22:30,464 - WARNING - Task queue depth is 2
+2026-06-28 16:22:30,719 - WARNING - Task queue depth is 1
+2026-06-28 16:22:30,720 - WARNING - Task queue depth is 2
+2026-06-28 16:22:30,724 - WARNING - Task queue depth is 3
+2026-06-28 16:22:30,727 - WARNING - Task queue depth is 4
+2026-06-28 16:22:38,630 - WARNING - Task queue depth is 1
+2026-06-28 16:22:38,633 - WARNING - Task queue depth is 2
+2026-06-28 16:22:38,642 - WARNING - Task queue depth is 3
+2026-06-28 16:22:38,642 - WARNING - Task queue depth is 4
+2026-06-28 16:22:39,663 - WARNING - Task queue depth is 1
+2026-06-28 16:22:40,637 - WARNING - Task queue depth is 1
+2026-06-28 16:22:40,641 - WARNING - Task queue depth is 2
+2026-06-28 16:22:40,642 - WARNING - Task queue depth is 3
+2026-06-28 16:22:41,174 - WARNING - Task queue depth is 1
+2026-06-28 16:22:41,176 - WARNING - Task queue depth is 2
+2026-06-28 16:22:41,178 - WARNING - Task queue depth is 3
+2026-06-28 16:22:41,181 - WARNING - Task queue depth is 4
+2026-06-28 16:22:42,266 - WARNING - Task queue depth is 1
+2026-06-28 16:22:42,274 - WARNING - Task queue depth is 1
+2026-06-28 16:22:43,143 - WARNING - Task queue depth is 1
+2026-06-28 16:22:43,149 - WARNING - Task queue depth is 1
+2026-06-28 16:22:43,156 - WARNING - Task queue depth is 2
+2026-06-28 16:22:43,899 - WARNING - Task queue depth is 1
+2026-06-28 16:22:43,900 - WARNING - Task queue depth is 2
+2026-06-28 16:22:43,903 - WARNING - Task queue depth is 3
+2026-06-28 16:22:43,907 - WARNING - Task queue depth is 1
+2026-06-28 16:22:44,479 - WARNING - Task queue depth is 1
+2026-06-28 16:22:44,483 - WARNING - Task queue depth is 2
+2026-06-28 16:22:44,486 - WARNING - Task queue depth is 3
+2026-06-28 16:22:44,488 - WARNING - Task queue depth is 4
+2026-06-28 16:22:44,983 - WARNING - Task queue depth is 1
+2026-06-28 16:22:44,989 - WARNING - Task queue depth is 2
+2026-06-28 16:22:44,990 - WARNING - Task queue depth is 3
+2026-06-28 16:22:44,991 - WARNING - Task queue depth is 4
+2026-06-28 16:22:45,709 - WARNING - Task queue depth is 1
+2026-06-28 16:22:45,712 - WARNING - Task queue depth is 2
+2026-06-28 16:22:45,713 - WARNING - Task queue depth is 3
+2026-06-28 16:22:45,714 - WARNING - Task queue depth is 4
+2026-06-28 16:22:46,432 - WARNING - Task queue depth is 1
+2026-06-28 16:22:46,440 - WARNING - Task queue depth is 1
+2026-06-28 16:22:47,210 - WARNING - Task queue depth is 1
+2026-06-28 16:22:47,211 - WARNING - Task queue depth is 2
+2026-06-28 16:22:47,215 - WARNING - Task queue depth is 3
+2026-06-28 16:22:47,217 - WARNING - Task queue depth is 4
+2026-06-28 16:22:47,376 - WARNING - Task queue depth is 1
+2026-06-28 16:22:47,382 - WARNING - Task queue depth is 1
+2026-06-28 16:22:58,978 - WARNING - Task queue depth is 1
+2026-06-28 16:22:58,983 - WARNING - Task queue depth is 1
+2026-06-28 16:22:59,916 - WARNING - Task queue depth is 1
+2026-06-28 16:22:59,918 - WARNING - Task queue depth is 2
+2026-06-28 16:25:15,860 - WARNING - Task queue depth is 1
+2026-06-28 16:25:15,865 - WARNING - Task queue depth is 2
+2026-06-28 16:25:15,866 - WARNING - Task queue depth is 3
+2026-06-28 16:25:15,873 - WARNING - Task queue depth is 1
+2026-06-28 16:25:20,444 - WARNING - Task queue depth is 1
+2026-06-28 16:25:20,445 - WARNING - Task queue depth is 2
+2026-06-28 16:25:20,448 - WARNING - Task queue depth is 3
+2026-06-28 16:25:20,449 - WARNING - Task queue depth is 4
+2026-06-28 16:25:23,317 - WARNING - Task queue depth is 1
+2026-06-28 16:25:23,323 - WARNING - Task queue depth is 1
+2026-06-28 16:25:23,327 - WARNING - Task queue depth is 2
+2026-06-28 16:25:23,328 - WARNING - Task queue depth is 3
+2026-06-28 16:25:24,702 - WARNING - Task queue depth is 1
+2026-06-28 16:25:24,707 - WARNING - Task queue depth is 2
+2026-06-28 16:25:24,708 - WARNING - Task queue depth is 3
+2026-06-28 16:25:24,712 - WARNING - Task queue depth is 3
+2026-06-28 16:25:27,382 - WARNING - Task queue depth is 1
+2026-06-28 16:25:27,384 - WARNING - Task queue depth is 2
+2026-06-28 16:25:27,388 - WARNING - Task queue depth is 3
+2026-06-28 16:25:27,393 - WARNING - Task queue depth is 2
+2026-06-28 16:25:27,980 - WARNING - Task queue depth is 1
+2026-06-28 16:25:27,990 - WARNING - Task queue depth is 1
+2026-06-28 16:25:27,993 - WARNING - Task queue depth is 2
+2026-06-28 16:25:29,338 - WARNING - Task queue depth is 1
+2026-06-28 16:25:29,339 - WARNING - Task queue depth is 2
+2026-06-28 16:25:29,343 - WARNING - Task queue depth is 3
+2026-06-28 16:25:30,943 - WARNING - Task queue depth is 1
+2026-06-28 16:25:30,945 - WARNING - Task queue depth is 1
+2026-06-28 16:25:30,950 - WARNING - Task queue depth is 2
+2026-06-28 16:25:30,950 - WARNING - Task queue depth is 3
+2026-06-28 16:25:32,500 - WARNING - Task queue depth is 1
+2026-06-28 16:25:32,503 - WARNING - Task queue depth is 2
+2026-06-28 16:25:32,505 - WARNING - Task queue depth is 3
+2026-06-28 16:25:32,505 - WARNING - Task queue depth is 4
+2026-06-28 16:25:33,343 - WARNING - Task queue depth is 1
+2026-06-28 16:25:33,995 - WARNING - Task queue depth is 1
+2026-06-28 16:25:34,000 - WARNING - Task queue depth is 2
+2026-06-28 16:25:34,002 - WARNING - Task queue depth is 3
+2026-06-28 16:25:34,003 - WARNING - Task queue depth is 4
+2026-06-28 16:25:35,402 - WARNING - Task queue depth is 1
+2026-06-28 16:25:35,410 - WARNING - Task queue depth is 2
+2026-06-28 16:25:35,410 - WARNING - Task queue depth is 3
+2026-06-28 16:25:35,411 - WARNING - Task queue depth is 4
+2026-06-28 16:25:35,511 - WARNING - Task queue depth is 1
+2026-06-28 16:25:39,832 - WARNING - Task queue depth is 1
+2026-06-28 16:31:55,365 - WARNING - Task queue depth is 1
+2026-06-28 16:31:55,370 - WARNING - Task queue depth is 2
+2026-06-28 16:31:55,371 - WARNING - Task queue depth is 3
+2026-06-28 16:31:57,313 - WARNING - Task queue depth is 1
+2026-06-28 16:31:57,317 - WARNING - Task queue depth is 2
+2026-06-28 16:31:57,322 - WARNING - Task queue depth is 3
+2026-06-28 16:31:57,323 - WARNING - Task queue depth is 4
+2026-06-28 16:32:11,494 - WARNING - Task queue depth is 1
+2026-06-28 16:32:11,499 - WARNING - Task queue depth is 1
+2026-06-28 16:32:11,507 - WARNING - Task queue depth is 2
+2026-06-28 16:32:29,559 - WARNING - Task queue depth is 1
+2026-06-28 16:32:29,560 - WARNING - Task queue depth is 2
+2026-06-28 16:32:29,563 - WARNING - Task queue depth is 3
+2026-06-28 16:32:29,563 - WARNING - Task queue depth is 4
+2026-06-28 16:32:32,642 - WARNING - Task queue depth is 1
+2026-06-28 16:32:32,646 - WARNING - Task queue depth is 1
+2026-06-28 16:32:32,650 - WARNING - Task queue depth is 2
+2026-06-28 16:32:32,650 - WARNING - Task queue depth is 3
+2026-06-28 16:32:33,793 - WARNING - Task queue depth is 1
+2026-06-28 16:32:33,794 - WARNING - Task queue depth is 2
+2026-06-28 16:32:33,798 - WARNING - Task queue depth is 3
+2026-06-28 16:32:33,798 - WARNING - Task queue depth is 4
+2026-06-28 16:32:34,392 - WARNING - Task queue depth is 1
+2026-06-28 16:32:34,394 - WARNING - Task queue depth is 2
+2026-06-28 16:32:34,396 - WARNING - Task queue depth is 3
+2026-06-28 16:32:34,399 - WARNING - Task queue depth is 1
+2026-06-28 16:32:34,928 - WARNING - Task queue depth is 1
+2026-06-28 16:32:34,931 - WARNING - Task queue depth is 2
+2026-06-28 16:32:34,933 - WARNING - Task queue depth is 3
+2026-06-28 16:32:34,933 - WARNING - Task queue depth is 4
+2026-06-28 16:32:35,511 - WARNING - Task queue depth is 1
+2026-06-28 16:32:35,514 - WARNING - Task queue depth is 2
+2026-06-28 16:32:35,514 - WARNING - Task queue depth is 3
+2026-06-28 16:32:36,226 - WARNING - Task queue depth is 1
+2026-06-28 16:32:36,229 - WARNING - Task queue depth is 2
+2026-06-28 16:32:36,230 - WARNING - Task queue depth is 3
+2026-06-28 16:32:36,230 - WARNING - Task queue depth is 4
+2026-06-28 16:32:38,061 - WARNING - Task queue depth is 1
+2026-06-28 16:32:38,065 - WARNING - Task queue depth is 1
+2026-06-28 16:32:39,133 - WARNING - Task queue depth is 1
+2026-06-28 16:32:40,287 - WARNING - Task queue depth is 1
+2026-06-28 16:32:40,295 - WARNING - Task queue depth is 1
+2026-06-28 16:32:40,297 - WARNING - Task queue depth is 2
+2026-06-28 16:32:41,012 - WARNING - Task queue depth is 1
+2026-06-28 16:32:41,580 - WARNING - Task queue depth is 1
+2026-06-28 16:32:41,586 - WARNING - Task queue depth is 1
+2026-06-28 16:32:41,592 - WARNING - Task queue depth is 2
+2026-06-28 16:32:41,593 - WARNING - Task queue depth is 3
+2026-06-28 16:32:42,208 - WARNING - Task queue depth is 1
+2026-06-28 16:32:42,209 - WARNING - Task queue depth is 2
+2026-06-28 16:32:43,861 - WARNING - Task queue depth is 1
+2026-06-28 16:32:43,863 - WARNING - Task queue depth is 2
+2026-06-28 16:32:43,864 - WARNING - Task queue depth is 3
+2026-06-28 16:32:43,865 - WARNING - Task queue depth is 4
+2026-06-28 16:32:45,183 - WARNING - Task queue depth is 1
+2026-06-28 16:32:45,184 - WARNING - Task queue depth is 2
+2026-06-28 16:32:45,189 - WARNING - Task queue depth is 3
+2026-06-28 16:32:45,190 - WARNING - Task queue depth is 4
+2026-06-28 16:32:46,410 - WARNING - Task queue depth is 1
+2026-06-28 16:32:46,414 - WARNING - Task queue depth is 2
+2026-06-28 16:32:46,414 - WARNING - Task queue depth is 3
+2026-06-28 16:32:47,566 - WARNING - Task queue depth is 1
+2026-06-28 16:32:47,572 - WARNING - Task queue depth is 1
+2026-06-28 16:32:47,576 - WARNING - Task queue depth is 2
+2026-06-28 16:32:47,576 - WARNING - Task queue depth is 3
+2026-06-28 16:32:50,246 - WARNING - Task queue depth is 1
+2026-06-28 16:32:50,247 - WARNING - Task queue depth is 2
+2026-06-28 16:32:50,252 - WARNING - Task queue depth is 3
+2026-06-28 16:32:50,255 - WARNING - Task queue depth is 4
+2026-06-28 16:32:50,860 - WARNING - Task queue depth is 1
+2026-06-28 16:32:50,862 - WARNING - Task queue depth is 2
+2026-06-28 16:32:50,863 - WARNING - Task queue depth is 3
+2026-06-28 16:32:50,864 - WARNING - Task queue depth is 4
+2026-06-28 16:32:51,382 - WARNING - Task queue depth is 1
+2026-06-28 16:32:51,383 - WARNING - Task queue depth is 2
+2026-06-28 16:32:51,390 - WARNING - Task queue depth is 3
+2026-06-28 16:32:51,391 - WARNING - Task queue depth is 4
+2026-06-28 16:32:51,948 - WARNING - Task queue depth is 1
+2026-06-28 16:32:51,950 - WARNING - Task queue depth is 2
+2026-06-28 16:32:51,952 - WARNING - Task queue depth is 3
+2026-06-28 16:32:51,956 - WARNING - Task queue depth is 4
+2026-06-28 16:32:52,711 - WARNING - Task queue depth is 1
+2026-06-28 16:32:52,713 - WARNING - Task queue depth is 2
+2026-06-28 16:32:52,716 - WARNING - Task queue depth is 3
+2026-06-28 16:32:52,717 - WARNING - Task queue depth is 4
+2026-06-28 16:32:53,363 - WARNING - Task queue depth is 1
+2026-06-28 16:32:53,366 - WARNING - Task queue depth is 2
+2026-06-28 16:32:53,373 - WARNING - Task queue depth is 3
+2026-06-28 16:32:53,374 - WARNING - Task queue depth is 4
+2026-06-28 16:32:54,144 - WARNING - Task queue depth is 1
+2026-06-28 16:32:54,147 - WARNING - Task queue depth is 2
+2026-06-28 16:32:54,732 - WARNING - Task queue depth is 1
+2026-06-28 16:32:54,733 - WARNING - Task queue depth is 2
+2026-06-28 16:32:54,734 - WARNING - Task queue depth is 3
+2026-06-28 16:32:54,739 - WARNING - Task queue depth is 4
+2026-06-28 16:32:55,511 - WARNING - Task queue depth is 1
+2026-06-28 16:32:55,513 - WARNING - Task queue depth is 2
+2026-06-28 16:32:55,517 - WARNING - Task queue depth is 3
+2026-06-28 16:32:55,521 - WARNING - Task queue depth is 4
+2026-06-28 16:32:59,676 - WARNING - Task queue depth is 1
+2026-06-28 16:32:59,682 - WARNING - Task queue depth is 2
+2026-06-28 16:32:59,682 - WARNING - Task queue depth is 3
+2026-06-28 16:34:32,388 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 16:34:32,389 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 16:34:32,389 - INFO - Scheduler started
+2026-06-28 16:34:32,391 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 16:34:32,407 - INFO - 启动生产服务器（waitress）...
+2026-06-28 16:34:32,424 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 16:58:41,277 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 16:58:41,278 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 16:58:41,278 - INFO - Scheduler started
+2026-06-28 16:58:41,280 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 16:58:41,292 - INFO - 启动生产服务器（waitress）...
+2026-06-28 16:58:41,298 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 16:59:02,358 - INFO - The CSRF token is missing.
+2026-06-28 17:00:31,105 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 17:00:31,106 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 17:00:31,106 - INFO - Scheduler started
+2026-06-28 17:00:31,107 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 17:00:31,120 - INFO - 启动生产服务器（waitress）...
+2026-06-28 17:00:31,126 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 17:00:47,531 - WARNING - Task queue depth is 1
+2026-06-28 17:00:47,533 - WARNING - Task queue depth is 2
+2026-06-28 17:00:47,561 - WARNING - Task queue depth is 3
+2026-06-28 17:00:47,562 - WARNING - Task queue depth is 4
+2026-06-28 17:00:50,600 - WARNING - Task queue depth is 1
+2026-06-28 17:00:50,605 - WARNING - Task queue depth is 2
+2026-06-28 17:00:50,606 - WARNING - Task queue depth is 2
+2026-06-28 17:00:50,608 - WARNING - Task queue depth is 3
+2026-06-28 17:00:50,725 - WARNING - Task queue depth is 1
+2026-06-28 17:00:50,740 - WARNING - Task queue depth is 2
+2026-06-28 17:06:02,777 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 17:06:02,777 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 17:06:02,777 - INFO - Scheduler started
+2026-06-28 17:06:02,778 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 17:06:02,793 - INFO - 启动生产服务器（waitress）...
+2026-06-28 17:06:02,797 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 17:06:10,816 - WARNING - Task queue depth is 1
+2026-06-28 17:06:10,819 - WARNING - Task queue depth is 2
+2026-06-28 17:06:10,822 - WARNING - Task queue depth is 1
+2026-06-28 17:06:10,863 - WARNING - Task queue depth is 2
+2026-06-28 17:06:13,697 - WARNING - Task queue depth is 1
+2026-06-28 17:06:13,700 - WARNING - Task queue depth is 2
+2026-06-28 17:06:13,706 - WARNING - Task queue depth is 3
+2026-06-28 17:06:14,813 - WARNING - Task queue depth is 1
+2026-06-28 17:06:14,816 - WARNING - Task queue depth is 2
+2026-06-28 17:06:14,820 - WARNING - Task queue depth is 3
+2026-06-28 17:06:14,823 - WARNING - Task queue depth is 4
+2026-06-28 17:19:12,597 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 17:19:12,597 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 17:19:12,597 - INFO - Scheduler started
+2026-06-28 17:19:12,600 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 17:19:12,616 - INFO - 启动生产服务器（waitress）...
+2026-06-28 17:19:12,636 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 17:19:35,862 - WARNING - Task queue depth is 1
+2026-06-28 17:19:35,867 - WARNING - Task queue depth is 1
+2026-06-28 17:19:35,899 - WARNING - Task queue depth is 2
+2026-06-28 17:19:35,899 - WARNING - Task queue depth is 3
+2026-06-28 17:19:39,683 - WARNING - Task queue depth is 1
+2026-06-28 17:19:39,690 - WARNING - Task queue depth is 1
+2026-06-28 17:19:39,702 - WARNING - Task queue depth is 2
+2026-06-28 17:19:39,716 - WARNING - Task queue depth is 3
+2026-06-28 17:19:41,854 - WARNING - Task queue depth is 1
+2026-06-28 17:19:41,858 - WARNING - Task queue depth is 2
+2026-06-28 17:19:43,446 - WARNING - Task queue depth is 1
+2026-06-28 17:19:43,450 - WARNING - Task queue depth is 1
+2026-06-28 17:19:43,464 - WARNING - Task queue depth is 2
+2026-06-28 17:19:43,464 - WARNING - Task queue depth is 3
+2026-06-28 17:19:44,217 - WARNING - Task queue depth is 1
+2026-06-28 17:19:44,222 - WARNING - Task queue depth is 2
+2026-06-28 17:19:44,226 - WARNING - Task queue depth is 2
+2026-06-28 17:19:46,145 - WARNING - Task queue depth is 1
+2026-06-28 17:19:47,115 - WARNING - Task queue depth is 1
+2026-06-28 17:22:19,516 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 17:22:19,516 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 17:22:19,516 - INFO - Scheduler started
+2026-06-28 17:22:19,520 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 17:22:19,533 - INFO - 启动生产服务器（waitress）...
+2026-06-28 17:22:19,541 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 17:22:26,425 - WARNING - Task queue depth is 1
+2026-06-28 17:22:26,425 - WARNING - Task queue depth is 2
+2026-06-28 17:22:26,430 - WARNING - Task queue depth is 2
+2026-06-28 17:22:26,538 - WARNING - Task queue depth is 3
+2026-06-28 17:22:34,750 - WARNING - Task queue depth is 1
+2026-06-28 17:22:34,753 - WARNING - Task queue depth is 1
+2026-06-28 17:22:34,763 - WARNING - Task queue depth is 2
+2026-06-28 17:22:34,764 - WARNING - Task queue depth is 3
+2026-06-28 17:22:35,593 - WARNING - Task queue depth is 1
+2026-06-28 17:22:35,598 - WARNING - Task queue depth is 2
+2026-06-28 17:22:35,604 - WARNING - Task queue depth is 2
+2026-06-28 17:22:36,214 - WARNING - Task queue depth is 1
+2026-06-28 17:22:36,220 - WARNING - Task queue depth is 1
+2026-06-28 17:22:36,224 - WARNING - Task queue depth is 2
+2026-06-28 17:22:36,225 - WARNING - Task queue depth is 3
+2026-06-28 17:22:36,799 - WARNING - Task queue depth is 1
+2026-06-28 17:22:36,809 - WARNING - Task queue depth is 2
+2026-06-28 17:22:38,428 - WARNING - Task queue depth is 1
+2026-06-28 17:22:38,431 - WARNING - Task queue depth is 2
+2026-06-28 17:22:38,441 - WARNING - Task queue depth is 3
+2026-06-28 17:22:38,442 - WARNING - Task queue depth is 4
+2026-06-28 17:22:49,665 - WARNING - Task queue depth is 1
+2026-06-28 17:22:49,671 - WARNING - Task queue depth is 1
+2026-06-28 17:22:49,694 - WARNING - Task queue depth is 2
+2026-06-28 17:22:49,695 - WARNING - Task queue depth is 3
+2026-06-28 17:22:50,550 - WARNING - Task queue depth is 1
+2026-06-28 17:22:50,556 - WARNING - Task queue depth is 2
+2026-06-28 17:22:50,558 - WARNING - Task queue depth is 3
+2026-06-28 17:22:51,826 - WARNING - Task queue depth is 1
+2026-06-28 17:22:51,827 - WARNING - Task queue depth is 2
+2026-06-28 17:22:51,833 - WARNING - Task queue depth is 1
+2026-06-28 17:22:51,845 - WARNING - Task queue depth is 2
+2026-06-28 17:22:53,321 - WARNING - Task queue depth is 1
+2026-06-28 17:22:54,028 - WARNING - Task queue depth is 1
+2026-06-28 17:22:54,030 - WARNING - Task queue depth is 2
+2026-06-28 17:22:54,032 - WARNING - Task queue depth is 3
+2026-06-28 17:22:54,034 - WARNING - Task queue depth is 4
+2026-06-28 17:25:42,647 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 17:25:42,648 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 17:25:42,648 - INFO - Scheduler started
+2026-06-28 17:25:42,649 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 17:25:42,665 - INFO - 启动生产服务器（waitress）...
+2026-06-28 17:25:42,671 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 17:25:50,852 - WARNING - Task queue depth is 1
+2026-06-28 17:25:50,856 - WARNING - Task queue depth is 2
+2026-06-28 17:25:50,862 - WARNING - Task queue depth is 2
+2026-06-28 17:25:50,889 - WARNING - Task queue depth is 3
+2026-06-28 17:26:03,777 - WARNING - Task queue depth is 1
+2026-06-28 17:26:03,781 - WARNING - Task queue depth is 2
+2026-06-28 17:26:03,782 - WARNING - Task queue depth is 3
+2026-06-28 17:26:05,443 - WARNING - Task queue depth is 1
+2026-06-28 17:26:05,448 - WARNING - Task queue depth is 2
+2026-06-28 17:26:05,448 - WARNING - Task queue depth is 3
+2026-06-28 17:26:06,183 - WARNING - Task queue depth is 1
+2026-06-28 17:26:06,189 - WARNING - Task queue depth is 2
+2026-06-28 17:26:06,190 - WARNING - Task queue depth is 3
+2026-06-28 17:26:06,193 - WARNING - Task queue depth is 2
+2026-06-28 17:26:07,213 - WARNING - Task queue depth is 1
+2026-06-28 17:26:07,214 - WARNING - Task queue depth is 2
+2026-06-28 17:26:07,217 - WARNING - Task queue depth is 3
+2026-06-28 17:26:07,219 - WARNING - Task queue depth is 4
+2026-06-28 17:26:09,394 - WARNING - Task queue depth is 1
+2026-06-28 17:26:09,396 - WARNING - Task queue depth is 2
+2026-06-28 17:26:09,404 - WARNING - Task queue depth is 1
+2026-06-28 17:26:09,428 - WARNING - Task queue depth is 2
+2026-06-28 17:26:10,459 - WARNING - Task queue depth is 1
+2026-06-28 17:26:10,464 - WARNING - Task queue depth is 1
+2026-06-28 17:26:10,469 - WARNING - Task queue depth is 2
+2026-06-28 17:26:10,476 - WARNING - Task queue depth is 3
+2026-06-28 17:26:25,842 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 17:26:25,842 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 17:26:25,842 - INFO - Scheduler started
+2026-06-28 17:26:25,843 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 17:26:25,860 - INFO - 启动生产服务器（waitress）...
+2026-06-28 17:26:25,873 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 17:26:31,717 - WARNING - Task queue depth is 1
+2026-06-28 17:26:31,721 - WARNING - Task queue depth is 2
+2026-06-28 17:26:31,722 - WARNING - Task queue depth is 3
+2026-06-28 17:26:42,417 - WARNING - Task queue depth is 1
+2026-06-28 17:26:42,423 - WARNING - Task queue depth is 1
+2026-06-28 17:26:42,445 - WARNING - Task queue depth is 2
+2026-06-28 17:26:46,220 - WARNING - Task queue depth is 1
+2026-06-28 17:26:46,225 - WARNING - Task queue depth is 1
+2026-06-28 17:26:46,229 - WARNING - Task queue depth is 2
+2026-06-28 17:26:46,230 - WARNING - Task queue depth is 3
+2026-06-28 17:26:48,211 - WARNING - Task queue depth is 1
+2026-06-28 17:26:48,214 - WARNING - Task queue depth is 2
+2026-06-28 17:26:48,227 - WARNING - Task queue depth is 3
+2026-06-28 17:26:48,227 - WARNING - Task queue depth is 4
+2026-06-28 17:55:14,481 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 17:55:14,482 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 17:55:14,482 - INFO - Scheduler started
+2026-06-28 17:55:14,483 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 17:55:14,497 - INFO - 启动生产服务器（waitress）...
+2026-06-28 17:55:14,516 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 17:55:22,053 - WARNING - Task queue depth is 1
+2026-06-28 17:55:22,055 - WARNING - Task queue depth is 2
+2026-06-28 17:55:22,057 - WARNING - Task queue depth is 3
+2026-06-28 17:55:22,058 - WARNING - Task queue depth is 4
+2026-06-28 17:55:36,516 - WARNING - Task queue depth is 1
+2026-06-28 17:55:36,520 - WARNING - Task queue depth is 2
+2026-06-28 17:55:36,544 - WARNING - Task queue depth is 3
+2026-06-28 17:55:36,545 - WARNING - Task queue depth is 4
+2026-06-28 17:55:51,229 - WARNING - Task queue depth is 1
+2026-06-28 17:55:51,230 - WARNING - Task queue depth is 2
+2026-06-28 17:55:51,260 - WARNING - Task queue depth is 3
+2026-06-28 17:55:51,260 - WARNING - Task queue depth is 4
+2026-06-28 17:55:56,331 - WARNING - Task queue depth is 1
+2026-06-28 17:55:56,339 - WARNING - Task queue depth is 2
+2026-06-28 17:55:56,342 - WARNING - Task queue depth is 1
+2026-06-28 17:55:59,295 - WARNING - Task queue depth is 1
+2026-06-28 17:55:59,298 - WARNING - Task queue depth is 2
+2026-06-28 17:56:00,847 - WARNING - Task queue depth is 1
+2026-06-28 17:56:00,850 - WARNING - Task queue depth is 2
+2026-06-28 17:56:00,859 - WARNING - Task queue depth is 3
+2026-06-28 17:56:00,859 - WARNING - Task queue depth is 4
+2026-06-28 17:56:02,928 - WARNING - Task queue depth is 1
+2026-06-28 17:56:02,931 - WARNING - Task queue depth is 2
+2026-06-28 17:56:02,938 - WARNING - Task queue depth is 3
+2026-06-28 17:56:05,794 - WARNING - Task queue depth is 1
+2026-06-28 17:56:05,798 - WARNING - Task queue depth is 1
+2026-06-28 17:56:05,807 - WARNING - Task queue depth is 2
+2026-06-28 17:56:05,808 - WARNING - Task queue depth is 3
+2026-06-28 17:56:07,389 - WARNING - Task queue depth is 1
+2026-06-28 17:56:07,390 - WARNING - Task queue depth is 2
+2026-06-28 17:56:07,407 - WARNING - Task queue depth is 3
+2026-06-28 17:56:07,407 - WARNING - Task queue depth is 4
+2026-06-28 17:56:12,563 - WARNING - Task queue depth is 1
+2026-06-28 17:56:12,565 - WARNING - Task queue depth is 2
+2026-06-28 17:56:12,591 - WARNING - Task queue depth is 3
+2026-06-28 17:56:12,592 - WARNING - Task queue depth is 4
+2026-06-28 17:56:13,981 - WARNING - Task queue depth is 1
+2026-06-28 17:56:13,986 - WARNING - Task queue depth is 2
+2026-06-28 17:56:13,990 - WARNING - Task queue depth is 3
+2026-06-28 17:56:17,929 - WARNING - Task queue depth is 1
+2026-06-28 17:56:17,932 - WARNING - Task queue depth is 2
+2026-06-28 17:56:17,938 - WARNING - Task queue depth is 2
+2026-06-28 17:56:18,981 - WARNING - Task queue depth is 1
+2026-06-28 17:56:18,984 - WARNING - Task queue depth is 1
+2026-06-28 17:56:27,522 - WARNING - Task queue depth is 1
+2026-06-28 17:56:27,528 - WARNING - Task queue depth is 2
+2026-06-28 17:56:29,227 - WARNING - Task queue depth is 1
+2026-06-28 17:56:29,231 - WARNING - Task queue depth is 2
+2026-06-28 17:56:29,241 - WARNING - Task queue depth is 3
+2026-06-28 17:56:29,241 - WARNING - Task queue depth is 4
+2026-06-28 17:56:31,465 - WARNING - Task queue depth is 1
+2026-06-28 17:56:31,473 - WARNING - Task queue depth is 2
+2026-06-28 17:56:31,476 - WARNING - Task queue depth is 1
+2026-06-28 17:56:37,378 - WARNING - Task queue depth is 1
+2026-06-28 17:56:37,380 - WARNING - Task queue depth is 2
+2026-06-28 17:56:37,382 - WARNING - Task queue depth is 3
+2026-06-28 17:56:37,410 - WARNING - Task queue depth is 4
+2026-06-28 17:56:39,766 - WARNING - Task queue depth is 1
+2026-06-28 17:56:39,774 - WARNING - Task queue depth is 2
+2026-06-28 17:56:41,278 - WARNING - Task queue depth is 1
+2026-06-28 17:56:41,279 - WARNING - Task queue depth is 2
+2026-06-28 17:56:41,294 - WARNING - Task queue depth is 3
+2026-06-28 17:56:41,294 - WARNING - Task queue depth is 4
+2026-06-28 17:56:42,953 - WARNING - Task queue depth is 1
+2026-06-28 17:56:42,956 - WARNING - Task queue depth is 1
+2026-06-28 17:56:42,962 - WARNING - Task queue depth is 1
+2026-06-28 17:56:42,982 - WARNING - Task queue depth is 2
+2026-06-28 17:56:46,056 - WARNING - Task queue depth is 1
+2026-06-28 17:56:46,061 - WARNING - Task queue depth is 2
+2026-06-28 17:56:46,082 - WARNING - Task queue depth is 3
+2026-06-28 17:56:46,083 - WARNING - Task queue depth is 4
+2026-06-28 17:56:48,728 - WARNING - Task queue depth is 1
+2026-06-28 17:56:48,730 - WARNING - Task queue depth is 2
+2026-06-28 17:56:48,733 - WARNING - Task queue depth is 3
+2026-06-28 17:56:48,737 - WARNING - Task queue depth is 4
+2026-06-28 17:56:54,394 - WARNING - Task queue depth is 1
+2026-06-28 17:56:54,398 - WARNING - Task queue depth is 2
+2026-06-28 17:56:54,402 - WARNING - Task queue depth is 3
+2026-06-28 17:56:54,405 - WARNING - Task queue depth is 4
+2026-06-28 17:56:56,409 - WARNING - Task queue depth is 1
+2026-06-28 18:02:07,245 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 18:02:07,246 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 18:02:07,246 - INFO - Scheduler started
+2026-06-28 18:02:07,247 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 18:02:07,262 - INFO - 启动生产服务器（waitress）...
+2026-06-28 18:02:07,266 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 18:02:37,685 - WARNING - Task queue depth is 1
+2026-06-28 18:02:37,686 - WARNING - Task queue depth is 2
+2026-06-28 18:02:37,692 - WARNING - Task queue depth is 2
+2026-06-28 18:02:37,717 - WARNING - Task queue depth is 3
+2026-06-28 18:02:39,189 - WARNING - Task queue depth is 1
+2026-06-28 18:02:39,190 - WARNING - Task queue depth is 1
+2026-06-28 18:02:39,194 - WARNING - Task queue depth is 1
+2026-06-28 18:02:39,209 - WARNING - Task queue depth is 2
+2026-06-28 18:02:40,412 - WARNING - Task queue depth is 1
+2026-06-28 18:02:40,415 - WARNING - Task queue depth is 1
+2026-06-28 18:02:41,684 - WARNING - Task queue depth is 1
+2026-06-28 18:02:43,119 - WARNING - Task queue depth is 1
+2026-06-28 18:02:43,132 - WARNING - Task queue depth is 1
+2026-06-28 18:02:45,078 - WARNING - Task queue depth is 1
+2026-06-28 18:02:45,081 - WARNING - Task queue depth is 1
+2026-06-28 18:02:45,091 - WARNING - Task queue depth is 2
+2026-06-28 18:02:45,092 - WARNING - Task queue depth is 3
+2026-06-28 18:02:46,229 - WARNING - Task queue depth is 1
+2026-06-28 18:02:47,143 - WARNING - Task queue depth is 1
+2026-06-28 18:02:47,146 - WARNING - Task queue depth is 2
+2026-06-28 18:02:47,160 - WARNING - Task queue depth is 3
+2026-06-28 18:02:47,161 - WARNING - Task queue depth is 4
+2026-06-28 18:02:47,809 - WARNING - Task queue depth is 1
+2026-06-28 18:02:47,814 - WARNING - Task queue depth is 1
+2026-06-28 18:02:47,824 - WARNING - Task queue depth is 2
+2026-06-28 18:02:47,825 - WARNING - Task queue depth is 3
+2026-06-28 18:02:49,230 - WARNING - Task queue depth is 1
+2026-06-28 18:02:51,384 - WARNING - Task queue depth is 1
+2026-06-28 18:02:51,391 - WARNING - Task queue depth is 1
+2026-06-28 18:02:51,411 - WARNING - Task queue depth is 2
+2026-06-28 18:02:51,412 - WARNING - Task queue depth is 3
+2026-06-28 18:02:51,966 - WARNING - Task queue depth is 1
+2026-06-28 18:02:51,967 - WARNING - Task queue depth is 2
+2026-06-28 18:02:51,978 - WARNING - Task queue depth is 1
+2026-06-28 18:02:51,984 - WARNING - Task queue depth is 2
+2026-06-28 18:02:52,551 - WARNING - Task queue depth is 1
+2026-06-28 18:02:52,558 - WARNING - Task queue depth is 2
+2026-06-28 18:02:52,559 - WARNING - Task queue depth is 3
+2026-06-28 18:02:53,349 - WARNING - Task queue depth is 1
+2026-06-28 18:02:53,359 - WARNING - Task queue depth is 1
+2026-06-28 18:02:53,361 - WARNING - Task queue depth is 2
+2026-06-28 18:02:54,963 - WARNING - Task queue depth is 1
+2026-06-28 18:02:54,964 - WARNING - Task queue depth is 2
+2026-06-28 18:02:54,968 - WARNING - Task queue depth is 2
+2026-06-28 18:02:54,993 - WARNING - Task queue depth is 3
+2026-06-28 18:02:55,562 - WARNING - Task queue depth is 1
+2026-06-28 18:02:55,565 - WARNING - Task queue depth is 2
+2026-06-28 18:02:55,571 - WARNING - Task queue depth is 1
+2026-06-28 18:02:56,066 - WARNING - Task queue depth is 1
+2026-06-28 18:02:56,067 - WARNING - Task queue depth is 2
+2026-06-28 18:02:56,084 - WARNING - Task queue depth is 3
+2026-06-28 18:02:56,091 - WARNING - Task queue depth is 4
+2026-06-28 18:02:56,583 - WARNING - Task queue depth is 1
+2026-06-28 18:02:57,144 - WARNING - Task queue depth is 1
+2026-06-28 18:02:57,150 - WARNING - Task queue depth is 1
+2026-06-28 18:03:01,760 - WARNING - Task queue depth is 1
+2026-06-28 18:03:01,764 - WARNING - Task queue depth is 2
+2026-06-28 18:03:01,764 - WARNING - Task queue depth is 3
+2026-06-28 18:03:01,765 - WARNING - Task queue depth is 4
+2026-06-28 18:03:15,027 - WARNING - Task queue depth is 1
+2026-06-28 18:03:15,029 - WARNING - Task queue depth is 2
+2026-06-28 18:03:15,031 - WARNING - Task queue depth is 3
+2026-06-28 18:03:15,031 - WARNING - Task queue depth is 4
+2026-06-28 18:06:46,898 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 18:06:46,899 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 18:06:46,899 - INFO - Scheduler started
+2026-06-28 18:06:46,900 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 18:06:46,917 - INFO - 启动生产服务器（waitress）...
+2026-06-28 18:06:46,926 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 18:07:30,795 - WARNING - Task queue depth is 1
+2026-06-28 18:07:30,795 - WARNING - Task queue depth is 2
+2026-06-28 18:07:30,825 - WARNING - Task queue depth is 3
+2026-06-28 18:07:30,826 - WARNING - Task queue depth is 4
+2026-06-28 18:07:33,900 - WARNING - Task queue depth is 1
+2026-06-28 18:07:33,903 - WARNING - Task queue depth is 2
+2026-06-28 18:07:33,912 - WARNING - Task queue depth is 3
+2026-06-28 18:07:33,913 - WARNING - Task queue depth is 4
+2026-06-28 18:07:36,944 - WARNING - Task queue depth is 1
+2026-06-28 18:07:36,945 - WARNING - Task queue depth is 2
+2026-06-28 18:07:36,948 - WARNING - Task queue depth is 3
+2026-06-28 18:07:36,953 - WARNING - Task queue depth is 4
+2026-06-28 18:07:39,433 - WARNING - Task queue depth is 1
+2026-06-28 18:07:39,441 - WARNING - Task queue depth is 2
+2026-06-28 18:07:39,441 - WARNING - Task queue depth is 3
+2026-06-28 18:07:41,571 - WARNING - Task queue depth is 1
+2026-06-28 18:07:41,576 - WARNING - Task queue depth is 1
+2026-06-28 18:07:41,602 - WARNING - Task queue depth is 2
+2026-06-28 18:07:41,605 - WARNING - Task queue depth is 3
+2026-06-28 18:07:42,598 - WARNING - Task queue depth is 1
+2026-06-28 18:07:42,600 - WARNING - Task queue depth is 1
+2026-06-28 18:07:42,616 - WARNING - Task queue depth is 2
+2026-06-28 18:07:42,627 - WARNING - Task queue depth is 3
+2026-06-28 18:07:43,167 - WARNING - Task queue depth is 1
+2026-06-28 18:07:43,173 - WARNING - Task queue depth is 2
+2026-06-28 18:07:43,174 - WARNING - Task queue depth is 3
+2026-06-28 18:07:43,174 - WARNING - Task queue depth is 4
+2026-06-28 18:07:44,549 - WARNING - Task queue depth is 1
+2026-06-28 18:07:44,556 - WARNING - Task queue depth is 2
+2026-06-28 18:07:45,998 - WARNING - Task queue depth is 1
+2026-06-28 18:07:46,004 - WARNING - Task queue depth is 1
+2026-06-28 18:07:46,008 - WARNING - Task queue depth is 2
+2026-06-28 18:07:46,916 - WARNING - Task queue depth is 1
+2026-06-28 18:07:46,924 - WARNING - Task queue depth is 2
+2026-06-28 18:07:47,716 - WARNING - Task queue depth is 1
+2026-06-28 18:07:47,722 - WARNING - Task queue depth is 2
+2026-06-28 18:07:47,728 - WARNING - Task queue depth is 3
+2026-06-28 18:07:47,728 - WARNING - Task queue depth is 4
+2026-06-28 18:07:50,955 - WARNING - Task queue depth is 1
+2026-06-28 18:07:50,957 - WARNING - Task queue depth is 2
+2026-06-28 18:07:50,962 - WARNING - Task queue depth is 1
+2026-06-28 18:07:53,772 - WARNING - Task queue depth is 1
+2026-06-28 18:07:53,776 - WARNING - Task queue depth is 2
+2026-06-28 18:07:53,780 - WARNING - Task queue depth is 3
+2026-06-28 18:07:53,781 - WARNING - Task queue depth is 4
+2026-06-28 18:07:55,237 - WARNING - Task queue depth is 1
+2026-06-28 18:07:55,239 - WARNING - Task queue depth is 1
+2026-06-28 18:07:55,248 - WARNING - Task queue depth is 2
+2026-06-28 18:07:55,249 - WARNING - Task queue depth is 3
+2026-06-28 18:07:56,979 - WARNING - Task queue depth is 1
+2026-06-28 18:07:56,980 - WARNING - Task queue depth is 2
+2026-06-28 18:07:56,989 - WARNING - Task queue depth is 2
+2026-06-28 18:07:57,011 - WARNING - Task queue depth is 3
+2026-06-28 18:08:25,322 - WARNING - Task queue depth is 1
+2026-06-28 18:08:25,325 - WARNING - Task queue depth is 2
+2026-06-28 18:08:25,355 - WARNING - Task queue depth is 3
+2026-06-28 18:08:25,356 - WARNING - Task queue depth is 4
+2026-06-28 18:08:25,930 - WARNING - Task queue depth is 1
+2026-06-28 18:08:25,933 - WARNING - Task queue depth is 1
+2026-06-28 18:08:30,664 - WARNING - Task queue depth is 1
+2026-06-28 18:08:30,665 - WARNING - Task queue depth is 2
+2026-06-28 18:08:30,692 - WARNING - Task queue depth is 3
+2026-06-28 18:08:30,693 - WARNING - Task queue depth is 4
+2026-06-28 18:08:42,779 - WARNING - Task queue depth is 1
+2026-06-28 18:08:42,780 - WARNING - Task queue depth is 2
+2026-06-28 18:08:42,783 - WARNING - Task queue depth is 3
+2026-06-28 18:08:42,783 - WARNING - Task queue depth is 4
+2026-06-28 18:08:43,599 - WARNING - Task queue depth is 1
+2026-06-28 18:08:46,595 - WARNING - Task queue depth is 1
+2026-06-28 18:08:46,609 - WARNING - Task queue depth is 1
+2026-06-28 18:08:47,848 - WARNING - Task queue depth is 1
+2026-06-28 18:08:49,420 - WARNING - Task queue depth is 1
+2026-06-28 18:08:49,423 - WARNING - Task queue depth is 2
+2026-06-28 18:08:49,429 - WARNING - Task queue depth is 1
+2026-06-28 18:08:49,443 - WARNING - Task queue depth is 2
+2026-06-28 18:09:15,217 - WARNING - Task queue depth is 1
+2026-06-28 18:09:15,221 - WARNING - Task queue depth is 2
+2026-06-28 18:09:15,224 - WARNING - Task queue depth is 3
+2026-06-28 18:09:17,793 - WARNING - Task queue depth is 1
+2026-06-28 18:09:17,797 - WARNING - Task queue depth is 2
+2026-06-28 18:09:17,809 - WARNING - Task queue depth is 3
+2026-06-28 18:09:17,809 - WARNING - Task queue depth is 4
+2026-06-28 18:09:34,754 - WARNING - Task queue depth is 1
+2026-06-28 18:09:34,759 - WARNING - Task queue depth is 2
+2026-06-28 18:09:34,760 - WARNING - Task queue depth is 3
+2026-06-28 18:09:34,760 - WARNING - Task queue depth is 4
+2026-06-28 18:09:47,063 - WARNING - Task queue depth is 1
+2026-06-28 18:09:47,063 - WARNING - Task queue depth is 2
+2026-06-28 18:09:47,067 - WARNING - Task queue depth is 3
+2026-06-28 18:09:47,095 - WARNING - Task queue depth is 4
+2026-06-28 18:09:48,439 - WARNING - Task queue depth is 1
+2026-06-28 18:09:48,441 - WARNING - Task queue depth is 2
+2026-06-28 18:09:48,448 - WARNING - Task queue depth is 3
+2026-06-28 18:09:48,456 - WARNING - Task queue depth is 4
+2026-06-28 18:09:50,213 - WARNING - Task queue depth is 1
+2026-06-28 18:09:50,214 - WARNING - Task queue depth is 2
+2026-06-28 18:09:50,217 - WARNING - Task queue depth is 3
+2026-06-28 18:09:50,223 - WARNING - Task queue depth is 4
+2026-06-28 18:09:52,572 - WARNING - Task queue depth is 1
+2026-06-28 18:09:52,574 - WARNING - Task queue depth is 2
+2026-06-28 18:09:52,580 - WARNING - Task queue depth is 3
+2026-06-28 18:09:52,581 - WARNING - Task queue depth is 4
+2026-06-28 18:10:34,128 - WARNING - Task queue depth is 1
+2026-06-28 18:10:34,131 - WARNING - Task queue depth is 2
+2026-06-28 18:10:34,160 - WARNING - Task queue depth is 3
+2026-06-28 18:10:34,161 - WARNING - Task queue depth is 4
+2026-06-28 18:10:43,129 - WARNING - Task queue depth is 1
+2026-06-28 18:10:43,130 - WARNING - Task queue depth is 2
+2026-06-28 18:10:43,160 - WARNING - Task queue depth is 3
+2026-06-28 18:10:43,161 - WARNING - Task queue depth is 4
+2026-06-28 18:10:44,647 - WARNING - Task queue depth is 1
+2026-06-28 18:10:44,650 - WARNING - Task queue depth is 1
+2026-06-28 18:10:44,658 - WARNING - Task queue depth is 2
+2026-06-28 18:10:53,746 - WARNING - Task queue depth is 1
+2026-06-28 18:10:53,752 - WARNING - Task queue depth is 2
+2026-06-28 18:10:53,755 - WARNING - Task queue depth is 3
+2026-06-28 18:11:02,738 - WARNING - Task queue depth is 1
+2026-06-28 18:11:02,741 - WARNING - Task queue depth is 2
+2026-06-28 18:11:35,297 - WARNING - Task queue depth is 1
+2026-06-28 18:11:35,299 - WARNING - Task queue depth is 2
+2026-06-28 18:11:36,544 - WARNING - Task queue depth is 1
+2026-06-28 18:11:36,548 - WARNING - Task queue depth is 1
+2026-06-28 18:11:36,551 - WARNING - Task queue depth is 2
+2026-06-28 18:11:38,182 - WARNING - Task queue depth is 1
+2026-06-28 18:11:38,194 - WARNING - Task queue depth is 1
+2026-06-28 18:11:38,197 - WARNING - Task queue depth is 2
+2026-06-28 18:11:38,198 - WARNING - Task queue depth is 3
+2026-06-28 18:11:39,214 - WARNING - Task queue depth is 1
+2026-06-28 18:11:39,223 - WARNING - Task queue depth is 1
+2026-06-28 18:11:39,225 - WARNING - Task queue depth is 2
+2026-06-28 18:11:39,226 - WARNING - Task queue depth is 3
+2026-06-28 18:11:44,409 - WARNING - Task queue depth is 1
+2026-06-28 18:11:44,413 - WARNING - Task queue depth is 2
+2026-06-28 18:11:44,419 - WARNING - Task queue depth is 1
+2026-06-28 18:11:44,445 - WARNING - Task queue depth is 2
+2026-06-28 18:12:02,929 - WARNING - Task queue depth is 1
+2026-06-28 18:12:02,932 - WARNING - Task queue depth is 2
+2026-06-28 18:12:02,933 - WARNING - Task queue depth is 3
+2026-06-28 18:12:02,934 - WARNING - Task queue depth is 4
+2026-06-28 18:12:04,181 - WARNING - Task queue depth is 1
+2026-06-28 18:12:04,187 - WARNING - Task queue depth is 1
+2026-06-28 18:12:04,191 - WARNING - Task queue depth is 2
+2026-06-28 18:12:05,546 - WARNING - Task queue depth is 1
+2026-06-28 18:12:05,547 - WARNING - Task queue depth is 2
+2026-06-28 18:12:05,553 - WARNING - Task queue depth is 1
+2026-06-28 18:12:05,556 - WARNING - Task queue depth is 2
+2026-06-28 18:12:07,223 - WARNING - Task queue depth is 1
+2026-06-28 18:12:07,226 - WARNING - Task queue depth is 2
+2026-06-28 18:12:07,229 - WARNING - Task queue depth is 3
+2026-06-28 18:12:07,230 - WARNING - Task queue depth is 4
+2026-06-28 18:12:09,096 - WARNING - Task queue depth is 1
+2026-06-28 18:12:09,100 - WARNING - Task queue depth is 2
+2026-06-28 18:12:16,381 - WARNING - Task queue depth is 1
+2026-06-28 18:12:16,389 - WARNING - Task queue depth is 1
+2026-06-28 18:12:16,392 - WARNING - Task queue depth is 2
+2026-06-28 18:12:16,393 - WARNING - Task queue depth is 3
+2026-06-28 18:12:37,080 - WARNING - Task queue depth is 1
+2026-06-28 18:12:37,082 - WARNING - Task queue depth is 2
+2026-06-28 18:12:37,112 - WARNING - Task queue depth is 3
+2026-06-28 18:13:05,178 - WARNING - Task queue depth is 1
+2026-06-28 18:13:05,180 - WARNING - Task queue depth is 2
+2026-06-28 18:13:06,164 - WARNING - Task queue depth is 1
+2026-06-28 18:13:09,545 - WARNING - Task queue depth is 1
+2026-06-28 18:13:09,546 - WARNING - Task queue depth is 1
+2026-06-28 18:13:09,576 - WARNING - Task queue depth is 2
+2026-06-28 18:13:09,577 - WARNING - Task queue depth is 3
+2026-06-28 18:13:13,652 - WARNING - Task queue depth is 1
+2026-06-28 18:13:13,662 - WARNING - Task queue depth is 1
+2026-06-28 18:13:13,682 - WARNING - Task queue depth is 2
+2026-06-28 18:13:13,682 - WARNING - Task queue depth is 3
+2026-06-28 18:13:14,833 - WARNING - Task queue depth is 1
+2026-06-28 18:13:14,842 - WARNING - Task queue depth is 2
+2026-06-28 18:13:14,842 - WARNING - Task queue depth is 3
+2026-06-28 18:13:16,196 - WARNING - Task queue depth is 1
+2026-06-28 18:13:16,199 - WARNING - Task queue depth is 1
+2026-06-28 18:13:18,328 - WARNING - Task queue depth is 1
+2026-06-28 18:13:18,328 - WARNING - Task queue depth is 2
+2026-06-28 18:13:18,332 - WARNING - Task queue depth is 2
+2026-06-28 18:13:18,361 - WARNING - Task queue depth is 3
+2026-06-28 18:13:19,696 - WARNING - Task queue depth is 1
+2026-06-28 18:13:19,698 - WARNING - Task queue depth is 2
+2026-06-28 18:13:19,705 - WARNING - Task queue depth is 3
+2026-06-28 18:13:19,706 - WARNING - Task queue depth is 4
+2026-06-28 18:13:30,493 - WARNING - Task queue depth is 1
+2026-06-28 18:13:36,278 - WARNING - Task queue depth is 1
+2026-06-28 18:13:36,283 - WARNING - Task queue depth is 1
+2026-06-28 18:13:36,308 - WARNING - Task queue depth is 2
+2026-06-28 18:13:36,309 - WARNING - Task queue depth is 3
+2026-06-28 18:13:49,560 - WARNING - Task queue depth is 1
+2026-06-28 18:13:49,562 - WARNING - Task queue depth is 2
+2026-06-28 18:13:49,581 - WARNING - Task queue depth is 3
+2026-06-28 18:13:49,582 - WARNING - Task queue depth is 4
+2026-06-28 18:14:06,079 - WARNING - Task queue depth is 1
+2026-06-28 18:14:06,080 - WARNING - Task queue depth is 2
+2026-06-28 18:14:14,272 - WARNING - Task queue depth is 1
+2026-06-28 18:14:14,276 - WARNING - Task queue depth is 2
+2026-06-28 18:14:14,301 - WARNING - Task queue depth is 3
+2026-06-28 18:14:14,302 - WARNING - Task queue depth is 4
+2026-06-28 18:14:18,866 - WARNING - Task queue depth is 1
+2026-06-28 18:14:18,869 - WARNING - Task queue depth is 1
+2026-06-28 18:14:18,877 - WARNING - Task queue depth is 2
+2026-06-28 18:14:18,877 - WARNING - Task queue depth is 3
+2026-06-28 18:14:24,655 - WARNING - Task queue depth is 1
+2026-06-28 18:14:24,657 - WARNING - Task queue depth is 2
+2026-06-28 18:14:24,657 - WARNING - Task queue depth is 3
+2026-06-28 18:14:27,062 - WARNING - Task queue depth is 1
+2026-06-28 18:14:27,065 - WARNING - Task queue depth is 2
+2026-06-28 18:14:27,066 - WARNING - Task queue depth is 3
+2026-06-28 18:14:28,069 - WARNING - Task queue depth is 1
+2026-06-28 18:14:28,073 - WARNING - Task queue depth is 2
+2026-06-28 18:14:28,082 - WARNING - Task queue depth is 3
+2026-06-28 18:14:28,082 - WARNING - Task queue depth is 4
+2026-06-28 18:14:28,920 - WARNING - Task queue depth is 1
+2026-06-28 18:14:30,250 - WARNING - Task queue depth is 1
+2026-06-28 18:14:30,259 - WARNING - Task queue depth is 1
+2026-06-28 18:14:30,266 - WARNING - Task queue depth is 2
+2026-06-28 18:14:30,267 - WARNING - Task queue depth is 3
+2026-06-28 18:14:32,322 - WARNING - Task queue depth is 1
+2026-06-28 18:14:32,329 - WARNING - Task queue depth is 2
+2026-06-28 18:14:32,333 - WARNING - Task queue depth is 3
+2026-06-28 18:14:32,334 - WARNING - Task queue depth is 4
+2026-06-28 18:14:33,417 - WARNING - Task queue depth is 1
+2026-06-28 18:14:33,421 - WARNING - Task queue depth is 2
+2026-06-28 18:14:33,425 - WARNING - Task queue depth is 3
+2026-06-28 18:14:33,429 - WARNING - Task queue depth is 1
+2026-06-28 18:14:35,163 - WARNING - Task queue depth is 1
+2026-06-28 18:14:35,166 - WARNING - Task queue depth is 2
+2026-06-28 18:14:35,170 - WARNING - Task queue depth is 3
+2026-06-28 18:14:35,171 - WARNING - Task queue depth is 4
+2026-06-28 18:14:36,255 - WARNING - Task queue depth is 1
+2026-06-28 18:14:36,258 - WARNING - Task queue depth is 2
+2026-06-28 18:14:36,260 - WARNING - Task queue depth is 2
+2026-06-28 18:14:36,263 - WARNING - Task queue depth is 3
+2026-06-28 18:14:38,445 - WARNING - Task queue depth is 1
+2026-06-28 18:14:38,450 - WARNING - Task queue depth is 1
+2026-06-28 18:14:38,457 - WARNING - Task queue depth is 2
+2026-06-28 18:14:38,458 - WARNING - Task queue depth is 3
+2026-06-28 18:14:39,365 - WARNING - Task queue depth is 1
+2026-06-28 18:14:39,374 - WARNING - Task queue depth is 1
+2026-06-28 18:14:39,379 - WARNING - Task queue depth is 2
+2026-06-28 18:14:40,783 - WARNING - Task queue depth is 1
+2026-06-28 18:14:40,794 - WARNING - Task queue depth is 1
+2026-06-28 18:14:43,344 - WARNING - Task queue depth is 1
+2026-06-28 18:14:43,350 - WARNING - Task queue depth is 1
+2026-06-28 18:14:43,376 - WARNING - Task queue depth is 2
+2026-06-28 18:15:09,404 - WARNING - Task queue depth is 1
+2026-06-28 18:15:09,408 - WARNING - Task queue depth is 1
+2026-06-28 18:15:09,412 - WARNING - Task queue depth is 1
+2026-06-28 18:15:11,257 - WARNING - Task queue depth is 1
+2026-06-28 18:15:18,647 - WARNING - Task queue depth is 1
+2026-06-28 18:15:18,647 - WARNING - Task queue depth is 2
+2026-06-28 18:15:18,658 - WARNING - Task queue depth is 2
+2026-06-28 18:15:18,680 - WARNING - Task queue depth is 3
+2026-06-28 18:48:25,194 - WARNING - Task queue depth is 1
+2026-06-28 18:48:25,226 - WARNING - Task queue depth is 1
+2026-06-28 18:48:53,099 - WARNING - Task queue depth is 1
+2026-06-28 18:48:53,123 - WARNING - Task queue depth is 2
+2026-06-28 18:48:59,098 - WARNING - Task queue depth is 1
+2026-06-28 18:48:59,115 - WARNING - Task queue depth is 2
+2026-06-28 18:49:48,095 - WARNING - Task queue depth is 1
+2026-06-28 18:49:48,099 - WARNING - Task queue depth is 2
+2026-06-28 18:49:48,100 - WARNING - Task queue depth is 3
+2026-06-28 18:49:48,100 - WARNING - Task queue depth is 4
+2026-06-28 18:56:12,366 - WARNING - Task queue depth is 1
+2026-06-28 18:56:12,371 - WARNING - Task queue depth is 1
+2026-06-28 18:56:36,526 - WARNING - Task queue depth is 1
+2026-06-28 18:56:36,543 - WARNING - Task queue depth is 2
+2026-06-28 18:56:36,544 - WARNING - Task queue depth is 3
+2026-06-28 19:26:41,776 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 19:26:41,780 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 19:26:41,830 - INFO - Scheduler started
+2026-06-28 19:26:41,884 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 19:26:41,908 - INFO - 启动生产服务器（waitress）...
+2026-06-28 19:26:42,024 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 19:27:24,033 - WARNING - Task queue depth is 1
+2026-06-28 19:27:46,875 - WARNING - Task queue depth is 1
+2026-06-28 19:27:46,888 - WARNING - Task queue depth is 2
+2026-06-28 19:35:14,382 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 19:35:14,388 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 19:35:14,411 - INFO - Scheduler started
+2026-06-28 19:35:14,414 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 19:35:14,444 - INFO - 启动生产服务器（waitress）...
+2026-06-28 19:35:14,455 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 19:36:00,391 - WARNING - Task queue depth is 1
+2026-06-28 19:36:00,397 - WARNING - Task queue depth is 2
+2026-06-28 19:36:01,761 - WARNING - Task queue depth is 1
+2026-06-28 19:36:01,773 - WARNING - Task queue depth is 2
+2026-06-28 19:36:02,908 - WARNING - Task queue depth is 1
+2026-06-28 19:36:02,930 - WARNING - Task queue depth is 1
+2026-06-28 19:36:03,609 - WARNING - Task queue depth is 1
+2026-06-28 19:36:03,615 - WARNING - Task queue depth is 1
+2026-06-28 19:36:03,624 - WARNING - Task queue depth is 2
+2026-06-28 19:36:03,733 - WARNING - Task queue depth is 1
+2026-06-28 19:36:03,775 - WARNING - Task queue depth is 2
+2026-06-28 19:36:03,781 - WARNING - Task queue depth is 1
+2026-06-28 19:36:06,902 - WARNING - Task queue depth is 1
+2026-06-28 19:36:06,906 - WARNING - Task queue depth is 1
+2026-06-28 19:36:07,083 - WARNING - Task queue depth is 1
+2026-06-28 19:36:07,124 - WARNING - Task queue depth is 2
+2026-06-28 19:36:07,124 - WARNING - Task queue depth is 3
+2026-06-28 19:36:07,977 - WARNING - Task queue depth is 1
+2026-06-28 19:36:08,010 - WARNING - Task queue depth is 2
+2026-06-28 19:36:10,326 - WARNING - Task queue depth is 1
+2026-06-28 19:36:10,363 - WARNING - Task queue depth is 2
+2026-06-28 19:36:10,363 - WARNING - Task queue depth is 3
+2026-06-28 19:36:13,519 - WARNING - Task queue depth is 1
+2026-06-28 19:36:43,914 - WARNING - Task queue depth is 1
+2026-06-28 19:36:43,952 - WARNING - Task queue depth is 1
+2026-06-28 19:36:50,396 - WARNING - Task queue depth is 1
+2026-06-28 19:36:50,422 - WARNING - Task queue depth is 2
+2026-06-28 19:36:50,423 - WARNING - Task queue depth is 3
+2026-06-28 19:37:13,400 - WARNING - Task queue depth is 1
+2026-06-28 20:01:34,181 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 20:01:34,421 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 20:01:34,574 - INFO - Scheduler started
+2026-06-28 20:01:34,790 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 20:01:34,864 - INFO - 启动生产服务器（waitress）...
+2026-06-28 20:01:35,308 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 20:01:49,555 - WARNING - Task queue depth is 1
+2026-06-28 20:01:49,578 - WARNING - Task queue depth is 2
+2026-06-28 20:01:54,040 - WARNING - Task queue depth is 1
+2026-06-28 20:02:04,386 - WARNING - Task queue depth is 1
+2026-06-28 20:02:04,437 - WARNING - Task queue depth is 2
+2026-06-28 20:14:07,295 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 20:14:07,296 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 20:14:07,296 - INFO - Scheduler started
+2026-06-28 20:14:07,297 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 20:14:07,312 - INFO - 启动生产服务器（waitress）...
+2026-06-28 20:14:07,343 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 20:14:25,995 - WARNING - Task queue depth is 1
+2026-06-28 20:14:26,040 - WARNING - Task queue depth is 2
+2026-06-28 20:14:43,153 - WARNING - Task queue depth is 1
+2026-06-28 20:14:43,209 - WARNING - Task queue depth is 2
+2026-06-28 20:36:41,630 - INFO - Added column username to operation_log
+2026-06-28 20:36:41,632 - INFO - Added column ip_address to operation_log
+2026-06-28 20:36:41,967 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-28 20:36:41,969 - INFO - Added job "backup_database" to job store "default"
+2026-06-28 20:36:41,969 - INFO - Scheduler started
+2026-06-28 20:36:41,970 - INFO - Added job "clean_login_attempts" to job store "default"
+2026-06-28 20:36:41,971 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-28 20:36:41,983 - INFO - 启动生产服务器（waitress）...
+2026-06-28 20:36:41,988 - INFO - Serving on http://0.0.0.0:5001
+2026-06-28 20:36:52,886 - WARNING - Task queue depth is 1
+2026-06-28 20:37:23,161 - WARNING - Task queue depth is 1
+2026-06-28 20:37:23,298 - WARNING - Task queue depth is 2
+2026-06-28 20:37:44,313 - WARNING - Task queue depth is 1
+2026-06-28 20:37:48,549 - WARNING - Task queue depth is 1
+2026-06-28 20:37:48,583 - WARNING - Task queue depth is 2
+2026-06-28 20:37:48,584 - WARNING - Task queue depth is 3
+2026-06-28 20:37:48,584 - WARNING - Task queue depth is 4
+2026-06-28 20:38:01,282 - WARNING - Task queue depth is 1
+2026-06-28 20:38:01,328 - WARNING - Task queue depth is 1
+2026-06-29 20:11:42,877 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-29 20:11:42,878 - INFO - Added job "backup_database" to job store "default"
+2026-06-29 20:11:42,879 - INFO - Scheduler started
+2026-06-29 20:11:42,880 - INFO - Added job "clean_login_attempts" to job store "default"
+2026-06-29 20:11:42,880 - INFO - Added job "clean_old_logs" to job store "default"
+2026-06-29 20:11:42,891 - INFO - 启动生产服务器（waitress）...
+2026-06-29 20:11:42,900 - INFO - Serving on http://0.0.0.0:5001

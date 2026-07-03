@@ -1,0 +1,18 @@
+{
+  "SCENT_NAME_MAP": {
+    "北国": "北国雪松",
+    "假日": "假日海风",
+    "秘境": "秘境森林",
+    "清风": "清风白茶",
+    "清樱": "清樱未央"
+  },
+  "CX06_PREFIX_LIST": [
+    "CX-06PRO",
+    "CX06-PRO",
+    "CX-06",
+    "CXT-06",
+    "CX06"
+  ],
+  "LOG_RETENTION_DAYS": 60,
+  "BACKUP_DIR": "backups"
+}

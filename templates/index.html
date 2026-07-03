@@ -1,0 +1,304 @@
+{% extends "admin_base.html" %}
+{% import "components/pagination.html" as page_mac %}
+{% block title %}订单列表{% endblock %}
+
+{% block content %}
+<style>
+  .sort-link { color: inherit; text-decoration: none; }
+  .sort-link:hover { color: #007bff; }
+  .sort-icon::after { content: ' ⇅'; font-size: 0.7em; color: #aaa; }
+  .sort-asc .sort-icon::after { content: ' ▲'; color: #007bff; }
+  .sort-desc .sort-icon::after { content: ' ▼'; color: #007bff; }
+    /* 新增表格固定布局 */
+  .table-fixed {
+    table-layout: fixed;
+    width: 100%;
+  }
+  .table-fixed th, .table-fixed td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  /* 为部分列指定宽度百分比，可根据需求调整 */
+  .col-check { width: 2%; }
+  .col-id { width: 3%; }
+  .col-order-code { width: 10%; }
+  .col-order-time { width: 11%; }
+  .col-extend-code { width: 10%; }
+  .col-goods { width: 23%; } 
+  .col-qty { width: 6%; }
+  .col-source { width: 8%; }
+  .col-ext2 { width: 23%; }
+  .col-actions { width: 4%; }
+</style>
+
+<div class="card">
+  <div class="card-header py-2">
+    <h3 class="card-title m-0">售后订单数据</h3>
+    <div class="card-tools">
+      <a class="btn btn-success btn-sm" href="/export_order?start_date={{start_date}}&end_date={{end_date}}">
+        <i class="fas fa-file-excel mr-1"></i>导出Excel
+      </a>
+    </div>
+  </div>
+  <div class="card-body p-2">
+    <!-- 统计卡片（保持不变） -->
+    <div class="row mb-2" id="statsRow">
+      <div class="col-lg-3 col-6">
+        <div class="info-box bg-info"><span class="info-box-icon"><i class="fas fa-file-invoice"></i></span><div class="info-box-content"><span class="info-box-text">订单总数</span><span class="info-box-number" id="statOrders">-</span></div></div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="info-box bg-success"><span class="info-box-icon"><i class="fas fa-box"></i></span><div class="info-box-content"><span class="info-box-text">商品种类</span><span class="info-box-number" id="statGoods">-</span></div></div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="info-box bg-warning"><span class="info-box-icon"><i class="fas fa-cubes"></i></span><div class="info-box-content"><span class="info-box-text">套装种类</span><span class="info-box-number" id="statSets">-</span></div></div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="info-box bg-secondary"><span class="info-box-icon"><i class="fas fa-clock"></i></span><div class="info-box-content"><span class="info-box-text">最近操作</span><span class="info-box-number small" id="statLastOp">-</span></div></div>
+      </div>
+    </div>
+
+    <!-- 搜索 + 快捷日期 -->
+    <form class="form-inline mb-2" onsubmit="return false;">
+      <div class="input-group input-group-sm mr-2" style="max-width:280px">
+        <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-search"></i></span></div>
+        <input type="text" class="form-control" id="keywordInput" placeholder="订单号/商品名称" value="{{ keyword }}">
+      </div>
+      <input type="date" class="form-control form-control-sm mr-2" id="startDate" value="{{ start_date }}">
+      <span class="mr-2">~</span>
+      <input type="date" class="form-control form-control-sm mr-2" id="endDate" value="{{ end_date }}">
+      <button class="btn btn-primary btn-sm mr-2" onclick="doSearch()"><i class="fas fa-filter mr-1"></i><span class="d-none d-md-inline">筛选</span></button>
+      <a href="/" class="btn btn-default btn-sm"><i class="fas fa-sync-alt mr-1"></i><span class="d-none d-md-inline">重置</span></a>
+      <div class="btn-group btn-group-sm ml-2">
+        <button type="button" class="btn btn-outline-secondary" onclick="setQuickDate('today')"><span class="d-none d-md-inline">今天</span></button>
+        <button type="button" class="btn btn-outline-secondary" onclick="setQuickDate('yesterday')"><span class="d-none d-md-inline">昨天</span></button>
+        <button type="button" class="btn btn-outline-secondary" onclick="setQuickDate('week')"><span class="d-none d-md-inline"></span></span>7天</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="setQuickDate('month')"><span class="d-none d-md-inline"></span>本月</span></button>
+      </div>
+      <select id="perPageSelect" class="form-control form-control-sm ml-2" style="width:85px" onchange="doSearch()">
+        <option value="12" {% if per_page == 12 %}selected{% endif %}>12条/页</option>
+        <option value="24" {% if per_page == 24 %}selected{% endif %}>24条/页</option>
+        <option value="48" {% if per_page == 48 %}selected{% endif %}>48条/页</option>
+        <option value="96" {% if per_page == 96 %}selected{% endif %}>96条/页</option>
+    </select>
+    </form>
+
+    <!-- 批量操作 -->
+    {% if current_user.role in ['admin', 'editor'] %}
+    <div class="mb-2">
+        <button class="btn btn-danger btn-sm" id="batchDeleteBtn"><i class="fas fa-trash mr-1"></i>批量删除</button>
+    </div>
+    {% endif %}
+
+    <!-- 表格（无内部滚动，长文本用 text-truncate） -->
+    <div class="table-responsive-sm">
+    <table class="table table-sm table-bordered table-hover mb-0 table-fixed">
+      <thead class="bg-light">
+        <tr>
+          <th class="col-check"><input type="checkbox" id="selectAllTop"></th>
+          <th class="col-id"><a href="#" class="sort-link" data-sort="id">ID<span class="sort-icon"></span></a></th>
+          <th class="col-order-code"><a href="#" class="sort-link" data-sort="order_code">订单号<span class="sort-icon"></span></a></th>
+          <th class="col-order-time"><a href="#" class="sort-link" data-sort="order_time">下单时间<span class="sort-icon"></span></a></th>
+          <th class="col-extend-code">扩展编码</th>
+          <th class="col-goods">原始商品名</th>
+          <th class="col-qty"><a href="#" class="sort-link" data-sort="original_quantity">原始数量<span class="sort-icon"></span></a></th>
+          <th class="col-source"><a href="#" class="sort-link" data-sort="source_table">数据来源<span class="sort-icon"></span></a></th>
+          <th class="col-ext2">扩展2</th>
+          <th class="col-actions">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in orders %}
+        <tr>
+          <td class="col-check"><input type="checkbox" class="order-check" data-id="{{ item.id }}"></td>
+          <td class="col-id">{{ item.id }}</td>
+          <td class="col-order-code" title="{{ item.order_code }}">{{ item.order_code }}</td>
+          <td class="col-order-time">{{ item.order_time }}</td>
+          <td class="col-extend-code" title="{{ item.extend_code }}">{{ item.extend_code or "-" }}</td>
+          <td class="col-goods" title="{{ item.original_goods }}">{{ item.original_goods or "-" }}</td>
+          <td class="col-qty">{{ item.original_quantity or 0 }}</td>
+          <td class="col-source">{{ item.source_table or "-" }}</td>
+          <td class="col-ext2" title="{{ item.extend_col2 if item.extend_col2 else '' }}">{{ item.extend_col2 if item.extend_col2 else "-" }}</td>
+          <td class="col-actions">
+            <div class="btn-group btn-group-sm">
+              <a class="btn btn-info" href="/detail/{{ item.order_code }}" title="明细"><i class="fas fa-list"></i></a>
+              {% if current_user.role in ['admin', 'editor'] %}
+              <button class="btn btn-danger btn-delete-order"
+                      data-id="{{ item.id }}"
+                      data-code="{{ item.order_code }}"
+                      data-extend="{{ item.extend_code or '' }}"
+                      title="删除">
+                <i class="fas fa-trash"></i>
+              </button>
+              {% endif %}
+            </div>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="10" class="text-center text-muted py-4">暂无符合条件的订单</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+    <!-- 分页 -->
+    {% set q = request.args.copy() %}{% set _ = q.pop('page', None) %}
+    {{ page_mac.render_pagination(page, total_pages, query_params=q) }}
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+const currentSort = '{{ sort_by }}';
+const currentOrder = '{{ sort_order }}';
+
+$(function(){
+  // 标记当前排序列
+  $(`.sort-link[data-sort="${currentSort}"]`).addClass(`sort-${currentOrder}`);
+
+  // 排序点击
+  $('.sort-link').click(function(e){
+    e.preventDefault();
+    const sort = $(this).data('sort');
+    let order = 'asc';
+    if (sort === currentSort && currentOrder === 'asc') {
+      order = 'desc';
+    }
+    const keyword = $('#keywordInput').val().trim();
+    const start = $('#startDate').val();
+    const end = $('#endDate').val();
+    window.location.href = `/?keyword=${encodeURIComponent(keyword)}&start_date=${start}&end_date=${end}&sort=${sort}&order=${order}`;
+  });
+
+  // 全选
+  $('#selectAllTop').change(function(){
+    $('.order-check').prop('checked', this.checked);
+  });
+
+  // 批量删除
+  $('#batchDeleteBtn').click(function(){
+    const ids = $('.order-check:checked').map(function(){ return $(this).data('id'); }).get();
+    if (!ids.length) {
+      toastr.warning('请选择要删除的订单');
+      return;
+    }
+    if (!confirm(`确定要删除选中的 ${ids.length} 个订单及其所有数据吗？`)) return;
+    const btn = $(this);
+    if (!btn.data('original-html')) {
+      btn.data('original-html', btn.html());
+      btn.data('loading-text', btn.text().trim() || '处理中...');
+    }
+    setButtonLoading(btn, true);
+    $.ajax({
+      url: '/api/deleteOrdersBatch',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({ ids: ids }),
+      success: function(res){
+        console.log('批量删除响应:', res);
+        if (res.success) {
+          toastr.success(res.msg || '删除成功');
+          setTimeout(function(){ location.reload(); }, 500);
+        } else {
+          toastr.error(res.msg || '删除失败');
+        }
+      },
+      error: function(xhr){
+        console.error('批量删除错误:', xhr);
+        const msg = (xhr.responseJSON && xhr.responseJSON.msg) || '网络异常，删除失败';
+        toastr.error(msg);
+      },
+      complete: function(){
+        setButtonLoading(btn, false);
+      }
+    });
+  });
+
+  // 单条删除
+  $(document).on('click', '.btn-delete-order', function(e){
+    e.preventDefault();
+    if (!confirm('确定删除该订单及所有关联数据？')) return;
+    const btn = $(this);
+    if (!btn.data('original-html')) {
+      btn.data('original-html', btn.html());
+      btn.data('loading-text', btn.text().trim() || '删除中...');
+    }
+    setButtonLoading(btn, true);
+    // 确保数据属性存在
+    const id = btn.attr('data-id');
+    const order_code = btn.attr('data-code');
+    const extend_code = btn.attr('data-extend') || '';
+    console.log('单条删除参数:', { id, order_code, extend_code });
+    $.ajax({
+      url: '/api/deleteOrder',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({ id: id, order_code: order_code, extend_code: extend_code }),
+      success: function(res){
+        console.log('单条删除响应:', res);
+        if (res.success) {
+          toastr.success(res.msg || '删除成功');
+          setTimeout(function(){ location.reload(); }, 500);
+        } else {
+          toastr.error(res.msg || '删除失败');
+        }
+      },
+      error: function(xhr){
+        console.error('单条删除错误:', xhr);
+        const msg = (xhr.responseJSON && xhr.responseJSON.msg) || '网络异常，删除失败';
+        toastr.error(msg);
+      },
+      complete: function(){
+        setButtonLoading(btn, false);
+      }
+    });
+  });
+
+  refreshStats();
+});
+
+// 搜索（保留排序）
+function doSearch() {
+    const keyword = $('#keywordInput').val().trim();
+    const start = $('#startDate').val();
+    const end = $('#endDate').val();
+    const perPage = $('#perPageSelect').val();
+    window.location.href = `/?keyword=${encodeURIComponent(keyword)}&start_date=${start}&end_date=${end}&sort=${currentSort}&order=${currentOrder}&per_page=${perPage}`;
+}
+
+// 回车搜索
+$('#keywordInput').keypress(function(e) {
+  if (e.which === 13) { doSearch(); return false; }
+});
+
+// 快捷日期
+function setQuickDate(type) {
+  const today = new Date();
+  const fmt = d => d.toISOString().split('T')[0];
+  let start, end;
+  switch(type) {
+    case 'today': start = end = fmt(today); break;
+    case 'yesterday': const y = new Date(today); y.setDate(y.getDate()-1); start = end = fmt(y); break;
+    case 'week': const w = new Date(today); w.setDate(w.getDate()-6); start = fmt(w); end = fmt(today); break;
+    case 'month': start = fmt(new Date(today.getFullYear(), today.getMonth(), 1)); end = fmt(today); break;
+  }
+  $('#startDate').val(start);
+  $('#endDate').val(end);
+  doSearch();
+}
+
+function refreshStats() {
+  $.getJSON('/api/stats', {
+    keyword: $('#keywordInput').val().trim(),
+    start_date: $('#startDate').val(),
+    end_date: $('#endDate').val()
+  }, function(data) {
+    $('#statOrders').text(data.total_orders);
+    $('#statGoods').text(data.goods_kinds);
+    $('#statSets').text(data.set_kinds);
+    $('#statLastOp').text(data.last_operation ? data.last_operation.substring(0,16) : '暂无');
+  });
+}
+</script>
+{% endblock %}

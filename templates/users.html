@@ -1,0 +1,178 @@
+{% extends "admin_base.html" %}
+{% block title %}用户管理{% endblock %}
+
+{% block content %}
+<style>
+  .table-fixed {
+    table-layout: fixed;
+    width: 100%;
+  }
+  .table-fixed th,
+  .table-fixed td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .col-id { width: 8%; }
+  .col-username { width: 22%; }
+  .col-role { width: 15%; }
+  .col-created { width: 22%; }
+  .col-actions { width: 33%; }
+</style>
+
+<div class="card">
+    <div class="card-header py-2">
+        <h3 class="card-title m-0">用户管理</h3>
+    </div>
+    <div class="card-body p-2">
+        <div class="mb-2">
+            <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#addUserPanel">
+                <i class="fas fa-plus mr-1"></i>新增用户
+            </button>
+        </div>
+        <div class="collapse mb-2" id="addUserPanel">
+            <div class="bg-light p-2 rounded">
+                <div class="form-inline">
+                    <input type="text" id="newUsername" class="form-control form-control-sm mr-2" placeholder="用户名" style="width:150px">
+                    <input type="password" id="newPassword" class="form-control form-control-sm mr-2" placeholder="密码（至少6位）" style="width:150px">
+                    <select id="newRole" class="form-control form-control-sm mr-2" style="width:120px">
+                        <option value="admin">管理员</option>
+                        <option value="editor">编辑员</option>
+                        <option value="viewer">只读</option>
+                    </select>
+                    <button class="btn btn-primary btn-sm" onclick="addUser()"><i class="fas fa-check mr-1"></i>保存</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="max-height: 55vh; overflow: auto; border: 1px solid #dee2e6; border-radius: 4px;" class="table-responsive-sm">
+            <table class="table table-sm table-bordered table-hover mb-0 table-fixed">
+                <thead class="bg-light" style="position: sticky; top: 0; z-index: 1;">
+                    <tr>
+                        <th class="col-id">ID</th>
+                        <th class="col-username">用户名</th>
+                        <th class="col-role">角色</th>
+                        <th class="col-created">创建时间</th>
+                        <th class="col-actions">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTable">
+                    <tr><td colspan="5" class="text-center text-muted py-3">加载中...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+$(function(){
+    loadUsers();
+    // 新增面板自动聚焦
+    $('#addUserPanel').on('shown.bs.collapse', function () {
+        $(this).find('input[type="text"]').first().focus();
+    });
+});
+
+function loadUsers() {
+    $.getJSON('/api/users', function(data) {
+        let html = '';
+        if (!data.length) {
+            html = '<tr><td colspan="5" class="text-center text-muted py-3">暂无用户</td></tr>';
+        } else {
+            data.forEach(u => {
+                // 安全转义
+                const username = $('<div>').text(u.username).html();
+                const createdAt = $('<div>').text(u.created_at || '-').html();
+                let roleBadge = '';
+                if (u.role === 'admin') roleBadge = '<span class="badge badge-danger">管理员</span>';
+                else if (u.role === 'editor') roleBadge = '<span class="badge badge-warning">编辑员</span>';
+                else roleBadge = '<span class="badge badge-secondary">只读</span>';
+
+                html += `<tr>
+                    <td class="col-id">${u.id}</td>
+                    <td class="col-username" title="${username}">${username}</td>
+                    <td class="col-role">${roleBadge}</td>
+                    <td class="col-created">${createdAt}</td>
+                    <td class="col-actions">
+                        <button class="btn btn-danger btn-xs" onclick="deleteUser(${u.id})" title="删除用户"><i class="fas fa-trash"></i> 删除</button>
+                        <button class="btn btn-warning btn-xs" onclick="changePassword(${u.id})" title="重置密码"><i class="fas fa-key"></i> 重置密码</button>
+                    </td>
+                </tr>`;
+            });
+        }
+        $('#usersTable').html(html);
+    }).fail(function(){
+        $('#usersTable').html('<tr><td colspan="5" class="text-center text-danger">加载失败，请刷新重试</td></tr>');
+    });
+}
+
+function addUser() {
+    const name = $('#newUsername').val().trim();
+    const pw = $('#newPassword').val();
+    const role = $('#newRole').val();
+    if (!name || !pw) return showWarning('用户名和密码不能为空');
+    if (pw.length < 6) return showWarning('密码至少6位');
+
+    $.ajax({
+        url: '/api/users/add',
+        method: 'POST',
+        data: {
+            username: name,
+            password: pw,
+            role: role
+        },
+        success: function(res){
+            if(res.success){
+                showSuccess(res.msg);
+                loadUsers();
+                $('#newUsername').val('');
+                $('#newPassword').val('');
+                $('#addUserPanel').collapse('hide');
+            } else {
+                showError(res.msg);
+            }
+        },
+        error: function(){ showError('添加失败，请重试'); }
+    });
+}
+
+function deleteUser(uid) {
+    if(!confirm('确定删除该用户？此操作不可撤销！')) return;
+    $.ajax({
+        url: '/api/users/del',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({id: uid}),
+        success: function(res){
+            if(res.success) { showSuccess(res.msg); loadUsers(); }
+            else showError(res.msg);
+        },
+        error: function(){ showError('删除失败'); }
+    });
+}
+
+function changePassword(uid) {
+    const newPw = prompt('请输入新密码（至少6位）：');
+    if (!newPw) return;
+    if (newPw.length < 6) {
+        showWarning('密码至少6位');
+        return;
+    }
+    if (!confirm('确认重置该用户的密码吗？')) return;
+
+    $.ajax({
+        url: '/api/users/set-password',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({id: uid, password: newPw}),
+        success: function(res){
+            if(res.success) showSuccess(res.msg);
+            else showError(res.msg);
+        },
+        error: function(){ showError('密码重置失败'); }
+    });
+}
+</script>
+{% endblock %}

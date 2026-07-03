@@ -1,0 +1,205 @@
+{% extends "admin_base.html" %}
+{% block title %}操作日志{% endblock %}
+
+{% block content %}
+<style>
+  .table-fixed {
+    table-layout: fixed;
+    width: 100%;
+  }
+  .table-fixed th,
+  .table-fixed td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .col-time { width: 15%; }
+  .col-user { width: 10%; }
+  .col-ip { width: 12%; }
+  .col-action { width: 12%; }
+  .col-detail { width: 51%; }
+</style>
+
+<div class="card">
+    <div class="card-header py-2">
+        <h3 class="card-title m-0">📋 操作日志</h3>
+        <div class="card-tools">
+            <button class="btn btn-success btn-sm" id="exportLogBtn">
+                <i class="fas fa-file-excel mr-1"></i>导出Excel
+            </button>
+        </div>
+    </div>
+    <div class="card-body p-2">
+        <!-- 筛选区 -->
+        <div class="form-inline mb-2" onsubmit="return false;">
+            <div class="input-group input-group-sm mr-2" style="max-width: 200px;">
+                <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-search"></i></span></div>
+                <input type="text" id="keywordInput" class="form-control" placeholder="搜索操作或详情...">
+            </div>
+            <input type="text" id="usernameInput" class="form-control form-control-sm mr-2" placeholder="操作人" style="max-width: 100px;">
+            <input type="text" id="ipInput" class="form-control form-control-sm mr-2" placeholder="IP" style="max-width: 120px;">
+            <select id="roleSelect" class="form-control form-control-sm mr-2" style="width:100px">
+                <option value="">全部角色</option>
+                <option value="admin">管理员</option>
+                <option value="editor">编辑员</option>
+                <option value="viewer">只读</option>
+            </select>
+            <input type="date" id="startDate" class="form-control form-control-sm mr-2">
+            <span class="mr-2">~</span>
+            <input type="date" id="endDate" class="form-control form-control-sm mr-2">
+            <button class="btn btn-primary btn-sm mr-2" onclick="doSearch()"><i class="fas fa-filter mr-1"></i>筛选</button>
+            <a href="/operation-log" class="btn btn-default btn-sm"><i class="fas fa-sync-alt mr-1"></i>重置</a>
+        </div>
+
+        <!-- 表格容器 -->
+        <div style="max-height: 60vh; overflow: auto; border: 1px solid #dee2e6; border-radius: 4px;" class="table-responsive-sm">
+            <table class="table table-sm table-bordered table-hover mb-0 table-fixed">
+                <thead class="bg-light" style="position: sticky; top: 0; z-index: 1;">
+                    <tr>
+                        <th class="col-time">时间</th>
+                        <th class="col-user">操作人</th>
+                        <th class="col-ip">IP</th>
+                        <th class="col-action">操作类型</th>
+                        <th class="col-detail">详情</th>
+                    </tr>
+                </thead>
+                <tbody id="logTableBody">
+                    <tr><td colspan="5" class="text-center text-muted py-3">加载中...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 分页 -->
+        <div class="text-center text-muted small mt-2" id="pageInfo"></div>
+        <div class="d-flex justify-content-center mt-1">
+            <ul class="pagination pagination-sm mb-0" id="pagination"></ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+let currentPage = 1;
+let totalPages = 1;
+
+// 获取当前所有筛选条件
+function getFilterParams() {
+    return {
+        start_date: $('#startDate').val().trim(),
+        end_date: $('#endDate').val().trim(),
+        keyword: $('#keywordInput').val().trim(),
+        username: $('#usernameInput').val().trim(),
+        ip: $('#ipInput').val().trim(),
+        role: $('#roleSelect').val()
+    };
+}
+
+$(function(){
+    loadLogs(1);
+
+    $('#exportLogBtn').on('click', function() {
+        const start = $('#startDate').val();
+        const end = $('#endDate').val();
+        const keyword = $('#keywordInput').val().trim();
+        const username = $('#usernameInput').val().trim();
+        const ip = $('#ipInput').val().trim();
+        const role = $('#roleSelect').val();          // ← 获取角色筛选值
+
+        let url = `/export_operation_log?start_date=${start}&end_date=${end}&keyword=${encodeURIComponent(keyword)}&username=${encodeURIComponent(username)}&ip=${encodeURIComponent(ip)}`;
+        if (role) {
+            url += `&role=${encodeURIComponent(role)}`;
+        }
+        window.location.href = url;
+    })
+
+    // 支持按回车触发筛选
+    $('#keywordInput, #usernameInput, #ipInput').on('keypress', function(e) {
+        if (e.which === 13) doSearch();
+    });
+});
+
+function loadLogs(page) {
+    currentPage = page;
+    const params = getFilterParams();
+    params.page = page;
+
+    $.ajax({
+        url: '/api/operation-log',
+        data: params,
+        success: function(res) {
+            totalPages = res.total_pages;
+            renderTable(res.logs);
+            renderPagination(page, totalPages);
+            $('#pageInfo').text(`第 ${page} 页 / 共 ${totalPages} 页（共 ${res.total} 条）`);
+        },
+        error: function() {
+            $('#logTableBody').html('<tr><td colspan="5" class="text-center text-danger">加载失败</td></tr>');
+            showError('加载日志失败');
+        }
+    });
+}
+
+function renderTable(logs) {
+    let html = '';
+    if (logs.length === 0) {
+        html = '<tr><td colspan="5" class="text-center text-muted py-3">暂无日志</td></tr>';
+    } else {
+        logs.forEach(log => {
+            const timestamp = $('<div>').text(log.timestamp || '-').html();
+            const username = $('<div>').text(log.username || '-').html();
+            const ip = $('<div>').text(log.ip_address || '-').html();
+            const action = $('<div>').text(log.action || '-').html();
+            const details = $('<div>').text(log.details || '-').html();
+
+            html += `<tr>
+                <td class="col-time">${timestamp}</td>
+                <td class="col-user">${username}</td>
+                <td class="col-ip">${ip}</td>
+                <td class="col-action"><span class="badge badge-secondary">${action}</span></td>
+                <td class="col-detail" title="${details}">${details}</td>
+            </tr>`;
+        });
+    }
+    $('#logTableBody').html(html);
+}
+
+function renderPagination(page, totalPages) {
+    if (totalPages <= 1) {
+        $('#pagination').html('');
+        return;
+    }
+    let html = '';
+    html += `<li class="page-item ${page === 1 ? 'disabled' : ''}"><a class="page-link" href="#" onclick="goPage(${page-1})">&laquo;</a></li>`;
+
+    const maxVisible = 5;
+    let start = Math.max(1, page - Math.floor(maxVisible / 2));
+    let end = Math.min(totalPages, start + maxVisible - 1);
+    if (end - start + 1 < maxVisible) start = Math.max(1, end - maxVisible + 1);
+
+    if (start > 1) {
+        html += `<li class="page-item"><a class="page-link" href="#" onclick="goPage(1)">1</a></li>`;
+        if (start > 2) html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+    }
+    for (let i = start; i <= end; i++) {
+        html += `<li class="page-item ${i === page ? 'active' : ''}"><a class="page-link" href="#" onclick="goPage(${i})">${i}</a></li>`;
+    }
+    if (end < totalPages) {
+        if (end < totalPages - 1) html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+        html += `<li class="page-item"><a class="page-link" href="#" onclick="goPage(${totalPages})">${totalPages}</a></li>`;
+    }
+    html += `<li class="page-item ${page === totalPages ? 'disabled' : ''}"><a class="page-link" href="#" onclick="goPage(${page+1})">&raquo;</a></li>`;
+    $('#pagination').html(html);
+}
+
+function goPage(page) {
+    if (page < 1 || page > totalPages) return;
+    loadLogs(page);
+    return false;
+}
+
+function doSearch() {
+    loadLogs(1);
+}
+</script>
+{% endblock %}

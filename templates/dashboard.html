@@ -1,0 +1,430 @@
+{% extends "admin_base.html" %}
+{% block title %}数据分析看板{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header py-2 d-flex justify-content-between align-items-center">
+        <h3 class="card-title m-0">📊 数据分析看板</h3>
+        <div class="form-inline">
+            <select id="sourceSelect" class="form-control form-control-sm mr-2" style="width:140px">
+                <option value="">全部来源</option>
+                <!-- 可手动添加已知来源，或通过API动态生成 -->
+                <option value="手动添加">手动添加</option>
+                <option value="系统导入">系统导入</option>
+                <option value="表格1">表格1</option>
+                <option value="表格2">表格2</option>
+            </select>
+            <input type="date" id="startDate" class="form-control form-control-sm mr-2" value="{{ start_date|default('') }}">
+            <span class="mr-2">~</span>
+            <input type="date" id="endDate" class="form-control form-control-sm mr-2" value="{{ end_date|default('') }}">
+            <button class="btn btn-primary btn-sm mr-2" onclick="filterDashboard()">
+                <i class="fas fa-filter mr-1"></i>筛选
+            </button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="resetDashboard()">
+                <i class="fas fa-sync-alt mr-1"></i>重置
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 关键指标卡片 -->
+<div class="row mb-2" id="summaryCards">
+    <div class="col-lg-2 col-4">
+        <div class="info-box bg-info">
+            <span class="info-box-icon"><i class="fas fa-file-invoice"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">订单总数</span>
+                <span class="info-box-number" id="sOrders">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-4">
+        <div class="info-box bg-success">
+            <span class="info-box-icon"><i class="fas fa-boxes"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">明细条数</span>
+                <span class="info-box-number" id="sDetails">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-4">
+        <div class="info-box bg-warning">
+            <span class="info-box-icon"><i class="fas fa-cubes"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">套装记录</span>
+                <span class="info-box-number" id="sSets">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-4">
+        <div class="info-box bg-danger">
+            <span class="info-box-icon"><i class="fas fa-tags"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">商品种类</span>
+                <span class="info-box-number" id="sGoodsKinds">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-4">
+        <div class="info-box bg-secondary">
+            <span class="info-box-icon"><i class="fas fa-archive"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">套装种类</span>
+                <span class="info-box-number" id="sSetKinds">-</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 图表行1：趋势 + 来源分布 -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <h3 class="card-title m-0">订单趋势</h3>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="exportChart('trendChart', '订单趋势')">📷 图片</button>
+                    <a class="btn btn-sm btn-outline-secondary" href="#" onclick="this.href='/api/dashboard/export/trend?'+getParams();return true;"><i class="fas fa-download"></i> CSV</a>
+                </div>
+            </div>
+            <div class="card-body p-2">
+                <canvas id="trendChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <h3 class="card-title m-0">数据来源分布</h3>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="exportChart('sourceChart', '数据来源分布')">📷 图片</button>
+                    <a class="btn btn-sm btn-outline-secondary" href="#" onclick="this.href='/api/dashboard/export/source?'+getParams();return true;"><i class="fas fa-download"></i> CSV</a>
+                </div>
+            </div>
+            <div class="card-body p-2">
+                <canvas id="sourceChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 图表行2：月度统计 + 商品TOP10 -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <h3 class="card-title m-0">月度订单统计</h3>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="exportChart('monthlyChart', '月度订单统计')">📷 图片</button>
+                    <a class="btn btn-sm btn-outline-secondary" href="#" onclick="this.href='/api/dashboard/export/monthly?'+getParams();return true;"><i class="fas fa-download"></i> CSV</a>
+                </div>
+            </div>
+            <div class="card-body p-2">
+                <canvas id="monthlyChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <h3 class="card-title m-0">商品数量 TOP10</h3>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="exportChart('goodsTopChart', '商品数量 TOP10')">📷 图片</button>
+                    <a class="btn btn-sm btn-outline-secondary" href="#" onclick="this.href='/api/dashboard/export/top-goods?'+getParams();return true;"><i class="fas fa-download"></i> CSV</a>
+                </div>
+            </div>
+            <div class="card-body p-2">
+                <canvas id="goodsTopChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 图表行3：套装TOP10 + 商品数量区间分布 -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <h3 class="card-title m-0">套装使用频率 TOP10</h3>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="exportChart('setsTopChart', '套装使用频率 TOP10')">📷 图片</button>
+                    <a class="btn btn-sm btn-outline-secondary" href="#" onclick="this.href='/api/dashboard/export/top-sets?'+getParams();return true;"><i class="fas fa-download"></i> CSV</a>
+                </div>
+            </div>
+            <div class="card-body p-2">
+                <canvas id="setsTopChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <h3 class="card-title m-0">商品数量区间分布</h3>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="exportChart('goodsDistChart', '商品数量区间分布')">📷 图片</button>
+                    <a class="btn btn-sm btn-outline-secondary" href="#" onclick="this.href='/api/dashboard/export/goods-distribution?'+getParams();return true;"><i class="fas fa-download"></i> CSV</a>
+                </div>
+            </div>
+            <div class="card-body p-2">
+                <canvas id="goodsDistChart" height="300"></canvas>
+            </div>
+        </div>
+        </div>
+        <!-- 放在现有图表卡片的同一行（例如在 goods-distribution 卡片之后） -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">最近7天操作趋势</h3>
+            </div>
+            <div class="card-body">
+                <canvas id="logDailyChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">操作类型分布</h3>
+            </div>
+            <div class="card-body">
+                <canvas id="logActionChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">高频操作人 TOP10</h3>
+            </div>
+            <div class="card-body">
+                <canvas id="logUserChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+// 全局图表实例管理
+let chartInstances = {};
+
+// 销毁所有已有图表
+function destroyCharts() {
+    Object.values(chartInstances).forEach(chart => chart.destroy());
+    chartInstances = {};
+}
+
+// 获取当前筛选参数（对象形式）
+function getFilterParams() {
+    let start = $('#startDate').val();
+    let end = $('#endDate').val();
+    if (!start || !end) {
+        const today = new Date();
+        const twoWeeksAgo = new Date(today);
+        twoWeeksAgo.setDate(today.getDate() - 13);
+        start = twoWeeksAgo.toISOString().split('T')[0];
+        end = today.toISOString().split('T')[0];
+    }
+    return {
+        start_date: start,
+        end_date: end,
+        source: $('#sourceSelect').val() || ''
+    };
+}
+// 获取筛选参数（字符串形式，用于导出链接）
+function getParams() {
+    const params = getFilterParams();
+    return `start_date=${params.start_date}&end_date=${params.end_date}&source=${params.source}`;
+}
+// 导出图表为图片
+function exportChart(canvasId, fileName) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const link = document.createElement('a');
+    link.download = fileName + '.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+}
+
+// 主加载函数
+function loadDashboard() {
+    const params = getFilterParams();  // 这里定义了 params
+    destroyCharts();
+
+    // 1. 汇总卡片
+    $.getJSON('/api/dashboard/summary', params, function(data) {
+        $('#sOrders').text(data.total_orders);
+        $('#sDetails').text(data.total_details);
+        $('#sSets').text(data.total_sets);
+        $('#sGoodsKinds').text(data.goods_kinds);
+        $('#sSetKinds').text(data.set_kinds);
+    }).fail(function() { showError('加载汇总数据失败'); });
+
+    // 2. 订单趋势
+    $.getJSON('/api/order-trend', params, function(data) {
+        const ctx = document.getElementById('trendChart').getContext('2d');
+        chartInstances.trend = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.dates,
+                datasets: [{
+                    label: '订单数',
+                    data: data.counts,
+                    borderColor: '#007bff',
+                    backgroundColor: 'rgba(0,123,255,0.1)',
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }
+        });
+    }).fail(function() { showError('加载订单趋势失败'); });
+
+    // 3. 来源分布
+    $.getJSON('/api/dashboard/source-distribution', params, function(data) {
+        const ctx = document.getElementById('sourceChart').getContext('2d');
+        chartInstances.source = new Chart(ctx, {
+            type: 'doughnut',
+            data: { labels: data.labels, datasets: [{ data: data.counts, backgroundColor: ['#007bff','#28a745','#ffc107','#dc3545','#17a2b8','#6f42c1','#fd7e14'] }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
+        });
+    }).fail(function() { showError('加载数据来源分布失败'); });
+
+    // 4. 月度统计
+    $.getJSON('/api/dashboard/monthly-orders', params, function(data) {
+        const ctx = document.getElementById('monthlyChart').getContext('2d');
+        chartInstances.monthly = new Chart(ctx, {
+            type: 'bar',
+            data: { labels: data.months, datasets: [{ label: '订单数', data: data.counts, backgroundColor: '#17a2b8' }] },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }
+        });
+    }).fail(function() { showError('加载月度订单统计失败'); });
+
+    // 5. 商品 TOP10
+    $.getJSON('/api/dashboard/top-goods', params, function(data) {
+        const ctx = document.getElementById('goodsTopChart').getContext('2d');
+        chartInstances.goods = new Chart(ctx, {
+            type: 'bar',
+            data: { labels: data.labels, datasets: [{ label: '总数量', data: data.totals, backgroundColor: '#28a745' }] },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, scales: { x: { beginAtZero: true } } }
+        });
+    }).fail(function() { showError('加载商品TOP10失败'); });
+
+    // 6. 套装 TOP10
+    $.getJSON('/api/dashboard/top-sets', params, function(data) {
+        const ctx = document.getElementById('setsTopChart').getContext('2d');
+        chartInstances.sets = new Chart(ctx, {
+            type: 'bar',
+            data: { labels: data.labels, datasets: [{ label: '总套数', data: data.totals, backgroundColor: '#ffc107' }] },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+        });
+    }).fail(function() { showError('加载套装TOP10失败'); });
+
+    // 7. 商品数量区间分布
+    $.getJSON('/api/dashboard/goods-distribution', params, function(data) {
+        const ctx = document.getElementById('goodsDistChart').getContext('2d');
+        chartInstances.goodsDist = new Chart(ctx, {
+            type: 'bar',
+            data: { labels: data.labels, datasets: [{ label: '商品种类数', data: data.counts, backgroundColor: '#6f42c1' }] },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }
+        });
+    }).fail(function() { showError('加载商品分布失败'); });
+
+    // 8. 每日操作次数趋势（新增）
+    $.getJSON('/api/dashboard/log-daily', params, function(data) {
+        const ctx = document.getElementById('logDailyChart').getContext('2d');
+        if (chartInstances.logDaily) chartInstances.logDaily.destroy();
+        chartInstances.logDaily = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.days,
+                datasets: [{
+                    label: '操作次数',
+                    data: data.counts,
+                    borderColor: '#36a2eb',
+                    backgroundColor: 'rgba(54,162,235,0.1)',
+                    tension: 0.3,
+                    fill: true,
+                    pointRadius: 2
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, precision: 0 } } }
+        });
+    }).fail(function() { showError('加载操作日志趋势失败'); });
+
+    // 9. 操作类型分布（新增）
+    $.getJSON('/api/dashboard/log-action-types', params, function(data) {
+        const ctx = document.getElementById('logActionChart').getContext('2d');
+        if (chartInstances.logAction) chartInstances.logAction.destroy();
+        chartInstances.logAction = new Chart(ctx, {
+            type: 'doughnut',
+            data: { labels: data.actions, datasets: [{ data: data.counts, backgroundColor: ['#f56954','#00a65a','#f39c12','#00c0ef','#3c8dbc','#d2d6de','#8e44ad','#e74c3c'] }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
+        });
+    }).fail(function() { showError('加载操作类型分布失败'); });
+
+    // 10. 高频操作人 TOP10
+$.getJSON('/api/dashboard/log-top-users', params, function(data) {
+    const ctx = document.getElementById('logUserChart').getContext('2d');
+    if (chartInstances.logUser) chartInstances.logUser.destroy();
+    chartInstances.logUser = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: data.users,
+            datasets: [{
+                label: '操作次数',
+                data: data.counts,
+                backgroundColor: 'rgba(255, 206, 86, 0.6)',
+                borderColor: 'rgba(255, 206, 86, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',  // 横向条形图
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: { x: { beginAtZero: true } }
+        }
+    });
+}).fail(function() {
+    showError('加载高频操作人失败');
+});
+}
+
+// 来源下拉框加载
+$.getJSON('/api/source-tables', function(data) {
+    const $sel = $('#sourceSelect');
+    $sel.empty().append('<option value="">全部来源</option>');
+    data.forEach(function(name) {
+        $sel.append(`<option value="${name}">${name}</option>`);
+    });
+    const urlParams = new URLSearchParams(window.location.search);
+    const curSource = urlParams.get('source');
+    if (curSource) $sel.val(curSource);
+});
+
+function filterDashboard() {
+    loadDashboard();
+}
+
+function resetDashboard() {
+    const today = new Date();
+    const twoWeeksAgo = new Date(today);
+    twoWeeksAgo.setDate(today.getDate() - 13);
+    $('#startDate').val(twoWeeksAgo.toISOString().split('T')[0]);
+    $('#endDate').val(today.toISOString().split('T')[0]);
+    $('#sourceSelect').val('');
+    loadDashboard();
+}
+
+$(function() {
+    const today = new Date();
+    const twoWeeksAgo = new Date(today);
+    twoWeeksAgo.setDate(today.getDate() - 13);
+    if (!$('#startDate').val()) $('#startDate').val(twoWeeksAgo.toISOString().split('T')[0]);
+    if (!$('#endDate').val()) $('#endDate').val(today.toISOString().split('T')[0]);
+    loadDashboard();
+});
+</script>
+{% endblock %}

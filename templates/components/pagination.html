@@ -1,0 +1,45 @@
+{% macro render_pagination(page, total_pages, query_params={}) %}
+{% if total_pages > 1 %}
+<div class="d-flex justify-content-center mt-2">
+    <ul class="pagination pagination-sm mb-0">
+        {# 上一页 #}
+        <li class="page-item {% if page <= 1 %}disabled{% endif %}">
+            <a class="page-link" href="{{ url_for(request.endpoint, page=page-1, **query_params) }}">&laquo;</a>
+        </li>
+
+        {# 动态生成页码（最多显示 5 个） #}
+        {% set max_visible = 5 %}
+        {% set start_page = [1, page - (max_visible // 2)] | max %}
+        {% set end_page = [total_pages, start_page + max_visible - 1] | min %}
+        {% if end_page - start_page + 1 < max_visible %}
+            {% set start_page = [1, end_page - max_visible + 1] | max %}
+        {% endif %}
+
+        {% if start_page > 1 %}
+            <li class="page-item"><a class="page-link" href="{{ url_for(request.endpoint, page=1, **query_params) }}">1</a></li>
+            {% if start_page > 2 %}
+                <li class="page-item disabled"><span class="page-link">...</span></li>
+            {% endif %}
+        {% endif %}
+
+        {% for p in range(start_page, end_page + 1) %}
+            <li class="page-item {% if p == page %}active{% endif %}">
+                <a class="page-link" href="{{ url_for(request.endpoint, page=p, **query_params) }}">{{ p }}</a>
+            </li>
+        {% endfor %}
+
+        {% if end_page < total_pages %}
+            {% if end_page < total_pages - 1 %}
+                <li class="page-item disabled"><span class="page-link">...</span></li>
+            {% endif %}
+            <li class="page-item"><a class="page-link" href="{{ url_for(request.endpoint, page=total_pages, **query_params) }}">{{ total_pages }}</a></li>
+        {% endif %}
+
+        {# 下一页 #}
+        <li class="page-item {% if page >= total_pages %}disabled{% endif %}">
+            <a class="page-link" href="{{ url_for(request.endpoint, page=page+1, **query_params) }}">&raquo;</a>
+        </li>
+    </ul>
+</div>
+{% endif %}
+{% endmacro %}

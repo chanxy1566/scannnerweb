@@ -1,0 +1,74 @@
+{% extends "admin_base.html" %}
+{% import "components/pagination.html" as page_mac %}
+{% block title %}商品汇总{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header py-2">
+        <h3 class="card-title m-0">商品汇总</h3>
+        <div class="card-tools">
+            <button class="btn btn-success btn-sm" onclick="doExport()">
+                <i class="fas fa-file-excel mr-1"></i>导出Excel
+            </button>
+        </div>
+    </div>
+    <div class="card-body p-2">
+        <form class="form-inline mb-2" onsubmit="return false;">
+            <div class="input-group input-group-sm mr-2" style="max-width: 250px;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+                <input type="text" id="keyword" class="form-control" placeholder="搜索商品名称..." value="{{ keyword }}">
+            </div>
+            <input type="date" id="startDate" class="form-control form-control-sm mr-2" value="{{ start_date }}">
+            <span class="mr-2">~</span>
+            <input type="date" id="endDate" class="form-control form-control-sm mr-2" value="{{ end_date }}">
+            <button class="btn btn-primary btn-sm mr-2" onclick="doSearch()"><i class="fas fa-filter mr-1"></i>筛选</button>
+            <a href="/" class="btn btn-default btn-sm"><i class="fas fa-arrow-left mr-1"></i>返回</a>
+        </form>
+
+        <div style="max-height: 60vh; overflow-y: auto;">
+            {% if items %}
+            <div class="row">
+                {% for item in items %}
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-2">
+                    <div class="border rounded p-2 bg-light d-flex justify-content-between align-items-center">
+                        <span class="text-truncate d-inline-block" style="max-width: 70%;" title="{{ item.cleaned_goods }}">{{ item.cleaned_goods }}</span>
+                        <span class="badge badge-primary rounded-pill">{{ item.total }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center text-muted py-5">暂无符合条件的数据</div>
+            {% endif %}
+        </div>
+
+        {% set q = request.args.copy() %}
+        {% set _ = q.pop('page', None) %}
+        {{ page_mac.render_pagination(page, total_pages, query_params=q) }}
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+function doSearch() {
+    const start = document.getElementById('startDate').value;
+    const end = document.getElementById('endDate').value;
+    const keyword = document.getElementById('keyword').value.trim();
+    window.location.href = `/goods-summary?start_date=${start}&end_date=${end}&keyword=${encodeURIComponent(keyword)}`;
+}
+
+function doExport() {
+    const start = document.getElementById('startDate').value;
+    const end = document.getElementById('endDate').value;
+    const keyword = document.getElementById('keyword').value.trim();
+    if (!start || !end) {
+        showWarning('请选择开始和结束日期');
+        return;
+    }
+    window.location.href = `/export_goods_summary?start_date=${start}&end_date=${end}&keyword=${encodeURIComponent(keyword)}`;
+}
+</script>
+{% endblock %}
