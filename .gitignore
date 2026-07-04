@@ -1,0 +1,22 @@
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 备份文件夹
+backups/
+
+# Excel 数据文件
+resources/
+
+# 日志文件
+*.log
+scan_logs/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 虚拟环境
+venv/
+env/
